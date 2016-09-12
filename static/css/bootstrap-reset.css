@@ -1,0 +1,201 @@
+
+.nav-stacked > li + li {
+    margin-top: 1px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #353F4F;
+    text-decoration: none;
+}
+
+.panel {
+    border: none;
+}
+
+.panel-heading {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-transform: uppercase;
+    color: #535351;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*dropdown shadow*/
+
+.btn-group.open .dropdown-toggle, .btn-white.active, .btn:active, .btn.active {
+    box-shadow: none;
+}
+
+/*dropdown select bg*/
+
+.dropdown-menu {
+    box-shadow: none;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #424F63;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/*progress*/
+
+.progress {
+    box-shadow: none;
+    background: #f0f2f7;
+    height: 15px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.progress-bar {
+    box-shadow: none;
+    line-height: 15px;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 11px;
+}
+
+/*alert*/
+
+.alert-success, .alert-danger, .alert-info, .alert-warning {
+    border: none;
+}
+
+/*table*/
+
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    padding: 10px;
+}
+
+/*pagination*/
+
+.pagination > li > a, .pagination > li > span {
+    background-color: #EFF2F7;
+    border: 1px solid #EFF2F7;
+    float: left;
+    line-height: 1.42857;
+    margin-left: 1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+    color: #535351;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus,
+.pagination > li.active > a,
+.pagination > li.active > a:hover,
+
+.pager li > a:hover, .pager li > a:focus{
+    background-color: #65CEA7;
+    border-color: #65CEA7;
+    color: #fff;
+}
+
+.pager li > a, .pager li > span {
+    background-color: #EFF2F7;
+    border: 1px solid #EFF2F7;
+    color: #535351;
+}
+
+/*button*/
+
+.btn-primary {
+    background-color: #424F63;
+    border-color: #374152;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    background-color: #374152;
+    border-color: #2e3644;
+    color: #FFFFFF;
+}
+
+
+/*modal*/
+
+.modal-content {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+.modal-header {
+    background: #65CEA7;
+    color: #fff;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    border: none;
+}
+
+.modal-header .close {
+    color: #fff;
+    opacity: .5;
+}
+.modal-header .close:hover {
+    opacity: 1;
+}
+
+/*popover*/
+
+.popover {
+    box-shadow: none;
+}
+
+/*form elements*/
+
+.form-group label {
+    font-weight: normal;
+}
+
+.form-control {
+    box-shadow: none;
+}
+
+.form-control:focus, #focusedInput {
+    border: 1px solid #424F63;
+    box-shadow: none;
+}
+
+.has-success .form-control:focus,
+.has-warning .form-control:focus,
+.has-error .form-control:focus{
+    box-shadow: none;
+}
+
+/*panels*/
+
+.panel-default > .panel-heading {
+    background-color: #424F63;
+    border-color: #424F63;
+    color: #fff;
+}
+
+.panel-success > .panel-heading {
+    background-color: #5CB85C;
+    border-color: #5CB85C;
+    color: #fff;
+}
+
+.panel-info > .panel-heading {
+    background-color: #46B8DA;
+    border-color: #46B8DA;
+    color: #fff;
+}
+
+.panel-warning > .panel-heading {
+    background-color: #F0AD4E;
+    border-color: #F0AD4E;
+    color: #fff;
+}
+
+.panel-danger > .panel-heading {
+    background-color: #D9534F;
+    border-color: #D9534F;
+    color: #fff;
+}
