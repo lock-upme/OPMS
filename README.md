@@ -28,3 +28,6 @@ http://opms.docs.milu365.cn/
 在线体验：
 
 http://opms.demo.milu365.cn/
+默认用户名和密码：
+libai
+123456
