@@ -3560,6 +3560,11 @@ h3.timeline-title {
     margin-bottom: 40px;
 }
 
+.profile-desk div.content img {
+   max-width:100%;
+   height:auto
+}
+
 
 .p-follow-btn {
     background: #eff0f4;
