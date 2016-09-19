@@ -55,6 +55,7 @@ func init() {
 	beego.Router("/project/:id", &projects.ShowProjectController{})
 
 	beego.Router("/my/project", &projects.MyProjectController{})
+	beego.Router("/project/chart/:id", &projects.ChartProjectController{})
 
 	//项目成员
 	beego.Router("/project/team/:id", &projects.TeamProjectController{})

@@ -305,3 +305,73 @@ func (this *ShowProjectController) Get() {
 	this.Data["project"] = project
 	this.TplName = "projects/project-detail.tpl"
 }
+
+//项目统计
+type ChartProjectController struct {
+	controllers.BaseController
+}
+
+func (this *ChartProjectController) Get() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "project-manage") {
+		this.Abort("401")
+	}
+	idstr := this.Ctx.Input.Param(":id")
+	id, err := strconv.Atoi(idstr)
+	longid := int64(id)
+	project, err := GetProject(longid)
+	if err != nil {
+		this.Redirect("/404.html", 302)
+	}
+
+	//团队
+	chartTeamsNum, _, chartTeams := ChartProjectTeam(longid)
+	this.Data["chartTeams"] = chartTeams
+	this.Data["chartTeamsNum"] = chartTeamsNum - 1
+
+	//需求
+	chartNeedsAcceptNum, _, chartNeedsAccept := ChartProjectNeed("accept", longid)
+	this.Data["chartNeedsAccept"] = chartNeedsAccept
+	this.Data["chartNeedsAcceptNum"] = chartNeedsAcceptNum - 1
+
+	chartNeedsUserNum, _, chartNeedsUser := ChartProjectNeed("user", longid)
+	this.Data["chartNeedsUser"] = chartNeedsUser
+	this.Data["chartNeedsUserNum"] = chartNeedsUserNum - 1
+
+	chartNeedsSourceNum, _, chartNeedsSource := ChartProjectNeedSource(longid)
+	this.Data["chartNeedsSource"] = chartNeedsSource
+	this.Data["chartNeedsSourceNum"] = chartNeedsSourceNum - 1
+
+	//任务
+	chartTasksAcceptNum, _, chartTasksAccept := ChartProjectTask("accept", longid)
+	this.Data["chartTasksAccept"] = chartTasksAccept
+	this.Data["chartTasksAcceptNum"] = chartTasksAcceptNum - 1
+
+	chartTasksUserNum, _, chartTasksUser := ChartProjectTask("user", longid)
+	this.Data["chartTasksUser"] = chartTasksUser
+	this.Data["chartTasksUserNum"] = chartTasksUserNum - 1
+
+	chartTasksCompleteNum, _, chartTasksComplete := ChartProjectTask("complete", longid)
+	this.Data["chartTasksComplete"] = chartTasksComplete
+	this.Data["chartTasksCompleteNum"] = chartTasksCompleteNum - 1
+
+	chartTasksSourceNum, _, chartTasksSource := ChartProjectTaskSource(longid)
+	this.Data["chartTasksSource"] = chartTasksSource
+	this.Data["chartTasksSourceNum"] = chartTasksSourceNum - 1
+
+	//Bug
+	chartTestsAcceptNum, _, chartTestsAccept := ChartProjectTest("accept", longid)
+	this.Data["chartTestsAccept"] = chartTestsAccept
+	this.Data["chartTestsAcceptNum"] = chartTestsAcceptNum - 1
+
+	chartTestsUserNum, _, chartTestsUser := ChartProjectTest("user", longid)
+	this.Data["chartTestsUser"] = chartTestsUser
+	this.Data["chartTestsUserNum"] = chartTestsUserNum - 1
+
+	chartTestsCompleteNum, _, chartTestsComplete := ChartProjectTest("complete", longid)
+	this.Data["chartTestsComplete"] = chartTestsComplete
+	this.Data["chartTestsCompleteNum"] = chartTestsCompleteNum - 1
+
+	this.Data["project"] = project
+	this.TplName = "projects/project-chart.tpl"
+}
