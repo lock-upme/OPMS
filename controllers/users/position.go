@@ -143,7 +143,7 @@ func (this *EditPositionController) Get() {
 	if err != nil {
 		this.Abort("404")
 	}
-	this.Data["pos"] = pos
+	this.Data["position"] = pos
 	this.TplName = "users/position-form.tpl"
 }
 
