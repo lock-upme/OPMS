@@ -35,4 +35,8 @@ libai
 
 123456
 
+技术讨论群：
+
+QQ群：451420312
+
 ![image](http://opms.milu365.cn/img/opms.png)
