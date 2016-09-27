@@ -37,6 +37,6 @@ libai
 
 技术讨论群：
 
-QQ群：451420312
+# QQ群：451420312
 
-![image](http://opms.milu365.cn/img/opms.png)
+![image](https://github.com/lock-upme/OPMS/blob/master/static/img/opms-view.png)
