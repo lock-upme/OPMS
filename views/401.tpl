@@ -19,8 +19,8 @@
     <div class="container">
       <section class="error-wrapper text-center">
         <h1><img alt="" src="/static/img/500-error.png"></h1>
-        <h2>无权限访问</h2>
-        <h3>你没有权限访问此页面，请联系超级管理员！</h3>
+        <h2>无权限访问或操作受限</h2>
+        <h3>你没有权限访问此页面或操作受限，请联系超级管理员！</h3>
         <a class="back-btn" href="javascript:history.back();"> Back To Home</a> </section>
     </div>
   </div>

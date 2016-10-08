@@ -37,7 +37,6 @@ func (this *ManageKnowledgeController) Get() {
 	if err1 != nil {
 		offset = 15
 	}
-
 	condArr := make(map[string]string)
 	condArr["status"] = status
 	condArr["keywords"] = keywords
@@ -235,7 +234,6 @@ func (this *EditKnowledgeController) Post() {
 
 	var err error
 	var knowledge Knowledges
-	knowledge.Userid = this.BaseController.UserUserId
 	knowledge.Sortid = sortid
 	knowledge.Title = title
 	knowledge.Tag = tag

@@ -19,20 +19,8 @@
       </ul>
     </div>
     <!--sidebar nav start-->
-    <ul class="nav nav-pills nav-stacked custom-nav">   
-		<li><a href="/my/task"><i class="fa fa-home"></i> <span>我的主页</span></a></li>  
-	    <li><a href="/project/manage"><i class="fa fa-book"></i> <span>项目管理</span></a></li>
-	    <li><a href="/knowledge/list"><i class="fa fa-th-list"></i> <span>知识分享</span></a></li>
-		<li><a href="/album/list"><i class="fa fa-camera"></i> <span>员工相册</span></a></li>
-	    <li><a href="/resume/list"><i class="fa fa-tasks"></i> <span>简历管理</span></a></li>  
-      <li class="menu-list"> <a href=""><i class="fa fa-user"></i> <span>员工管理</span></a>
-        <ul class="sub-menu-list">
-          <li><a href="/user/manage"> 员工</a></li>
-          <li><a href="/department/manage"> 部门</a></li>
-		  <li><a href="/position/manage"> 职称</a></li>
-		  <li><a href="/notice/manage"> 公告</a></li>
-        </ul>
-      </li>     
+    <ul class="nav nav-pills nav-stacked custom-nav">
+	<li><a href="/user/show/{{.LoginUserid}}"><i class="fa fa-home"></i> <span>我的主页</span></a></li>    
     </ul>
     <!--sidebar nav end-->
   </div>

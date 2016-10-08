@@ -37,13 +37,19 @@
             <div class="col-md-12">
               <div class="panel">
                 <div class="panel-body">
-                  <div class="profile-desk">
+                  <div class="profile-desk">				   
                     <h1>需求介绍</h1>
                     <div class="content"> {{str2html .needs.Desc}} </div>
                     <h1>验收标准</h1>
                     <div class="content"> {{str2html .needs.Acceptance}} </div>
                     <h1>关联项目</h1>
                     <div class="content"> {{str2html .project.Desc}} </div>
+					{{if ne .needs.Attachment ""}}
+					<h1>附件下载</h1>					
+					<div class="content">
+                    <a href="{{.needs.Attachment}}" target="_blank">预览下载</a>					
+					</div>
+					{{end}}
                     <a class="btn p-follow-btn" href="/need/edit/{{.needs.Id}}"> <i class="fa fa-check"></i> 编辑</a>&nbsp; <a href="javascript:;" class="btn p-follow-btn js-needs-single {{if eq .needs.Status 1}}active{{end}}" data-id="{{.needs.Id}}" data-status="1">草稿</a> <a href="javascript:;" class="btn p-follow-btn js-needs-single {{if eq .needs.Status 2}}active{{end}}" data-id="{{.needs.Id}}" data-status="2">激活</a> <a href="javascript:;" class="btn p-follow-btn js-needs-single {{if eq .needs.Status 3}}active{{end}}" data-id="{{.needs.Id}}" data-status="3">已变更</a> <a href="javascript:;" class="btn p-follow-btn js-needs-single {{if eq .needs.Status 4}}active{{end}}" data-id="{{.needs.Id}}" data-status="4">待关闭</a> <a href="javascript:;" class="btn p-follow-btn js-needs-single {{if eq .needs.Status 5}}active{{end}}" data-id="{{.needs.Id}}" data-status="5">已关闭</a> </div>
                 </div>
               </div>

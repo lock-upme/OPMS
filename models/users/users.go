@@ -64,6 +64,10 @@ func LoginUser(username, password string) (err error, user Users) {
 	qs = qs.SetCond(cond)
 	var users Users
 	err = qs.Limit(1).One(&users, "userid", "username", "avatar")
+	fmt.Println(err)
+	if err == nil {
+		o.Raw("UPDATE pms_users_profile SET lasted = ?,lognum=lognum+? WHERE userid = ?", time.Now().Unix(), 1, users.Id).Exec()
+	}
 	return err, users
 }
 
@@ -148,6 +152,23 @@ func GetPositionsNameForUserid(id int64) string {
 		utils.SetCache("GetPositionsNameForUserid.id."+fmt.Sprintf("%d", id), position, cache_expire)
 	}
 	return position
+}
+
+func GetDepartmentsNameForUserid(id int64) string {
+	var err error
+	var depart string
+
+	err = utils.GetCache("GetDepartmentsNameForUserid.id."+fmt.Sprintf("%d", id), &depart)
+	if err != nil {
+		cache_expire, _ := beego.AppConfig.Int("cache_expire")
+		var user UsersProfile
+		o := orm.NewOrm()
+		o.QueryTable(models.TableName("users_profile")).Filter("userid", id).One(&user, "departid")
+
+		depart = GetDepartsName(user.Departid)
+		utils.SetCache("GetDepartmentsNameForUserid.id."+fmt.Sprintf("%d", id), depart, cache_expire)
+	}
+	return depart
 }
 
 //得到用户详情信息
@@ -287,6 +308,7 @@ func AddUserProfile(updUser Users, updPro UsersProfile) error {
 	user.Profile = pro
 	user.Username = updUser.Username
 	user.Password = utils.Md5(updUser.Password)
+	user.Avatar = utils.GetAvatar("")
 	user.Status = 1
 	_, err := o.Insert(user)
 	return err
@@ -302,7 +324,6 @@ func ListUser(condArr map[string]string, page int, offset int) (num int64, err e
 		cond = cond.AndCond(cond.And("username__icontains", condArr["keywords"]).Or("profile__realname__icontains", condArr["keywords"]))
 	}
 	if condArr["status"] != "" {
-		//status, _ := strconv.Atoi(condArr["status"])
 		cond = cond.And("status", condArr["status"])
 	}
 	qs = qs.SetCond(cond)
@@ -364,4 +385,26 @@ func ChangeUserAvatar(id int64, avatar string) error {
 		_, err := o.Update(&user)
 		return err
 	}
+}
+
+type UsersFind struct {
+	Userid   int64
+	Realname string
+	Avatar   string
+	Position string
+}
+
+//显示所有用户
+func ListUserFind() (num int64, err error, user []UsersFind) {
+	var users []UsersFind
+	qb, _ := orm.NewQueryBuilder("mysql")
+	qb.Select("upr.userid", "upr.realname", "p.name AS position", "u.avatar").From("pms_users AS u").
+		LeftJoin("pms_users_profile AS upr").On("upr.userid = u.userid").
+		LeftJoin("pms_positions AS p").On("p.positionid = upr.positionid").
+		OrderBy("p.name").
+		Desc()
+	sql := qb.String()
+	o := orm.NewOrm()
+	nums, err := o.Raw(sql).QueryRows(&users)
+	return nums, err, users
 }

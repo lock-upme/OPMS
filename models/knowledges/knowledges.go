@@ -66,18 +66,17 @@ func UpdateKnowledge(id int64, upd Knowledges) error {
 	o := orm.NewOrm()
 	knowledge = Knowledges{Id: id}
 
-	knowledge.Userid = upd.Userid
 	knowledge.Sortid = upd.Sortid
 	knowledge.Title = upd.Title
 	knowledge.Tag = upd.Tag
 	knowledge.Summary = upd.Summary
 	knowledge.Content = upd.Content
 	knowledge.Url = upd.Url
-	knowledge.Color = upd.Color
-	knowledge.Ispublis = 1
-	knowledge.Status = 1
+	//knowledge.Color = upd.Color
+	//knowledge.Ispublis = 1
+	//knowledge.Status = 1
 	knowledge.Changed = time.Now().Unix()
-	_, err := o.Update(&knowledge)
+	_, err := o.Update(&knowledge, "sortid", "title", "tag", "summary", "content", "url", "changed")
 	return err
 }
 
@@ -108,6 +107,7 @@ func ListKnowledge(condArr map[string]string, page int, offset int) (num int64, 
 	start := (page - 1) * offset
 
 	var knowledge []Knowledges
+	qs = qs.OrderBy("-knowid")
 	num, errs := qs.Limit(offset, start).All(&knowledge)
 	return num, errs, knowledge
 }

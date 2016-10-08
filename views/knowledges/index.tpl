@@ -55,21 +55,17 @@
                       <div class="activity-desk">
                         <h5><a href="/user/show/{{$v.Userid}}">{{getRealname $v.Userid}}</a> <span><a href="/knowledge/{{$v.Id}}" style="color:#2a323f">{{$v.Title}}</a></span></h5>
                         <p class="text-muted">{{$v.Summary}}</p>
-                        <p class="pull-right text-muted">
-						{{if eq $.LoginUserid $v.Userid}}
-						{{if eq $.condArr.filter "me"}}
-		                  <a href="/knowledge/edit/{{$v.Id}}">修改</a> 
-              			{{end}}
-						{{end}}						
-						<i class="fa fa-eye"></i> {{$v.Viewnum}}&nbsp;&nbsp;&nbsp;<i class="fa fa-heart"></i> {{$v.Laudnum}}&nbsp;&nbsp;&nbsp;<i class="fa fa-envelope-o"></i> {{$v.Comtnum}}&nbsp;&nbsp;&nbsp;{{getDateMH $v.Created}}</p>
+                        <p class="pull-right text-muted"> {{if eq $.LoginUserid $v.Userid}}
+                          {{if eq $.condArr.filter "me"}} <a href="/knowledge/edit/{{$v.Id}}">修改</a> {{end}}
+                          {{end}} <i class="fa fa-eye"></i> {{$v.Viewnum}}&nbsp;&nbsp;&nbsp;<i class="fa fa-heart"></i> {{$v.Laudnum}}&nbsp;&nbsp;&nbsp;<i class="fa fa-envelope-o"></i> {{$v.Comtnum}}&nbsp;&nbsp;&nbsp;{{getDateMH $v.Created}}</p>
                       </div>
                     </li>
-					{{else}}
-					<h2>我要当第一个发知识分享的达人。<br/><a href="/knowledge/add">+分享知识</a></h2>
+                    {{else}}
+                    <h2>我要当第一个发知识分享的达人。<br/>
+                      <a href="/knowledge/add">+分享知识</a></h2>
                     {{end}}
                   </ul>
-				{{template "inc/page.tpl" .}}
-                </div>
+                  {{template "inc/page.tpl" .}} </div>
               </div>
             </div>
           </div>
@@ -77,19 +73,14 @@
         <div class="col-md-4">
           <div class="panel">
             <div class="panel-body">
-              <ul class="p-info">
-                <li>
-                  <div class="title">分享分类</div>
-                </li>
-                <li>
-                  <div class="title"><a href="/knowledge/list">全部</a></div>
-                </li>
-                {{range .sorts}}
-                <li>
-                  <div class="title"><a href="/knowledge/list?sortid={{.Id}}">{{.Name}}</a></div>
-                </li>
-                {{end}}
-              </ul>
+              <div class="blog-post">
+                <h3>分类</h3>
+                <ul>
+                  {{range .sorts}}
+                  <li> <a href="/knowledge/list?sortid={{.Id}}">{{.Name}}</a> </li>
+                  {{end}}
+                </ul>
+              </div>
             </div>
           </div>
         </div>

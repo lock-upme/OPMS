@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <title>{{config "String" "globaltitle" ""}}</title>
 {{template "inc/meta.tpl" .}}
+<style>
+.pie-chart{width: 620px;height:400px;}
+@media screen and (max-width: 768px) {
+	.pie-chart{width: 384px;height:430px;}
+}
+</style>
 </head><body class="sticky-header">
 <section> {{template "inc/left.tpl" .}}
   <!-- main content start-->
@@ -42,7 +48,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartTeam"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartTeam" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -57,7 +63,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartNeedsAccept"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartNeedsAccept" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -72,7 +78,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartNeedsUser"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartNeedsUser" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -88,7 +94,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartNeedsSource"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartNeedsSource" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -104,7 +110,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartTasksAccept"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartTasksAccept" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -119,7 +125,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartTasksUser"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartTasksUser" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -135,7 +141,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartTasksComplete"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartTasksComplete" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -151,7 +157,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartTasksSource"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartTasksSource" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -168,7 +174,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartTestsAccept"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartTestsAccept" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -183,7 +189,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartTestsUser"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartTestsUser" class="pie-chart">
                             </div>
                         </div>
                     </section>
@@ -199,7 +205,7 @@
                          </span>
                         </header>
                         <div class="panel-body">
-                            <div id="chartTestsComplete"  style="width: 620px;height:400px;" class="pie-chart">
+                            <div id="chartTestsComplete" class="pie-chart">
                             </div>
                         </div>
                     </section>

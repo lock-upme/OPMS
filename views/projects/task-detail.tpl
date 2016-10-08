@@ -54,8 +54,10 @@
               <div class="panel">
                 <div class="panel-body">
                   <div class="profile-desk">
+					{{if ne .task.Attachment ""}}
                     <h1>附件下载</h1>
-                    <p>{{if ne .task.Attachment ""}}<a href="{{.task.Attachment}}" target="_blank">预览下载</a>{{end}}</p>
+                    <p><a href="{{.task.Attachment}}" target="_blank">预览下载</a></p>
+					{{end}}
                     <h1>历史记录</h1>
                     {{range .log}}
                     <ul>

@@ -122,6 +122,7 @@ func ListProject(condArr map[string]string, page int, offset int) (num int64, er
 	qs = qs.RelatedSel()
 
 	var projects []Projects
+	qs = qs.OrderBy("-projectid")
 	num, err1 := qs.Limit(offset, start).All(&projects)
 	return num, err1, projects
 }

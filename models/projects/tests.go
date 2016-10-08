@@ -183,8 +183,7 @@ func ListProjectTest(condArr map[string]string, page int, offset int) (num int64
 	if condArr["status"] != "" {
 		cond = cond.And("status", condArr["status"])
 	}
-	qs = qs.SetCond(cond)
-
+	qs = qs.SetCond(cond).OrderBy("-testid")
 	nums, errs := qs.Limit(offset, start).All(&test)
 	return nums, errs, test
 }

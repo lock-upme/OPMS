@@ -86,6 +86,7 @@ func ListNotices(condArr map[string]string, page int, offset int) (num int64, er
 	start := (page - 1) * offset
 
 	var deps []Notices
+	qs = qs.OrderBy("-noticeid")
 	num, err1 := qs.Limit(offset, start).All(&deps)
 	return num, err1, deps
 }
@@ -105,7 +106,7 @@ func CountNotices(condArr map[string]string) int64 {
 	return num
 }
 
-//更改用户状态
+//更改状态
 func ChangeNoticeStatus(id int64, status int) error {
 	o := orm.NewOrm()
 

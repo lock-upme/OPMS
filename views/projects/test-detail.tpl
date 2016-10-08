@@ -62,8 +62,10 @@
               <div class="panel">
                 <div class="panel-body">
                   <div class="profile-desk">
+				{{if ne .test.Attachment ""}}
                     <h1>附件下载</h1>
-                    <p>{{if ne .test.Attachment ""}}<a href="{{.test.Attachment}}" target="_blank">预览下载</a>{{end}}</p>
+                    <p><a href="{{.test.Attachment}}" target="_blank">预览下载</a></p>
+				{{end}}
                     <h1>历史记录</h1>
                     {{range .log}}
                     <ul>

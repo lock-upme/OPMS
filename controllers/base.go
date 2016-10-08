@@ -38,6 +38,10 @@ func (this *BaseController) Prepare() {
 		this.UserUserId = longid
 		this.UserUsername = tmp[1]
 		this.UserAvatar = tmp[2]
+
+		this.Data["PermissionModel"] = this.GetSession("userPermissionModel")
+		this.Data["PermissionModelc"] = this.GetSession("userPermissionModelc")
 	}
 	this.Data["IsLogin"] = this.IsLogin
+
 }

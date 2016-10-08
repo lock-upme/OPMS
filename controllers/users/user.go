@@ -61,7 +61,13 @@ func (this *LoginUserController) Post() {
 
 	if err == nil {
 		this.SetSession("userLogin", fmt.Sprintf("%d", users.Id)+"||"+users.Username+"||"+users.Avatar)
-		this.SetSession("userPermission", GetPermissions(users.Id))
+		//this.SetSession("userPermission", GetPermissions(users.Id))
+
+		permission, _ := GetPermissionsAll(users.Id)
+		this.SetSession("userPermission", permission.Permission)
+		this.SetSession("userPermissionModel", permission.Model)
+		this.SetSession("userPermissionModelc", permission.Modelc)
+
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "贺喜你，登录成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "登录失败"}
@@ -436,9 +442,12 @@ func (this *AddUserController) Post() {
 	err = AddUserProfile(user, pro)
 
 	if err == nil {
+		//新用户默认权限
 		var per Permissions
 		per.Id = id
-		per.Permission = "project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit"
+		per.Permission = "project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit"
+		per.Model = "项目管理-project-book||project-manage,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list"
+		per.Modelc = "请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage"
 		AddPermissions(per)
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "员工信息添加成功", "id": fmt.Sprintf("%d", id)}
 	} else {
@@ -763,9 +772,13 @@ func (this *PermissionController) Post() {
 	}
 	userid, _ := this.GetInt64("userid")
 	permission := this.GetString("permission")
+	model := this.GetString("model")
+	modelc := this.GetString("modelc")
 
 	var per Permissions
 	per.Permission = permission
+	per.Model = model
+	per.Modelc = modelc
 
 	err := UpdatePermissions(userid, per)
 	if err == nil {

@@ -3216,14 +3216,14 @@ div.tagsinput span.tag a {
 }
 
 .error-wrapper h2 {
-    font-size: 64px;
+    font-size: 30px;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .error-wrapper h3 {
-    font-size: 32px;
+    font-size: 18px;
     color: #c7c2c2;
     text-transform: uppercase;
     font-weight: bold;
@@ -3542,7 +3542,7 @@ h3.timeline-title {
 
 .profile-desk h1 {
     color: #49586e;
-    font-size: 24px;
+    font-size: 20px;
     /*font-weight: bold;*/
     margin: 0 0 5px 0;
     text-transform: uppercase;
@@ -3691,7 +3691,7 @@ ul.activity-list li {
     display: inline-block;
     width: 100%;
     margin-bottom: 30px;
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
     border-bottom: 1px solid #eff0f4;
 }
 
@@ -4754,3 +4754,7 @@ ol.comment-list {
     -webkit-border-radius: 5px;
 }
 .ui-widget-content a {display:block;}
+
+.js-selectuserbox a {border-radius: 50px;  width: 30px;  height: 45px;  text-align: center;vertical-align: top;   display: inline-block;}
+.js-selectuserbox img{width:30px;height:30px;  border-radius: 50%;}
+.gray {-webkit-filter: grayscale(1);filter:gray;filter: grayscale(1);}

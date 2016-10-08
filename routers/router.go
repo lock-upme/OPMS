@@ -2,7 +2,13 @@ package routers
 
 import (
 	"opms/controllers/albums"
+	"opms/controllers/businesstrips"
+	"opms/controllers/expenses"
+	"opms/controllers/goouts"
 	"opms/controllers/knowledges"
+	"opms/controllers/leaves"
+	"opms/controllers/oagoods"
+	"opms/controllers/overtimes"
 	"opms/controllers/projects"
 	"opms/controllers/resumes"
 	"opms/controllers/users"
@@ -120,4 +126,57 @@ func init() {
 
 	beego.Router("/kindeditor/upload", &albums.UploadKindController{})
 
+	//请假
+	beego.Router("/leave/manage", &leaves.ManageLeaveController{})
+	beego.Router("/leave/approval", &leaves.ApprovalLeaveController{})
+	beego.Router("/leave/approval/:id", &leaves.ShowLeaveController{})
+	beego.Router("/leave/edit/:id", &leaves.EditLeaveController{})
+	beego.Router("/leave/add", &leaves.AddLeaveController{})
+	beego.Router("/leave/ajax/status", &leaves.AjaxLeaveStatusController{})
+	beego.Router("/leave/ajax/delete", &leaves.AjaxLeaveDeleteController{})
+
+	//报销
+	beego.Router("/expense/manage", &expenses.ManageExpenseController{})
+	beego.Router("/expense/approval", &expenses.ApprovalExpenseController{})
+	beego.Router("/expense/approval/:id", &expenses.ShowExpenseController{})
+	beego.Router("/expense/edit/:id", &expenses.EditExpenseController{})
+	beego.Router("/expense/add", &expenses.AddExpenseController{})
+	beego.Router("/expense/ajax/status", &expenses.AjaxExpenseStatusController{})
+	beego.Router("/expense/ajax/delete", &expenses.AjaxExpenseDeleteController{})
+
+	//出差
+	beego.Router("/businesstrip/manage", &businesstrips.ManageBusinesstripController{})
+	beego.Router("/businesstrip/approval", &businesstrips.ApprovalBusinesstripController{})
+	beego.Router("/businesstrip/approval/:id", &businesstrips.ShowBusinesstripController{})
+	beego.Router("/businesstrip/edit/:id", &businesstrips.EditBusinesstripController{})
+	beego.Router("/businesstrip/add", &businesstrips.AddBusinesstripController{})
+	beego.Router("/businesstrip/ajax/status", &businesstrips.AjaxBusinesstripStatusController{})
+	beego.Router("/businesstrip/ajax/delete", &businesstrips.AjaxBusinesstripDeleteController{})
+
+	//外出
+	beego.Router("/goout/manage", &goouts.ManageGooutController{})
+	beego.Router("/goout/approval", &goouts.ApprovalGooutController{})
+	beego.Router("/goout/approval/:id", &goouts.ShowGooutController{})
+	beego.Router("/goout/edit/:id", &goouts.EditGooutController{})
+	beego.Router("/goout/add", &goouts.AddGooutController{})
+	beego.Router("/goout/ajax/status", &goouts.AjaxGooutStatusController{})
+	beego.Router("/goout/ajax/delete", &goouts.AjaxGooutDeleteController{})
+
+	//物品领用
+	beego.Router("/oagood/manage", &oagoods.ManageOagoodController{})
+	beego.Router("/oagood/approval", &oagoods.ApprovalOagoodController{})
+	beego.Router("/oagood/approval/:id", &oagoods.ShowOagoodController{})
+	beego.Router("/oagood/edit/:id", &oagoods.EditOagoodController{})
+	beego.Router("/oagood/add", &oagoods.AddOagoodController{})
+	beego.Router("/oagood/ajax/status", &oagoods.AjaxOagoodStatusController{})
+	beego.Router("/oagood/ajax/delete", &oagoods.AjaxOagoodDeleteController{})
+
+	//加班
+	beego.Router("/overtime/manage", &overtimes.ManageOvertimeController{})
+	beego.Router("/overtime/approval", &overtimes.ApprovalOvertimeController{})
+	beego.Router("/overtime/approval/:id", &overtimes.ShowOvertimeController{})
+	beego.Router("/overtime/edit/:id", &overtimes.EditOvertimeController{})
+	beego.Router("/overtime/add", &overtimes.AddOvertimeController{})
+	beego.Router("/overtime/ajax/status", &overtimes.AjaxOvertimeStatusController{})
+	beego.Router("/overtime/ajax/delete", &overtimes.AjaxOvertimeDeleteController{})
 }

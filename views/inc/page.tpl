@@ -1,5 +1,5 @@
 {{if .paginator.HasPages}}
-                <ul class="pagination">
+                <ul class="pagination pull-right">
                   {{if .paginator.HasPrev}}
                   <li><a href="{{.paginator.PageLinkFirst}}">首页</a></li>
                   <li><a href="{{.paginator.PageLinkPrev}}">&laquo;</a></li>

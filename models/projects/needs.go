@@ -176,7 +176,7 @@ func ListProjectNeeds(condArr map[string]string, page int, offset int) (num int6
 		cond = cond.And("userid", condArr["userid"])
 	}
 	qs = qs.SetCond(cond)
-
+	qs = qs.OrderBy("-needsid")
 	nums, errs := qs.Limit(offset, start).All(&needs)
 	return nums, errs, needs
 }

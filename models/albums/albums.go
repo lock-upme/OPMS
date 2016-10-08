@@ -101,6 +101,7 @@ func ListAlbum(condArr map[string]string, page int, offset int) (num int64, err 
 	if offset < 1 {
 		offset, _ = beego.AppConfig.Int("pageoffset")
 	}
+	qs = qs.OrderBy("-albumid")
 	start := (page - 1) * offset
 	var albums []Albums
 	num, err1 := qs.Limit(offset, start).All(&albums)

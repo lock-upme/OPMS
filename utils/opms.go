@@ -299,3 +299,28 @@ func GetResumeStatus(status int) string {
 	}
 	return txt
 }
+
+func GetLeaveType(ltype int) string {
+	var txt string
+	switch ltype {
+	case 1:
+		txt = "事假"
+	case 2:
+		txt = "病假"
+	case 3:
+		txt = "年假"
+	case 4:
+		txt = "调休"
+	case 5:
+		txt = "婚假"
+	case 6:
+		txt = "产假"
+	case 7:
+		txt = "陪产假"
+	case 8:
+		txt = "路途假"
+	case 9:
+		txt = "其他"
+	}
+	return txt
+}

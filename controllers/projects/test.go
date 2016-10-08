@@ -170,7 +170,7 @@ func (this *AjaxStatusTestController) Post() {
 		return
 	}
 	status, _ := this.GetInt("status")
-	if status <= 0 || status >= 7 {
+	if status <= 0 || status >= 8 {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "请选择操作状态"}
 		this.ServeJSON()
 		return

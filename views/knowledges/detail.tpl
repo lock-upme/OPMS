@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <title>{{config "String" "globaltitle" ""}}</title>
 {{template "inc/meta.tpl" .}}
-</head><body class="sticky-header">
+</head>
+<body class="sticky-header">
 <section> {{template "inc/left.tpl" .}}
   <!-- main content start-->
   <div class="main-content" >
@@ -32,19 +33,22 @@
     <div class="wrapper">
       <div class="row">
         <div class="row">
-          <div class="col-md-12">
-            <div class="panel">
-              <div class="panel-body">
-                <div class="profile-desk">
-                  <h1>{{.knowledge.Title}}</h1>
-                  <span class="designation">{{.knowledge.Summary}}-by @<a href="/user/show/{{.knowledge.Userid}}">{{getRealname .knowledge.Userid}}</a></span>
-                  <p> {{str2html .knowledge.Content}} </p>
-                  <a class="btn p-follow-btn js-knowledge-laud" href="javascript:;" data-id="{{.knowledge.Id}}"> <i class="fa fa-heart"></i> {{.knowledge.Laudnum}}</a>&nbsp; <a class="btn p-follow-btn" href="#commenta"> <i class="fa fa-envelope-o"></i> {{.knowledge.Comtnum}}</a>&nbsp; <a class="btn p-follow-btn" href="javascript:;"> <i class="fa fa-eye"></i> {{.knowledge.Viewnum}}</a>
-                  <ul class="p-social-link pull-right bdsharebuttonbox">
-                    <li><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></li>
-                    <li><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></li>
-                    <li><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></li>
-                  </ul>
+          <div class="blog">
+            <div class="col-md-12">
+              <div class="panel">
+                <div class="panel-body">
+                  <div class="single-blog">
+                    <h1 class="text-center mtop35"><a>{{.knowledge.Title}}</a></h1>
+                    <p class="text-center auth-row"> By <a href="/user/show/{{.knowledge.Userid}}">{{getRealname .knowledge.Userid}}</a> |   {{getDate .knowledge.Created}} </p>
+                    <div> {{str2html .knowledge.Content}} </div>
+                    <br/>
+                    {{if .knowledge.Url}} <a class="btn p-follow-btn js-knowledge-laud" href="{{.knowledge.Url}}" target="_blank">源地址</a>{{end}} <a class="btn p-follow-btn js-knowledge-laud" href="javascript:;" data-id="{{.knowledge.Id}}"> <i class="fa fa-heart"></i> {{.knowledge.Laudnum}}</a>&nbsp; <a class="btn p-follow-btn" href="#commenta"> <i class="fa fa-envelope-o"></i> {{.knowledge.Comtnum}}</a>&nbsp; <a class="btn p-follow-btn" href="javascript:;"> <i class="fa fa-eye"></i> {{.knowledge.Viewnum}}</a>
+                    <ul class="p-social-link pull-right bdsharebuttonbox">
+                      <li><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></li>
+                      <li><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></li>
+                      <li><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

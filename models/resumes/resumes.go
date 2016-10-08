@@ -115,6 +115,7 @@ func ListResumes(condArr map[string]string, page int, offset int) (num int64, er
 	start := (page - 1) * offset
 
 	var reses []Resumes
+	qs = qs.OrderBy("-resumeid")
 	num, err1 := qs.Limit(offset, start).All(&reses)
 	return num, err1, reses
 }

@@ -290,12 +290,10 @@ func (this *AddTaskProjectController) Post() {
 	tasktime, _ := this.GetInt("tasktime")
 
 	startedstr := this.GetString("started")
-	started, _ := time.Parse("2006-01-02", startedstr)
-	startedtime := started.Unix()
+	startedtime := utils.GetDateParse(startedstr)
 
 	endedstr := this.GetString("ended")
-	ended, _ := time.Parse("2006-01-02", endedstr)
-	endedtime := ended.Unix()
+	endedtime := utils.GetDateParse(endedstr)
 
 	desc := this.GetString("desc")
 	note := this.GetString("note")
@@ -424,12 +422,10 @@ func (this *EditTaskProjectController) Post() {
 	tasktime, _ := this.GetInt("tasktime")
 
 	startedstr := this.GetString("started")
-	started, _ := time.Parse("2006-01-02", startedstr)
-	startedtime := started.Unix()
+	startedtime := utils.GetDateParse(startedstr)
 
 	endedstr := this.GetString("ended")
-	ended, _ := time.Parse("2006-01-02", endedstr)
-	endedtime := ended.Unix()
+	endedtime := utils.GetDateParse(endedstr)
 
 	desc := this.GetString("desc")
 	note := this.GetString("note")

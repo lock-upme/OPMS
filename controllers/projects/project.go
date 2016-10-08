@@ -33,7 +33,9 @@ type ManageProjectController struct {
 func (this *ManageProjectController) Get() {
 	//权限检测
 	if !strings.Contains(this.GetSession("userPermission").(string), "project-manage") {
-		this.Abort("401")
+		this.Redirect("/my/task", 302)
+		return
+		//this.Abort("401")
 	}
 	page, err := this.GetInt("p")
 	status := this.GetString("status")
@@ -138,8 +140,7 @@ func (this *AddProjectController) Post() {
 		this.ServeJSON()
 		return
 	}
-	started, _ := time.Parse("2006-01-02", startedstr)
-	startedtime := started.Unix()
+	startedtime := utils.GetDateParse(startedstr)
 
 	endedstr := this.GetString("ended")
 	if "" == endedstr {
@@ -147,8 +148,7 @@ func (this *AddProjectController) Post() {
 		this.ServeJSON()
 		return
 	}
-	ended, _ := time.Parse("2006-01-02", endedstr)
-	endedtime := ended.Unix()
+	endedtime := utils.GetDateParse(endedstr)
 
 	desc := this.GetString("desc")
 	if "" == desc {
@@ -240,8 +240,7 @@ func (this *EditProjectController) Post() {
 		this.ServeJSON()
 		return
 	}
-	started, _ := time.Parse("2006-01-02", startedstr)
-	startedtime := started.Unix()
+	startedtime := utils.GetDateParse(startedstr)
 
 	endedstr := this.GetString("ended")
 	if "" == endedstr {
@@ -249,8 +248,7 @@ func (this *EditProjectController) Post() {
 		this.ServeJSON()
 		return
 	}
-	ended, _ := time.Parse("2006-01-02", endedstr)
-	endedtime := ended.Unix()
+	endedtime := utils.GetDateParse(endedstr)
 
 	desc := this.GetString("desc")
 	if "" == desc {

@@ -234,6 +234,7 @@ func ListProjectTask(condArr map[string]string, page int, offset int) (num int64
 	qs = qs.SetCond(cond)
 
 	nums, errs := qs.Limit(offset, start).All(&task)
+	qs = qs.OrderBy("-taskid")
 	return nums, errs, task
 }
 

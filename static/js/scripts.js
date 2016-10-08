@@ -17,7 +17,11 @@
 
 
     // Toggle Left Menu
-   jQuery('.menu-list > a').click(function() {
+	
+	$("body").delegate(".menu-list > a","click",function(){
+
+	
+   //jQuery('.menu-list > a').click(function() {
       
       var parent = jQuery(this).parent();
       var sub = parent.find('> ul');
