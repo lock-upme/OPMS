@@ -19,7 +19,7 @@
       </ul>
     </div>
     <!--sidebar nav start-->
-    <ul class="nav nav-pills nav-stacked custom-nav">
+    <ul class="nav nav-pills nav-stacked custom-nav js-left-nav">
 	<li><a href="/user/show/{{.LoginUserid}}"><i class="fa fa-home"></i> <span>我的主页</span></a></li>    
     </ul>
     <!--sidebar nav end-->

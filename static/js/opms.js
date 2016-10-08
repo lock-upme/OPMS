@@ -39,7 +39,7 @@ $(function(){
 			html2 = '';
 			html += '</li>';		
 		}	
-		$('.custom-nav').append(html);
+		$('.js-left-nav').append(html);
 	}
 	
 	
