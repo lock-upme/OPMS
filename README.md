@@ -39,4 +39,15 @@ libai
 
 # QQ群：451420312
 
+# 捐赠
+支付宝：
+
+![image](https://github.com/lock-upme/OPMS/blob/master/static/img/qrcode_alipay.png)
+
+微信:
+
+![image](https://github.com/lock-upme/OPMS/blob/master/static/img/qrcode_wechat.png)
+
+# 效果图预览
+
 ![image](https://github.com/lock-upme/OPMS/blob/master/static/img/opms-view.png)
