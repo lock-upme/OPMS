@@ -38,7 +38,8 @@ type LoginUserController struct {
 func (this *LoginUserController) Get() {
 	check := this.BaseController.IsLogin
 	if check {
-		this.Abort("401")
+		//this.Abort("401")
+		this.Redirect("/my/task", 302)
 	} else {
 		this.TplName = "users/login.tpl"
 	}
