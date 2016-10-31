@@ -49,4 +49,9 @@ func InitTemplate() {
 	beego.AddFuncMap("getWorkYear", utils.GetWorkYear)
 	beego.AddFuncMap("getResumeStatus", utils.GetResumeStatus)
 
+	beego.AddFuncMap("getCheckworkType", utils.GetCheckworkType)
+
+	beego.AddFuncMap("getMessageType", utils.GetMessageType)
+	beego.AddFuncMap("getMessageSubtype", utils.GetMessageSubtype)
+
 }

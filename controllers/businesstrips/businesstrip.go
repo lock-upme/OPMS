@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"opms/controllers"
 	. "opms/models/businesstrips"
+	. "opms/models/messages"
 	. "opms/models/users"
 	"opms/utils"
 	"os"
@@ -193,6 +194,21 @@ func (this *ShowBusinesstripController) Post() {
 	err := UpdateBusinesstripsApprover(approverid, businesstrip)
 
 	if err == nil {
+		//消息通知
+		bs, _ := GetBusinesstrip(businesstripid)
+		var msg Messages
+		msg.Id = utils.SnowFlakeId()
+		msg.Userid = this.BaseController.UserUserId
+		msg.Touserid = bs.Userid
+		msg.Type = 3
+		msg.Subtype = 34
+		if status == 1 {
+			msg.Title = "同意"
+		} else if status == 2 {
+			msg.Title = "拒绝"
+		}
+		msg.Url = "/businesstrip/approval/" + fmt.Sprintf("%d", businesstripid)
+		AddMessages(msg)
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "审批成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "审批失败"}
@@ -512,6 +528,20 @@ func (this *AjaxBusinesstripStatusController) Post() {
 	err := ChangeBusinesstripStatus(id, 2)
 
 	if err == nil {
+		userids := strings.Split(businesstrip.Approverids, ",")
+		for _, v := range userids {
+			//消息通知
+			userid, _ := strconv.Atoi(v)
+			var msg Messages
+			msg.Id = utils.SnowFlakeId()
+			msg.Userid = this.BaseController.UserUserId
+			msg.Touserid = int64(userid)
+			msg.Type = 4
+			msg.Subtype = 34
+			msg.Title = "去审批处理"
+			msg.Url = "/businesstrip/approval/" + fmt.Sprintf("%d", businesstrip.Id)
+			AddMessages(msg)
+		}
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "状态修改成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "状态修改失败"}

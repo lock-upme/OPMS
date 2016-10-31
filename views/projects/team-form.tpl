@@ -35,7 +35,7 @@
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">姓名</label>
                   <div class="col-sm-10">
-                    <input type="text" name="username" id="team-username"value="" class="form-control js-search-username" placeholder="请输入姓名或用户名匹配">
+                    <input type="text" name="username" id="team-username" class="form-control js-search-username" placeholder="请输入姓名或用户名匹配">
                   </div>
                 </div>
                 <div class="form-group">

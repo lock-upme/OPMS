@@ -324,3 +324,61 @@ func GetLeaveType(ltype int) string {
 	}
 	return txt
 }
+
+func GetCheckworkType(ctype int) string {
+	var txt string
+	switch ctype {
+	case 1:
+		txt = "正常"
+	case 2:
+		txt = "迟到"
+	case 3:
+		txt = "早退"
+	case 4:
+		txt = "加班"
+	}
+	return txt
+}
+
+func GetMessageType(ctype int) string {
+	var txt string
+	switch ctype {
+	case 1:
+		txt = "评论"
+	case 2:
+		txt = "赞"
+	case 3:
+		txt = "审批"
+	case 4:
+		txt = "新加"
+	}
+	return txt
+}
+
+//11知识评论12相册评论21知识赞22相册赞31请假审批32加班33报销34出差35外出36物品
+func GetMessageSubtype(subtype int) string {
+	var txt string
+	switch subtype {
+	case 11:
+		txt = "知识"
+	case 12:
+		txt = "相册"
+	case 21:
+		txt = "知识"
+	case 22:
+		txt = "相册"
+	case 31:
+		txt = "请假"
+	case 32:
+		txt = "加班"
+	case 33:
+		txt = "报销"
+	case 34:
+		txt = "出差"
+	case 35:
+		txt = "外出"
+	case 36:
+		txt = "物品"
+	}
+	return txt
+}

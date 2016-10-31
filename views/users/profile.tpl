@@ -64,6 +64,17 @@
                 </div>
               </div>
             </div>
+			<!--div class="col-md-12">
+              <div class="panel">
+                <div class="panel-body p-states">
+                  <h4 class="title">打卡</h4>
+                  <div class="text-center">
+				<a href="javascript:;" id="js-clock" class="btn btn-info">打卡<br/><span></span></a>
+				
+					</div>
+                </div>
+              </div>
+            </div-->
             <div class="col-md-12">
               <div class="panel">
                 <div class="panel-body p-states">
@@ -76,19 +87,7 @@
                   </ul>
                 </div>
               </div>
-            </div>
-			  <!--div class="col-md-12">
-              <div class="panel">
-                <div class="panel-body p-states">
-                  <div class="summary pull-left">
-                    <h4>Total <span>Earning</span></h4>
-                    <span>Monthly Summary</span>
-                    <h3>$ 51,2600</h3>
-                  </div>
-                  <div id="expense2" class="chart-bar"></div>
-                </div>
-              </div>
-            </div-->
+            </div>			  
             <div class="col-md-12">
               <div class="panel">
                 <div class="panel-body">

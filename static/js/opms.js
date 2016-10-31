@@ -63,6 +63,15 @@ $(function(){
 		}
 	});
 	
+	//顶部消息点击更新状态
+	$('.js-msg-status').on('click', function(){
+		var that = $(this);
+		var id = that.attr('data-id');
+		$.post('/message/ajax/status', {id:id},function(data){
+						
+		},'json');
+	});
+	
     $('#login-form').validate({
         ignore:'',
         rules : {
@@ -264,6 +273,20 @@ $(function(){
 			dialogInfo(data.message)
 			if (data.code) {
 				that.attr('data-status', status == 2 ? 1 : 2).text(status == 2 ? '正常' : '屏蔽').parents('td').prev('td').text(status == 2 ? '屏蔽' : '正常');
+			} else {
+				
+			}
+			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+		},'json');
+    });
+	
+	$('.js-notice-delete').on('click', function(){
+    	var that = $(this);
+    	var id = that.attr('data-id');
+		$.post('/notice/ajax/delete', { id: id },function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				that.parents('tr').remove();
 			} else {
 				
 			}
@@ -861,6 +884,20 @@ $(function(){
 		},'json');
     });
 	
+	$('.js-resumes-delete').on('click', function(){
+    	var that = $(this);
+    	var id = that.attr('data-id');
+		$.post('/resume/ajax/delete', { id: id },function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				that.parents('tr').remove();
+			} else {
+				
+			}
+			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+		},'json');
+    });
+	
 	$('#permission-btn').on('click', function(){
 		var str = '', model = '', modelc = '';
 		
@@ -907,14 +944,14 @@ $(function(){
 			type:{required:true},
 			started:{required:true},
 			ended:{required:true},
-			days:{required:true,digits:true},
+			days:{required:true,number:true},
 			reason:{required:true}
         },
         messages : {
 			type:{required:'请选择请假类型'},
 			started:{required:'请选择开始日期'},
 			ended:{required:'请选择结束日期'},
-			days:{required:'请填写天数',digits:'请填写数字'},
+			days:{required:'请填写天数',number:'请填写数字'},
 			reason:{required:'请填写请假事由'}
         },
         submitHandler:function(form) {
@@ -1540,4 +1577,16 @@ function uniqueString(str) {
 		} 
 	}
 	return strArr;
+}
+
+function addZero(v){
+	return v<10 ? '0'+v : v;
+}
+	
+function fixDate(time) {
+	if (!document.all) {
+		return new Date(time);
+	}
+	var arr = time.split(time.match(/\D+/g)[0]);
+	return new Date(arr[0], arr[1] - 1, arr[2]);
 }

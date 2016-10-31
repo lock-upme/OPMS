@@ -873,7 +873,7 @@ h5.left-nav-title {
     right: 4px;
     top: 10px;
 }
-.panel-heading{font-weight:500;}
+.panel-heading span{font-weight:500;}
 
 /* ------------------------------
         STICKY HEADER
@@ -4758,3 +4758,5 @@ ol.comment-list {
 .js-selectuserbox a {border-radius: 50px;  width: 30px;  height: 45px;  text-align: center;vertical-align: top;   display: inline-block;}
 .js-selectuserbox img{width:30px;height:30px;  border-radius: 50%;}
 .gray {-webkit-filter: grayscale(1);filter:gray;filter: grayscale(1);}
+
+#js-clock{font-size: 26px;text-align: center; border-radius: 50%; display: inline-block; height: 150px; width: 150px; line-height: 32px; padding: 46px 0 0 0;  text-decoration: none;}

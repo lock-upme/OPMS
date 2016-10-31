@@ -1,8 +1,10 @@
 package albums
 
 import (
+	"fmt"
 	"opms/controllers"
 	. "opms/models/albums"
+	. "opms/models/messages"
 	"opms/utils"
 )
 
@@ -34,6 +36,17 @@ func (this *AddCommentController) Post() {
 	err = AddAlbumComment(comment)
 
 	if err == nil {
+		//消息通知
+		album, _ := GetAlbum(albumid)
+		var msg Messages
+		msg.Id = utils.SnowFlakeId()
+		msg.Userid = this.BaseController.UserUserId
+		msg.Touserid = album.Userid
+		msg.Type = 1
+		msg.Subtype = 12
+		msg.Title = album.Title
+		msg.Url = "/album/" + fmt.Sprintf("%d", albumid)
+		AddMessages(msg)
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "评价添加成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "添加失败"}
@@ -68,6 +81,17 @@ func (this *AjaxLaudController) Post() {
 	err = AddAlbumLaud(laud)
 
 	if err == nil {
+		//消息通知
+		album, _ := GetAlbum(albumid)
+		var msg Messages
+		msg.Id = utils.SnowFlakeId()
+		msg.Userid = this.BaseController.UserUserId
+		msg.Touserid = album.Userid
+		msg.Type = 2
+		msg.Subtype = 22
+		msg.Title = album.Title
+		msg.Url = "/album/" + fmt.Sprintf("%d", albumid)
+		AddMessages(msg)
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "点赞成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "点赞失败"}

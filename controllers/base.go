@@ -3,9 +3,10 @@ package controllers
 import (
 	//"opms/initial"
 
+	"fmt"
+	. "opms/models/messages"
 	"strconv"
 	"strings"
-	//"fmt"
 
 	"github.com/astaxie/beego"
 )
@@ -23,12 +24,10 @@ func (this *BaseController) Prepare() {
 	userLogin := this.GetSession("userLogin")
 	if userLogin == nil {
 		this.IsLogin = false
-		//this.Redirect("/login", 302)
 	} else {
 		this.IsLogin = true
 		tmp := strings.Split((this.GetSession("userLogin")).(string), "||")
 
-		//id, _ := strconv.Atoi(tmp[0])
 		userid, _ := strconv.Atoi(tmp[0])
 		longid := int64(userid)
 		this.Data["LoginUserid"] = longid
@@ -41,7 +40,15 @@ func (this *BaseController) Prepare() {
 
 		this.Data["PermissionModel"] = this.GetSession("userPermissionModel")
 		this.Data["PermissionModelc"] = this.GetSession("userPermissionModelc")
+
+		//消息
+		msgcondArr := make(map[string]string)
+		msgcondArr["touserid"] = fmt.Sprintf("%d", longid)
+		msgcondArr["view"] = "1"
+		countTopMessage := CountMessages(msgcondArr)
+		_, _, topMessages := ListMessages(msgcondArr, 1, 10)
+		this.Data["topMessages"] = topMessages
+		this.Data["countTopMessage"] = countTopMessage
 	}
 	this.Data["IsLogin"] = this.IsLogin
-
 }

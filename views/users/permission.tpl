@@ -113,6 +113,33 @@
                         </li>
                       </ul>
                     </li>
+					<li data-pmodel="考勤管理-checkwork-tasks||checkwork-list" class="border">
+                      <h4>考勤管理</h4>
+                      <ul class="list-unstyled">
+                        <li>
+                          <div class="form-group">
+                            <label class="checkbox-inline">
+                            <input type="checkbox" name="permission[]" value="checkwork-manage">
+                             我的考勤</label>
+                            <label class="checkbox-inline">
+                            <input type="checkbox" name="permission[]" value="checkwork-all">
+                            全部员工考勤 </label>						
+                          </div>
+                        </li>
+						
+						<li>
+                          <div class="form-group">
+                            <label class="checkbox-inline">
+                            <input type="checkbox" name="permission[]" value="message-manage">
+                            消息列表 </label>
+							<label class="checkbox-inline">
+                            <input type="checkbox" name="permission[]" value="message-delete">
+                            删除消息 </label>
+                          </div>
+							
+                        </li>
+                      </ul>
+                    </li>
                     <li data-pmodel="审批管理-approval-suitcase||#" class="border">
                       <h4>审批管理</h4>
                       <ul class="list-unstyled">
@@ -282,6 +309,9 @@
                             <label class="checkbox-inline">
                             <input type="checkbox" name="permission[]" value="resume-edit">
                             编辑简历 </label>
+							<label class="checkbox-inline">
+                            <input type="checkbox" name="permission[]" value="resume-delete">
+                            删除简历 </label>
                           </div>
                         </li>
                       </ul>
@@ -308,7 +338,7 @@
                             <input type="checkbox" name="permission[]" value="user-permission">
                             权限设置 </label>
                           </div>
-                        </li>
+                        </li>						
                         <li>
                           <div class="form-group" data-cmodel="部门-user||department-manage"> 部门：
                             <label class="checkbox-inline">
@@ -346,6 +376,9 @@
                             <label class="checkbox-inline">
                             <input type="checkbox" name="permission[]" value="notice-edit">
                             编辑公告 </label>
+							<label class="checkbox-inline">
+                            <input type="checkbox" name="permission[]" value="notice-delete">
+                            删除公告 </label>
                           </div>
                         </li>
                       </ul>

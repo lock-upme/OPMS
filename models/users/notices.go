@@ -120,3 +120,9 @@ func ChangeNoticeStatus(id int64, status int) error {
 		return err
 	}
 }
+
+func DeleteNotice(id int64) error {
+	o := orm.NewOrm()
+	_, err := o.Delete(&Notices{Id: id})
+	return err
+}

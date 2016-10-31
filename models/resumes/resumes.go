@@ -148,3 +148,9 @@ func ChangeResumeStatus(id int64, status int) error {
 		return err
 	}
 }
+
+func DeleteResume(id int64) error {
+	o := orm.NewOrm()
+	_, err := o.Delete(&Resumes{Id: id})
+	return err
+}

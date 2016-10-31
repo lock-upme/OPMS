@@ -16,7 +16,7 @@ type Leaves struct {
 	Type        int
 	Started     int64
 	Ended       int64
-	Days        int
+	Days        float64
 	Reason      string
 	Picture     string
 	Result      int

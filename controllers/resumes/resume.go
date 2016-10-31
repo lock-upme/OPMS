@@ -87,6 +87,34 @@ func (this *AjaxStatusResumeController) Post() {
 	this.ServeJSON()
 }
 
+type AjaxDeleteResumeController struct {
+	controllers.BaseController
+}
+
+func (this *AjaxDeleteResumeController) Post() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "resume-delete") {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "无权设置"}
+		this.ServeJSON()
+		return
+	}
+	id, _ := this.GetInt64("id")
+	if id <= 0 {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "请选择面试者"}
+		this.ServeJSON()
+		return
+	}
+
+	err := DeleteResume(id)
+
+	if err == nil {
+		this.Data["json"] = map[string]interface{}{"code": 1, "message": "删除成功"}
+	} else {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "删除失败"}
+	}
+	this.ServeJSON()
+}
+
 //部门添加
 type AddResumeController struct {
 	controllers.BaseController

@@ -3,6 +3,7 @@ package oagoods
 import (
 	"fmt"
 	"opms/controllers"
+	. "opms/models/messages"
 	. "opms/models/oagoods"
 	. "opms/models/users"
 	"opms/utils"
@@ -194,6 +195,21 @@ func (this *ShowOagoodController) Post() {
 	err := UpdateOagoodsApprover(approverid, oagood)
 
 	if err == nil {
+		//消息通知
+		og, _ := GetOagood(oagoodid)
+		var msg Messages
+		msg.Id = utils.SnowFlakeId()
+		msg.Userid = this.BaseController.UserUserId
+		msg.Touserid = og.Userid
+		msg.Type = 3
+		msg.Subtype = 36
+		if status == 1 {
+			msg.Title = "同意"
+		} else if status == 2 {
+			msg.Title = "拒绝"
+		}
+		msg.Url = "/oagood/approval/" + fmt.Sprintf("%d", oagoodid)
+		AddMessages(msg)
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "审批成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "审批失败"}
@@ -489,6 +505,20 @@ func (this *AjaxOagoodStatusController) Post() {
 	err := ChangeOagoodStatus(id, 2)
 
 	if err == nil {
+		userids := strings.Split(oagood.Approverids, ",")
+		for _, v := range userids {
+			//消息通知
+			userid, _ := strconv.Atoi(v)
+			var msg Messages
+			msg.Id = utils.SnowFlakeId()
+			msg.Userid = this.BaseController.UserUserId
+			msg.Touserid = int64(userid)
+			msg.Type = 4
+			msg.Subtype = 36
+			msg.Title = "去审批处理"
+			msg.Url = "/oagood/approval/" + fmt.Sprintf("%d", oagood.Id)
+			AddMessages(msg)
+		}
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "状态修改成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "状态修改失败"}

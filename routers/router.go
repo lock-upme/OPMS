@@ -3,10 +3,12 @@ package routers
 import (
 	"opms/controllers/albums"
 	"opms/controllers/businesstrips"
+	"opms/controllers/checkworks"
 	"opms/controllers/expenses"
 	"opms/controllers/goouts"
 	"opms/controllers/knowledges"
 	"opms/controllers/leaves"
+	"opms/controllers/messages"
 	"opms/controllers/oagoods"
 	"opms/controllers/overtimes"
 	"opms/controllers/projects"
@@ -50,6 +52,7 @@ func init() {
 	//公告
 	beego.Router("/notice/manage", &users.ManageNoticeController{})
 	beego.Router("/notice/ajax/status", &users.AjaxStatusNoticeController{})
+	beego.Router("/notice/ajax/delete", &users.AjaxDeleteNoticeController{})
 	beego.Router("/notice/edit/:id", &users.EditNoticeController{})
 	beego.Router("/notice/add", &users.AddNoticeController{})
 
@@ -123,6 +126,7 @@ func init() {
 	beego.Router("/resume/add", &resumes.AddResumeController{})
 	beego.Router("/resume/edit/:id", &resumes.EditResumeController{})
 	beego.Router("/resume/ajax/status", &resumes.AjaxStatusResumeController{})
+	beego.Router("/resume/ajax/delete", &resumes.AjaxDeleteResumeController{})
 
 	beego.Router("/kindeditor/upload", &albums.UploadKindController{})
 
@@ -179,4 +183,15 @@ func init() {
 	beego.Router("/overtime/add", &overtimes.AddOvertimeController{})
 	beego.Router("/overtime/ajax/status", &overtimes.AjaxOvertimeStatusController{})
 	beego.Router("/overtime/ajax/delete", &overtimes.AjaxOvertimeDeleteController{})
+
+	//考勤打卡
+	beego.Router("/checkwork/list", &checkworks.ManageCheckworkController{})
+	beego.Router("/checkwork/all", &checkworks.ManageCheckworkAllController{})
+	beego.Router("/checkwork/ajax/clock", &checkworks.AjaxClockUserController{})
+
+	//消息
+	beego.Router("/message/list", &messages.ManageMessageController{})
+	beego.Router("/message/ajax/delete", &messages.AjaxDeleteMessageController{})
+	beego.Router("/message/ajax/status", &messages.AjaxStatusMessageController{})
+
 }

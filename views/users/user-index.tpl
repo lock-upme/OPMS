@@ -85,6 +85,8 @@
                             {{else}}
                             <li><a href="javascript:;" class="js-user-single" data-id="{{$v.Id}}" data-status="1">正常</a></li>
                             {{end}}
+							<li role="separator" class="divider"></li>
+							<li><a href="/checkwork/all?userid={{$v.Id}}">考勤</a></li>
                           </ul>
                         </div></td>
                     </tr>

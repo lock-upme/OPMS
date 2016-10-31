@@ -189,3 +189,31 @@ func (this *EditNoticeController) Post() {
 	}
 	this.ServeJSON()
 }
+
+type AjaxDeleteNoticeController struct {
+	controllers.BaseController
+}
+
+func (this *AjaxDeleteNoticeController) Post() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "notice-delete") {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "无权设置"}
+		this.ServeJSON()
+		return
+	}
+	id, _ := this.GetInt64("id")
+	if id <= 0 {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "请选择公告"}
+		this.ServeJSON()
+		return
+	}
+
+	err := DeleteNotice(id)
+
+	if err == nil {
+		this.Data["json"] = map[string]interface{}{"code": 1, "message": "删除成功"}
+	} else {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "删除失败"}
+	}
+	this.ServeJSON()
+}

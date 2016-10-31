@@ -43,6 +43,7 @@ type UsersProfile struct {
 func (this *Users) TableName() string {
 	return models.TableName("users")
 }
+
 func init() {
 	//orm.RegisterModel(new(Users), new(UsersProfile))
 	orm.RegisterModel(new(Users))

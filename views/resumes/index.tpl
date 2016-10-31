@@ -91,6 +91,8 @@
 							<li><a href="javascript:;" class="js-resumes-single" data-id="{{$v.Id}}" data-status="4">录用</a></li>                           
 							<li><a href="javascript:;" class="js-resumes-single" data-id="{{$v.Id}}" data-status="5">不录用</a></li>                            
                             {{end}}
+							<li role="separator" class="divider"></li>
+                            <li><a href="javascript:;" class="js-resumes-delete" data-id="{{$v.Id}}">删除</a></li>
                           </ul>
                         </div></td>
                     </tr>

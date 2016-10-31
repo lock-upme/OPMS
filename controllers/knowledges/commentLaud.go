@@ -1,9 +1,10 @@
 package knowledges
 
 import (
-	//"fmt"
+	"fmt"
 	"opms/controllers"
 	. "opms/models/knowledges"
+	. "opms/models/messages"
 	"opms/utils"
 )
 
@@ -35,6 +36,17 @@ func (this *AddCommentController) Post() {
 	err = AddKnowledgeComment(comment)
 
 	if err == nil {
+		//消息通知
+		knowledge, _ := GetKnowledge(knowid)
+		var msg Messages
+		msg.Id = utils.SnowFlakeId()
+		msg.Userid = this.BaseController.UserUserId
+		msg.Touserid = knowledge.Userid
+		msg.Type = 1
+		msg.Subtype = 11
+		msg.Title = knowledge.Title
+		msg.Url = "/knowledge/" + fmt.Sprintf("%d", knowid)
+		AddMessages(msg)
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "评价添加成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "添加失败"}
@@ -69,6 +81,17 @@ func (this *AjaxLaudController) Post() {
 	err = AddKnowledgeLaud(laud)
 
 	if err == nil {
+		//消息通知
+		knowledge, _ := GetKnowledge(knowid)
+		var msg Messages
+		msg.Id = utils.SnowFlakeId()
+		msg.Userid = this.BaseController.UserUserId
+		msg.Touserid = knowledge.Userid
+		msg.Type = 2
+		msg.Subtype = 21
+		msg.Title = knowledge.Title
+		msg.Url = "/knowledge/" + fmt.Sprintf("%d", knowid)
+		AddMessages(msg)
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "点赞成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "点赞失败"}

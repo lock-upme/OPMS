@@ -75,6 +75,8 @@
                             {{else}}
                             <li><a href="javascript:;" class="js-notice-single" data-id="{{$v.Id}}" data-status="1">正常</a></li>
                             {{end}}
+							<li role="separator" class="divider"></li>
+							<li><a href="javascript:;" class="js-notice-delete" data-id="{{$v.Id}}">删除</a></li>
                           </ul>
                         </div></td>
                     </tr>

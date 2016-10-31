@@ -3,6 +3,7 @@ package overtimes
 import (
 	"fmt"
 	"opms/controllers"
+	. "opms/models/messages"
 	. "opms/models/overtimes"
 	. "opms/models/users"
 	"opms/utils"
@@ -192,6 +193,21 @@ func (this *ShowOvertimeController) Post() {
 	err := UpdateOvertimesApprover(approverid, overtime)
 
 	if err == nil {
+		//消息通知
+		ot, _ := GetOvertime(overtimeid)
+		var msg Messages
+		msg.Id = utils.SnowFlakeId()
+		msg.Userid = this.BaseController.UserUserId
+		msg.Touserid = ot.Userid
+		msg.Type = 3
+		msg.Subtype = 32
+		if status == 1 {
+			msg.Title = "同意"
+		} else if status == 2 {
+			msg.Title = "拒绝"
+		}
+		msg.Url = "/overtime/approval/" + fmt.Sprintf("%d", overtimeid)
+		AddMessages(msg)
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "审批成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "审批失败"}
@@ -449,6 +465,20 @@ func (this *AjaxOvertimeStatusController) Post() {
 	err := ChangeOvertimeStatus(id, 2)
 
 	if err == nil {
+		userids := strings.Split(overtime.Approverids, ",")
+		for _, v := range userids {
+			//消息通知
+			userid, _ := strconv.Atoi(v)
+			var msg Messages
+			msg.Id = utils.SnowFlakeId()
+			msg.Userid = this.BaseController.UserUserId
+			msg.Touserid = int64(userid)
+			msg.Type = 4
+			msg.Subtype = 32
+			msg.Title = "去审批处理"
+			msg.Url = "/overtime/approval/" + fmt.Sprintf("%d", overtime.Id)
+			AddMessages(msg)
+		}
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "状态修改成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "状态修改失败"}
