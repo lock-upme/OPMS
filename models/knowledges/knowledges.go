@@ -147,9 +147,15 @@ func GetKnowledge(id int64) (Knowledges, error) {
 	return knowledge, err
 }
 
-func DeleteKnowledge(id int64) error {
-	o := orm.NewOrm()
+func DeleteKnowledge(id int64, userid int64) error {
+	/*o := orm.NewOrm()
 	_, err := o.Delete(&Knowledges{Id: id})
+	return err*/
+	o := orm.NewOrm()
+	_, err := o.Raw("DELETE FROM "+models.TableName("knowledges")+" WHERE knowid=? AND userid=?", id, userid).Exec()
+	o.Raw("DELETE FROM "+models.TableName("knowledges_comment")+" WHERE knowid=?", id).Exec()
+	o.Raw("DELETE FROM "+models.TableName("knowledges_laud")+" WHERE knowid=?", id).Exec()
+
 	return err
 }
 

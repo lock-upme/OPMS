@@ -34,13 +34,13 @@
             <div class="panel-body">
               <form class="form-horizontal adminex-form" id="project-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">项目名称</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>项目名称</label>
                   <div class="col-sm-10">
                     <input type="text" name="name" value="{{.project.Name}}" class="form-control" placeholder="请填写名称">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">项目别名</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>项目别名</label>
                   <div class="col-sm-10">
                     <input type="text" name="aliasname" value="{{.project.Aliasname}}" class="form-control" placeholder="取个代号">
                   </div>
@@ -56,7 +56,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">描述</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>描述</label>
                   <div class="col-sm-10">
                     <textarea name="desc" placeholder="请填写描述" style="height:300px;" class="form-control">{{.project.Desc}}</textarea>
                   </div>
@@ -127,8 +127,26 @@
   </div>
   <!-- main content end-->
 </section>
+<div aria-hidden="true" aria-labelledby="projectModalLabel" role="dialog" tabindex="-1" id="projectModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">新建项目成功，请先按项目流程设置</h4>
+          </div>
+          <div class="modal-body">
+            
+            
+            
+          </div>
+          <div class="modal-footer">
+            <a href="/project/manage" class="btn btn-primary">去设置管理</a>
+          </div>
+        </div>
+      </div>
+    </div>
 {{template "inc/foot.tpl" .}}
-<script type="text/javascript" src="/static/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/static/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="/static/keditor/kindeditor-min.js"></script>
 <script>
 $(function(){

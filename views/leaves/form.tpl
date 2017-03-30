@@ -21,7 +21,7 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 审批管理 </h3>
+      <h3> 审批管理 {{template "inc/checkwork-nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/leave/manage">审批管理</a> </li>
@@ -41,10 +41,10 @@
                 <strong>注意!</strong> 请假单状态为正常后(可在列表操作中设置为“正常”)，就不能再编辑！后续流程等待审批人操作。. </div>
               <form class="form-horizontal adminex-form" id="leave-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">任务类型</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>类型</label>
                   <div class="col-sm-10">
                     <select name="type" class="form-control">
-                      <option value="">请选择任务类型</option>
+                      <option value="">请选择类型</option>
                       <option value="1" {{if eq 1 .leave.Type}}selected{{end}}>事假</option>
                       <option value="2" {{if eq 2 .leave.Type}}selected{{end}}>病假</option>
                       <option value="3" {{if eq 3 .leave.Type}}selected{{end}}>年假</option>
@@ -58,7 +58,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">请假日期</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>请假日期</label>
                   <div class="col-sm-10">
                     <div class="input-group input-large custom-date-range" data-date="2016-07-07" data-date-format="yyyy-mm-dd">
                       <input type="text" class="form-control dpd1" name="started" placeholder="开始日期" value="{{getDate .leave.Started}}">
@@ -74,7 +74,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">请假事由</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>请假事由</label>
                   <div class="col-sm-10">
                     <textarea name="reason" placeholder="请假事由，如世界很大，我想出去走一走" style="height:200px;" class="form-control">{{.leave.Reason}}</textarea>
                   </div>

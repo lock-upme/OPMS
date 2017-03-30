@@ -402,6 +402,7 @@ func ListUserFind() (num int64, err error, user []UsersFind) {
 	qb.Select("upr.userid", "upr.realname", "p.name AS position", "u.avatar").From("pms_users AS u").
 		LeftJoin("pms_users_profile AS upr").On("upr.userid = u.userid").
 		LeftJoin("pms_positions AS p").On("p.positionid = upr.positionid").
+		Where("u.status=1").
 		OrderBy("p.name").
 		Desc()
 	sql := qb.String()

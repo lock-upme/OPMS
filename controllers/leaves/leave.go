@@ -16,6 +16,18 @@ import (
 	"github.com/astaxie/beego/utils/pagination"
 )
 
+type ManageApprovalController struct {
+	controllers.BaseController
+}
+
+func (this *ManageApprovalController) Get() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "approval-manage") {
+		//this.Abort("401")
+	}
+	this.TplName = "leaves/approval-index.tpl"
+}
+
 //我的
 type ManageLeaveController struct {
 	controllers.BaseController

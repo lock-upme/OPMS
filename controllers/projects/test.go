@@ -278,6 +278,9 @@ func (this *AddTestProjectController) Post() {
 	needsid, _ := this.GetInt64("needsid")
 	acceptid, _ := this.GetInt64("acceptid")
 	level, _ := this.GetInt("level")
+	if level == 0 {
+		level = 4
+	}
 
 	desc := this.GetString("desc")
 	osystem := this.GetString("os")

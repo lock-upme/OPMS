@@ -23,26 +23,41 @@
       <div class="col-lg-12">
         <section class="panel">
           <header class="panel-heading"> 精彩相片
-            <div class="pull-right"><a href="/album/list?filter=me" class="btn btn-default">我的相片</a>&nbsp;<a href="/album/list" class="btn btn-success">全部相片</a>&nbsp;<a href="/album/upload" class="btn btn-success">上传相片</a></div>
+            <div class="pull-right"><a href="/album/manage?filter=me" class="btn btn-warning">我的相片</a>&nbsp;<a href="/album/manage" class="btn btn-success">全部相片</a>&nbsp;<a href="/album/upload" class="btn btn-success">+上传相片</a></div>
           </header>
-          <div class="panel-body"> {{range $k,$v := .albums}}
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail"> <a href="{{$v.Picture}}" data-lightbox="example-set" data-title="{{$v.Summary}}"><img alt="{{$v.Title}}" style="height: 200px; width: 100%; display: block;" src="{{$v.Picture}}"></a>
-                <div class="caption">
-                  <h3><a href="/album/{{$v.Id}}">{{$v.Title}}</a></h3>
-                  <p>{{substr $v.Summary 0 20}}</p>
-				  <p style="color:#999999;">{{getRealname $v.Userid}}{{getDate $v.Created}}上传</p>
-				{{if eq $.LoginUserid $v.Userid}}
+          <div class="panel-body"> 
+		<div id="gallery" class="media-gal">
+		{{range $k,$v := .albums}}
+		
+		
+		
+                                <div class="images item " >
+                                    <a href="{{$v.Picture}}" data-lightbox="example-set" data-title="{{$v.Summary}}">
+                                        <img src="{{$v.Picture}}" alt="{{$v.Title}}" />
+                                    </a>
+                                    <p><a href="/album/{{$v.Id}}">{{substr $v.Title 0 10}}</a> </p>
+									<p>{{substr $v.Summary 0 16}}</p>
+									<p>{{getRealname $v.Userid}}{{getDate $v.Created}}上传</p>
+									{{if eq $.LoginUserid $v.Userid}}
 				{{if eq $.condArr.filter "me"}}
-                  <p><a href="javascript:;" class="btn btn-primary js-album-edit" data-id="{{$v.Id}}" data-title="{{$v.Title}}" data-summary="{{$v.Summary}}" data-status="{{$v.Status}}">修改</a> <!--a href="javascript:;" class="btn btn-default">{{if $v.Status}}正常{{else}}屏蔽{{end}}</a--></p>
+                  <p>
+				<a href="javascript:;"title="编辑" class="js-album-edit" data-id="{{$v.Id}}" data-title="{{$v.Title}}" data-summary="{{$v.Summary}}" data-status="{{$v.Status}}"><i class="fa fa-edit"></i></a> 
+				
+				<a href="javascript:;" class="js-album-delete" data-id="{{$v.Id}}" title="删除"><i class="fa fa-trash-o"></i></a>
+				<!--a href="javascript:;" class="btn btn-default">{{if $v.Status}}正常{{else}}屏蔽{{end}}</a--></p>
               {{end}}
 			  {{end}}
-			 </div>
-              </div>
-            </div>
+                                </div>
+
+		
+            
+			
+			
+			
 			{{else}}
 			<h2 class="text-center">我的还有上传过相片,现在就<a href="/album/upload">上传相片</a></h2>
             {{end}}
+			</div>
 			<div class="clearfix"></div>
 			{{template "inc/page.tpl" .}}		
 			</div>			

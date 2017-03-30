@@ -141,6 +141,10 @@ type ShowAlbumController struct {
 }
 
 func (this *ShowAlbumController) Get() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "album-view") {
+		this.Abort("401")
+	}
 	idstr := this.Ctx.Input.Param(":id")
 	id, err := strconv.Atoi(idstr)
 	album, err := GetAlbum(int64(id))
@@ -198,7 +202,8 @@ func (this *UploadMultiController) Post() {
 		filename := files[i].Filename
 		resfilename += utils.GetFileSuffix(filename) + "||"
 
-		ext := utils.SubString(filename, strings.LastIndex(filename, "."), 5)
+		//ext := utils.SubString(filename, strings.LastIndex(filename, "."), 5)
+		ext := utils.SubString(utils.Unicode(filename), strings.LastIndex(utils.Unicode(filename), "."), 5)
 		filename = utils.GetGuid() + ext
 		dst, err := os.Create(dir + "/" + filename)
 
@@ -249,7 +254,8 @@ func (this *UploadKindController) Post() {
 	}
 	//生成新的文件名
 	filename := h.Filename
-	ext := utils.SubString(filename, strings.LastIndex(filename, "."), 5)
+	//ext := utils.SubString(filename, strings.LastIndex(filename, "."), 5)
+	ext := utils.SubString(utils.Unicode(filename), strings.LastIndex(utils.Unicode(filename), "."), 5)
 	filename = utils.GetGuid() + ext
 
 	if err != nil {
@@ -257,6 +263,34 @@ func (this *UploadKindController) Post() {
 	} else {
 		this.SaveToFile("imgFile", dir+"/"+filename)
 		this.Data["json"] = map[string]interface{}{"error": 0, "url": strings.Replace(dir, ".", "", 1) + "/" + filename}
+	}
+	this.ServeJSON()
+}
+
+type AjaxDeleteAlbumController struct {
+	controllers.BaseController
+}
+
+func (this *AjaxDeleteAlbumController) Post() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "album-delete") {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "无权设置"}
+		this.ServeJSON()
+		return
+	}
+	id, _ := this.GetInt64("id")
+	if id < 0 {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "请选择要删除的选项"}
+		this.ServeJSON()
+		return
+	}
+
+	err := DeleteAlbum(id, this.BaseController.UserUserId)
+
+	if err == nil {
+		this.Data["json"] = map[string]interface{}{"code": 1, "message": "删除成功"}
+	} else {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "删除失败"}
 	}
 	this.ServeJSON()
 }

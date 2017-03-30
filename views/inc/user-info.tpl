@@ -24,7 +24,7 @@
 							 {{else}}
 			                  <li class="text-center">目前还没有最新消息</li>
 			                  {{end}}
-                            <li class="new"><a href="/message/list">查看更多</a></li>
+                            <li class="new"><a href="/message/manage">查看更多</a></li>
                         </ul>
                     </div>
                 </li>

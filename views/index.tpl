@@ -22,7 +22,7 @@
     <div class="wrapper">
       <div class="row">
         <div class="jumbotron text-center" style="background-color:transparent;">
-          <h2>坚持写作分享，每天积累点。</h2>
+          <h2>让项目管理与OA办公更加轻便！</h2>
 		<br/><br/>
 			<a style="font-size:38px;" href="/user/show/{{.LoginUserid}}">开启OPMS之旅</a>
 			<br/><br/>

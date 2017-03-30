@@ -5,6 +5,7 @@ import (
 	"opms/models/businesstrips"
 	"opms/models/expenses"
 	"opms/models/goouts"
+	"opms/models/groups"
 	"opms/models/leaves"
 	"opms/models/oagoods"
 	"opms/models/overtimes"
@@ -20,6 +21,7 @@ func InitTemplate() {
 	beego.AddFuncMap("getRealname", users.GetRealname)
 	beego.AddFuncMap("getNeedsname", projects.GetProjectNeedsName)
 	beego.AddFuncMap("getProjectname", projects.GetProjectName)
+	beego.AddFuncMap("getPermissionname", groups.GetPermissiontName)
 	beego.AddFuncMap("getLeaveProcess", leaves.ListLeaveApproverProcessHtml)
 	beego.AddFuncMap("getExpenseProcess", expenses.ListExpenseApproverProcessHtml)
 	beego.AddFuncMap("getBusinesstripProcess", businesstrips.ListBusinesstripApproverProcessHtml)

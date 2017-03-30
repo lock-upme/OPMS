@@ -22,7 +22,7 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 审批管理 </h3>
+      <h3> 审批管理 {{template "inc/checkwork-nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/businesstrip/manage">审批管理</a> </li>
@@ -45,13 +45,13 @@
                 <div class="js-businesstripBox">
                   <div class="alert alert-info fade in"> 行程明细(1) </div>
                   <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">目的地</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><span>*</span>目的地</label>
                     <div class="col-sm-10">
                       <input type="text" name="destinations[]" class="form-control" placeholder="请输入目的地">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">行程日期</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><span>*</span>行程日期</label>
                     <div class="col-sm-10">
                       <div class="input-group input-large custom-date-range" data-date="2016-07-07" data-date-format="yyyy-mm-dd">
                         <input type="text" class="form-control dpd1" name="starteds[]" placeholder="开始日期">
@@ -73,7 +73,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">出差事由</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>出差事由</label>
                   <div class="col-sm-10">
                     <textarea name="reason" placeholder="请输入出差事由" style="height:200px;" class="form-control">{{.businesstrip.Reason}}</textarea>
                   </div>

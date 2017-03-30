@@ -42,7 +42,7 @@ func (this *ManageCheckworkController) Get() {
 	this.Data["checkworks"] = checkworks
 
 	this.Data["year"] = time.Now().Format("2006")
-	this.Data["month"] = time.Now().Format("01")
+	this.Data["month"] = time.Now().Format("1")
 
 	//统计
 	countCheckworks, _ := CountCheckwork(date, this.BaseController.UserUserId)
@@ -94,7 +94,7 @@ func (this *ManageCheckworkAllController) Get() {
 	this.Data["checkworks"] = checkworks
 
 	this.Data["year"] = time.Now().Format("2006")
-	this.Data["month"] = time.Now().Format("01")
+	this.Data["month"] = time.Now().Format("1")
 
 	//统计
 	countCheckworks, _ := CountCheckwork(date, userId)

@@ -21,7 +21,7 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 审批管理 </h3>
+      <h3> 审批管理 {{template "inc/checkwork-nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/goout/manage">审批管理</a> </li>
@@ -41,7 +41,7 @@
                 <strong>注意!</strong> 外出单状态为正常后(可在列表操作中设置为“正常”)，就不能再编辑！后续流程等待审批人操作。. </div>
               <form class="form-horizontal adminex-form" id="goout-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">外出时间</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>外出时间</label>
                   <div class="col-sm-10">
                     <div class="input-group input-large custom-date-range" data-date="2016-07-07" data-date-format="yyyy-mm-dd hh:ii">
                       <input type="text" class="form-control dpd1" name="started" placeholder="开始时间" value="{{getDateMH .goout.Started}}">
@@ -57,7 +57,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">外出事由</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>外出事由</label>
                   <div class="col-sm-10">
                     <textarea name="reason" placeholder="外出事由" style="height:200px;" class="form-control">{{.goout.Reason}}</textarea>
                   </div>

@@ -21,7 +21,7 @@
     <div class="row">
       <div class="col-lg-12">
         <section class="panel">
-          <header class="panel-heading"> 上传相片 <div class="pull-right"><a href="/album/list" class="btn btn-success">欣赏相片</a></div></header>
+          <header class="panel-heading"> 上传相片 <div class="pull-right"><a href="/album/manage" class="btn btn-success">欣赏相片</a></div></header>
           <div class="panel-body">
             <form method="post" action="/uploadmulti" enctype="multipart/form-data" id="uploadMulti-form">
               <div class="wrapper text-center">

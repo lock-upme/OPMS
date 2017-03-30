@@ -15,13 +15,13 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 员工管理 </h3>
+      <h3> 组织管理 {{template "users/nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/department/manage">部门管理</a> </li>
         <li class="active"> 部门 </li>
       </ul>
-      <div class="pull-right"><a href="/department/add" class="btn btn-success">添加新部门</a></div>
+      <div class="pull-right"><a href="/department/add" class="btn btn-success">+添加新部门</a></div>
     </div>
     <!-- page heading end-->
     <!--body wrapper start-->
@@ -33,7 +33,7 @@
             <div class="panel-body">
               <form class="form-horizontal adminex-form" id="depart-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">名称</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>名称</label>
                   <div class="col-sm-10">
                     <input type="text" name="name" value="{{.dep.Name}}" class="form-control" placeholder="请填写名称">
                   </div>

@@ -1,0 +1,1 @@
+<span><a href="/user/manage">员工</a><a href="/department/manage">部门</a><a href="/position/manage">职称</a><a href="/notice/manage">公告</a><a href="/group/manage">组</a><a href="/permission/manage">权限</a></span>

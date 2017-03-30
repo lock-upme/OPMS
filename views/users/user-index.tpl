@@ -29,13 +29,13 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 员工管理 </h3>
+      <h3> 组织管理 {{template "users/nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/user/manage">员工管理</a> </li>
         <li class="active"> 员工 </li>
       </ul>
-      <div class="pull-right"><a href="/user/add" class="btn btn-success">添加新员工</a></div>
+      <div class="pull-right"><a href="/user/add" class="btn btn-success">+添加新员工</a></div>
     </div>
     <!-- page heading end-->
     <!--body wrapper start-->
@@ -77,8 +77,8 @@
                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 操作<span class="caret"></span> </button>
                           <ul class="dropdown-menu">
                             <li><a href="/user/edit/{{$v.Id}}">编辑</a></li>
-                            <li role="separator" class="divider"></li>
-							<li><a href="/user/permission/{{$v.Id}}">权限</a></li>
+                            <!--li role="separator" class="divider"></li>
+							<li><a href="/user/permission/{{$v.Id}}">权限</a></li-->
                             <li role="separator" class="divider"></li>
                             {{if eq 1 $v.Status}}
                             <li><a href="javascript:;" class="js-user-single" data-id="{{$v.Id}}" data-status="2">屏蔽</a></li>

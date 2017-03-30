@@ -22,7 +22,7 @@
       <h3> 精彩相片 </h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
-        <li> <a href="/album/list">全部相片</a> </li>
+        <li> <a href="/album/manage">全部相片</a> </li>
         <li class="active"> 相片 </li>
       </ul>
     </div>
@@ -58,7 +58,7 @@
                 <ul class="activity-list">
                   {{range $k,$v := .comments}}
                   <li>
-                    <div class="avatar"> <img src="{{getAvatarUserid $v.Userid}}" alt="{{getRealname $v.Userid}}"> </div>
+                    <div class="avatar"> <a href="/user/show/{{$v.Userid}}"><img src="{{getAvatarUserid $v.Userid}}"></a> </div>
                     <div class="activity-desk">
                       <h5><a href="/user/show/{{$v.Userid}}">{{getRealname $v.Userid}}</a> <span>{{$v.Content}}</span></h5>
                       <p class="text-muted">{{getDateMH $v.Created}}</p>

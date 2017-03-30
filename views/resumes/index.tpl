@@ -15,7 +15,7 @@
       <a class="toggle-btn"><i class="fa fa-bars"></i></a>
       <!--toggle button end-->
       <!--search start-->
-      <form class="searchform" action="/resume/list" method="get">
+      <form class="searchform" action="/resume/manage" method="get">
         <select name="status" class="form-control">
           <option value="">状态</option>
           <option value="1" {{if eq "1" .condArr.status}}selected{{end}}>入档</option>
@@ -35,10 +35,10 @@
       <h3> 简历管理 </h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
-        <li> <a href="/resume/list">简历管理</a> </li>
+        <li> <a href="/resume/manage">简历管理</a> </li>
         <li class="active"> 简历 </li>
       </ul>
-      <div class="pull-right"><a href="/resume/add" class="btn btn-success">添加新简历</a></div>
+      <div class="pull-right"><a href="/resume/add" class="btn btn-success">+添加新简历</a></div>
     </div>
     <!-- page heading end-->
     <!--body wrapper start-->
@@ -76,7 +76,7 @@
 					<td>{{getDate $v.Birth}}</td>
 					<td>{{getEdu $v.Edu}}</td>
 					<td>{{getWorkYear $v.Work}}</td>
-					<td><a href="{{$v.Attachment}}" target="_blank">查看预览</a></td>
+					<td>{{if ne $v.Attachment ""}}<a href="{{$v.Attachment}}" target="_blank">查看预览</a>{{else}}暂无{{end}}</td>
                       <td>{{getResumeStatus $v.Status}}</td>
                       <td><div class="btn-group">
                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 操作<span class="caret"></span> </button>

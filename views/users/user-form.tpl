@@ -15,13 +15,13 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 员工管理 </h3>
+      <h3> 组织管理 {{template "users/nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/user/manage">员工管理</a> </li>
         <li class="active"> 员工 </li>
       </ul>
-      <div class="pull-right"><a href="/user/add" class="btn btn-success">添加新员工</a></div>
+      <div class="pull-right"><a href="/user/add" class="btn btn-success">+添加新员工</a></div>
     </div>
     <!-- page heading end-->
     <!--body wrapper start-->
@@ -34,7 +34,7 @@
               <form class="form-horizontal adminex-form" id="userprofile-form">
                 <header><b> 基本信息 </b></header>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">用户名</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>用户名</label>
                   <div class="col-sm-10">
                     <input type="text" name="username"  value="{{.user.Username}}" class="form-control" placeholder="请填写用户名">
                   </div>
@@ -46,7 +46,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">部门</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>部门</label>
                   <div class="col-sm-10">
                     <select name="depart" class="form-control">
                       <option value="">请选择</option>
@@ -61,7 +61,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">职位</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>职位</label>
                   <div class="col-sm-10">
                     <select name="position" class="form-control">
                       <option value="">请选择</option>
@@ -77,7 +77,7 @@
                 </div>
                 <header> <b>帐号信息</b> </header>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">姓名</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>姓名</label>
                   <div class="col-sm-10">
                     <input type="text" name="realname"  value="{{.pro.Realname}}" class="form-control" placeholder="请填写姓名">
                   </div>
@@ -94,13 +94,13 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">生日</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>生日</label>
                   <div class="col-sm-10">
                     <input type="text" name="birth" id="default-date-picker"  value="{{.pro.Birth}}" class="form-control" placeholder="请填写昵称">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">公司邮箱</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>公司邮箱</label>
                   <div class="col-sm-10">
                     <input type="email" name="email"  value="{{.pro.Email}}" class="form-control" placeholder="cto@milu365.com">
                   </div>
@@ -118,7 +118,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">手机号</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>手机号</label>
                   <div class="col-sm-10">
                     <input type="number" name="phone" maxlength="11" value="{{.pro.Phone}}" class="form-control" placeholder="手机号">
                   </div>
@@ -136,13 +136,13 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">紧急联系人</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>紧急联系人</label>
                   <div class="col-sm-10">
                     <input type="text" name="emercontact"  value="{{.pro.Emercontact}}" class="form-control" placeholder="紧急联系人">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">紧急联系人电话</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>紧急联系人电话</label>
                   <div class="col-sm-10">
                     <input type="text" name="emerphone"  value="{{.pro.Emerphone}}" class="form-control" placeholder="紧急联系人电话">
                   </div>

@@ -33,7 +33,7 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 审批管理 </h3>
+      <h3> 审批管理 {{template "inc/checkwork-nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/businesstrip/manage">审批管理</a> </li>

@@ -29,10 +29,10 @@
       <h3> 考勤 </h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
-        <li> <a href="/checkwork/list">考勤管理</a> </li>
+        <li> <a href="/checkwork/manage">考勤管理</a> </li>
         <li class="active"> 考勤 </li>
       </ul>
-      <div class="pull-right"><a href="/checkwork/list" class="btn btn-success">我的考勤</a></div>
+      <div class="pull-right"><a href="/checkwork/manage" class="btn btn-success">我的考勤</a></div>
     </div>
     <div class="clearfix"></div>
     <!-- page heading end-->
@@ -44,7 +44,7 @@
             <div class="col-md-12">
               <div class="panel">
                 <header class="panel-heading"> 考勤 <span class="label label-warning">搜索姓名查询考勤记录</span><span class="tools pull-right">
-                  <button onClick="myPrint(document.getElementById('print'))" class="btn">打 印</button>
+                  <button onClick="myPrint(document.getElementById('print'))" class="btn btn-warning" style="margin-top: -4px;">打 印</button>
                   <select class="form-control" id="ym" style="width: 124px;display: inline;">
                   </select>
                   </span> </header>
@@ -112,6 +112,7 @@
 $(function(){
 	//年月统计
 	var html = '';
+	//addZero
 	for(var i={{.month}};i>0; i--) {
 		html += '<option value="{{.year}}-'+addZero(i)+'">{{.year}}年'+addZero(i)+'月</option>';
 	}

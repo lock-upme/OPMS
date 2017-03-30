@@ -56,7 +56,7 @@
                       <td><a href="/user/show/{{$v.Userid}}">{{getRealname $v.Userid}}</a></td>
                       <td>{{getPositionsName $v.Userid}}</td>
                       <td>{{getDate $v.Created}}</td>
-                      <td><a href="javascript:;" class="js-team-single" data-id="{{$v.Id}}">删除</a></td>
+                      <td><a href="javascript:;" class="js-team-single btn btn-danger btn-xs" data-id="{{$v.Id}}" title="删除"><i class="fa fa-trash-o"></i> 删除</a></td>
                     </tr>
                     {{end}}
                     </tbody>

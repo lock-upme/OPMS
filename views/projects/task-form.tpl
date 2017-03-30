@@ -33,7 +33,7 @@
             <div class="panel-body">
               <form class="form-horizontal adminex-form" id="task-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">关联需求</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>关联需求</label>
                   <div class="col-sm-10">
                     <select name="needsid" class="form-control">
                       <option value="">请选择项目需求</option>
@@ -44,7 +44,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">任务类型</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>任务类型</label>
                   <div class="col-sm-10">
                     <select name="type" class="form-control">
                       <option value="">请选择任务类型</option>
@@ -71,7 +71,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">任务名称</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>任务名称</label>
                   <div class="col-sm-10">
                     <input type="text" name="name" value="{{.task.Name}}" class="form-control" placeholder="请输入任务名称">
                   </div>

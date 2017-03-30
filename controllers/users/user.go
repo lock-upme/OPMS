@@ -7,6 +7,7 @@ import (
 
 	"opms/controllers"
 	. "opms/models/albums"
+	//. "opms/models/groups"
 	. "opms/models/knowledges"
 	. "opms/models/projects"
 	. "opms/models/users"
@@ -38,8 +39,8 @@ type LoginUserController struct {
 func (this *LoginUserController) Get() {
 	check := this.BaseController.IsLogin
 	if check {
-		//this.Abort("401")
-		this.Redirect("/my/task", 302)
+		this.Redirect("/", 302)
+		return
 	} else {
 		this.TplName = "users/login.tpl"
 	}
@@ -66,8 +67,9 @@ func (this *LoginUserController) Post() {
 
 		permission, _ := GetPermissionsAll(users.Id)
 		this.SetSession("userPermission", permission.Permission)
-		this.SetSession("userPermissionModel", permission.Model)
-		this.SetSession("userPermissionModelc", permission.Modelc)
+		this.SetSession("userGroupid", permission.Groupid)
+		//this.SetSession("userPermissionModel", permission.Model)
+		//this.SetSession("userPermissionModelc", permission.Modelc)
 
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "贺喜你，登录成功"}
 	} else {
@@ -83,9 +85,10 @@ type LogoutUserController struct {
 
 func (this *LogoutUserController) Get() {
 	this.DelSession("userLogin")
+	this.DelSession("userPermissionModel")
+	this.DelSession("userPermissionModelc")
 	//this.Ctx.WriteString("you have logout")
 	this.Redirect("/login", 302)
-
 }
 
 //用户管理
@@ -135,6 +138,9 @@ type ShowUserController struct {
 
 func (this *ShowUserController) Get() {
 	idstr := this.Ctx.Input.Param(":id")
+	if "" == idstr {
+		idstr = fmt.Sprintf("%d", this.BaseController.UserUserId)
+	}
 	id, _ := strconv.Atoi(idstr)
 	userId := int64(id)
 	pro, _ := GetProfile(userId)
@@ -166,20 +172,20 @@ func (this *ShowUserController) Get() {
 	if this.BaseController.UserUserId != userId {
 		condArr["userid"] = idstr
 	}
-	_, _, knowledges := ListKnowledge(condArr, 1, 10)
+	_, _, knowledges := ListKnowledge(condArr, 1, 3)
 	this.Data["knowledges"] = knowledges
 
 	//相片
 	if this.BaseController.UserUserId != userId {
 		condArr["userid"] = idstr
 	}
-	_, _, albums := ListAlbum(condArr, 1, 6)
+	_, _, albums := ListAlbum(condArr, 1, 8)
 	this.Data["albums"] = albums
 
 	//公告
 	//知识分享
 	condArr["status"] = "1"
-	_, _, notices := ListNotices(condArr, 1, 10)
+	_, _, notices := ListNotices(condArr, 1, 5)
 	this.Data["notices"] = notices
 
 	this.TplName = "users/profile.tpl"
@@ -214,7 +220,8 @@ func (this *AvatarUserController) Post() {
 		}
 		//生成新的文件名
 		filename := h.Filename
-		ext := utils.SubString(filename, strings.LastIndex(filename, "."), 5)
+		//ext := utils.SubString(filename, strings.LastIndex(filename, "."), 5)
+		ext := utils.SubString(utils.Unicode(filename), strings.LastIndex(utils.Unicode(filename), "."), 5)
 		filename = utils.GetGuid() + ext
 
 		if err != nil {
@@ -444,12 +451,18 @@ func (this *AddUserController) Post() {
 
 	if err == nil {
 		//新用户默认权限
-		var per Permissions
+		/*var per UsersPermissions
 		per.Id = id
-		per.Permission = "project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit"
-		per.Model = "项目管理-project-book||project-manage,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list"
+		per.Permission = "project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,checkwork-manage,message-manage,message-delete,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit"
+		per.Model = "项目管理-project-book||project-manage,考勤管理-checkwork-tasks||checkwork-list,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list"
 		per.Modelc = "请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage"
-		AddPermissions(per)
+		AddPermissions(per)*/
+		/*
+			var groupUser GroupsUser
+			groupUser.Id = utils.SnowFlakeId()
+			groupUser.Groupid = 1468755197309162133
+			groupUser.Userid = id
+			err = AddGroupsUser(groupUser)*/
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "员工信息添加成功", "id": fmt.Sprintf("%d", id)}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "员工信息添加失败"}
@@ -776,7 +789,7 @@ func (this *PermissionController) Post() {
 	model := this.GetString("model")
 	modelc := this.GetString("modelc")
 
-	var per Permissions
+	var per UsersPermissions
 	per.Permission = permission
 	per.Model = model
 	per.Modelc = modelc

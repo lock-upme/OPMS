@@ -25,7 +25,7 @@
         <li> <a href="/project/test/{{.project.Id}}">{{.project.Name}}</a> </li>
         <li class="active"> Bug </li>
       </ul>
-      <div class="pull-right"><a href="/project/team/{{.project.Id}}" class="btn btn-success">团队</a> <a href="/project/need/{{.project.Id}}" class="btn btn-success">需求</a> <a href="/project/task/{{.project.Id}}" class="btn btn-success">任务</a> <a href="/project/test/{{.project.Id}}" class="btn btn-success">Bug</a> <a href="/project/chart/{{.project.Id}}" class="btn btn-warning">报表</a></div>
+      <div class="pull-right">{{template "projects/nav.tpl" .}}</div>
     </div>
     <div class="clearfix"></div>
     <!-- page heading end-->

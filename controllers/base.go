@@ -4,6 +4,7 @@ import (
 	//"opms/initial"
 
 	"fmt"
+	. "opms/models/groups"
 	. "opms/models/messages"
 	"strconv"
 	"strings"
@@ -38,8 +39,8 @@ func (this *BaseController) Prepare() {
 		this.UserUsername = tmp[1]
 		this.UserAvatar = tmp[2]
 
-		this.Data["PermissionModel"] = this.GetSession("userPermissionModel")
-		this.Data["PermissionModelc"] = this.GetSession("userPermissionModelc")
+		//this.Data["PermissionModel"] = this.GetSession("userPermissionModel")
+		//this.Data["PermissionModelc"] = this.GetSession("userPermissionModelc")
 
 		//消息
 		msgcondArr := make(map[string]string)
@@ -49,6 +50,11 @@ func (this *BaseController) Prepare() {
 		_, _, topMessages := ListMessages(msgcondArr, 1, 10)
 		this.Data["topMessages"] = topMessages
 		this.Data["countTopMessage"] = countTopMessage
+
+		//fmt.Println(this.GetSession("userGroupid").(string))
+		//左侧导航
+		_, _, leftNav := ListGroupsUserPermission(this.GetSession("userGroupid").(string))
+		this.Data["leftNav"] = leftNav
 	}
 	this.Data["IsLogin"] = this.IsLogin
 }

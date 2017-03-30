@@ -275,7 +275,7 @@ func (this *EditProjectController) Post() {
 	err = UpdateProject(id, pro)
 
 	if err == nil {
-		this.Data["json"] = map[string]interface{}{"code": 1, "message": "项目修改成功", "id": fmt.Sprintf("%d", id)}
+		this.Data["json"] = map[string]interface{}{"code": 1, "message": "项目修改成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "项目修改失败"}
 	}

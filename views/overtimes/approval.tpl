@@ -20,7 +20,7 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 审批管理 </h3>
+      <h3> 审批管理 {{template "inc/checkwork-nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/overtime/approval">审批管理</a> </li>
@@ -52,7 +52,7 @@
                 
                 {{range $k,$v := .overtimes}}
                 <tr>
-                  <td><a href="/user/show/{{$v.Userid}}">{{getRealname $v.Userid}}</a> </td>
+                  <td><a href="/user/show/{{$v.Userid}}" style="color:#65CEA7">{{getRealname $v.Userid}}</a> </td>
 				  <td> {{$v.Longtime}} </td>
                   <td class="hidden-phone hidden-xs">{{getDateMH $v.Started}}至{{getDateMH $v.Ended}}</td>
 				  <td>{{if eq $v.Way 1}}调休{{else if eq $v.Way 2}}加班费{{end}} </td>

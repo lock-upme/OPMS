@@ -1,9 +1,11 @@
 $(function(){
 	if (is_mobile()) {
 		//$('body').removeClass('left-side-collapsed');
+		$('.left-side').hide();
 	}
 	
 	//左侧菜单显示
+	/*
 	var str = $('#permissionModel').val();
 	if (str != "") {
 		var str2 = $('#permissionModelc').val();
@@ -39,7 +41,7 @@ $(function(){
 			html2 = '';
 			html += '</li>';		
 		}	
-		$('.js-left-nav').append(html);
+		//$('.js-left-nav').append(html);
 	}
 	
 	
@@ -52,7 +54,7 @@ $(function(){
         	return $(this).attr('href') == lefthref;
         }).parent().addClass('active').parents('.menu-list').addClass('nav-active');
     };
-	
+	*/
 	$('.js_checkboxAll').on('click', function(){
 		var that = $(this);
 		var chk = that.parent().prev('table').find('input[type="checkbox"]');
@@ -341,9 +343,15 @@ $(function(){
                 type:'POST',
                 dataType:'json',
                 success:function(data) {
-                    dialogInfo(data.message)
+                    
                     if (data.code) {
-                       setTimeout(function(){window.location.href="/project/manage"}, 2000);
+						if (data.id) {
+							var html = '<a href="/project/team/'+data.id+'" class="btn btn-success">添加团队成员</a> <a href="/project/team/'+data.id+'" class="btn btn-warning">建立需求</a> <a href="/project/team/'+data.id+'" class="btn btn-info">建立任务</a>'
+							$('#projectModal').modal('toggle').find('.modal-body').html(html);
+						} else {
+							dialogInfo(data.message)
+							setTimeout(function(){window.location.href="/project/manage"}, 2000);
+						}
                     } else {
                        setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000); 
                     }
@@ -582,7 +590,43 @@ $(function(){
 			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
 		},'json');
     });
+	$('#taskbatch-form').validate({
+        ignore:'',		    
+		rules : {
+			'needsid[]':{required: true},
+			'name[]':{required: true},
+			'type[]':{required: true},
+			'acceptid[]':{required: true},
+			'tasktime[]':{required: true},
+			'desc[]':{required: true},
+			'level[]':{required: true}			
+        },
+        messages : {
+			'needsid[]':{required: '必填'},
+			'name[]':{required: '必填'},
+			'type[]':{required: '必填'},
+			'acceptid[]':{required: '必填'},
+			'tasktime[]':{required: '必填'},
+			'desc[]':{required: '必填'},
+			'level[]':{required: '必填'}
+        },
+        submitHandler:function(form) {
+            $(form).ajaxSubmit({
+                type:'POST',
+                dataType:'json',
+                success:function(data) {
+                    dialogInfo(data.message)
+                    if (data.code) {
+                       setTimeout(function(){window.location.href="/project/task/"+$('#projectid').val()}, 2000);
+                    } else {
+                       setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+                    }
+                }
+            });
+        }
+    });
 	
+	//bug
 	$('#test-form').validate({
         ignore:'',		    
 		rules : {
@@ -673,6 +717,85 @@ $(function(){
 		},'json');
     });
 	
+	//文档
+	$('#doc-form').validate({
+        ignore:'',		    
+		rules : {
+			title:{required: true},
+			sort: {required: true}			
+        },
+        messages : {
+			title:{required: '请填写文档名称'},
+			sort:{required: '请选择类型'}
+        },
+        submitHandler:function(form) {
+            $(form).ajaxSubmit({
+                type:'POST',
+                dataType:'json',
+                success:function(data) {
+                    dialogInfo(data.message)
+                    if (data.code) {
+                       setTimeout(function(){window.location.href="/project/doc/"+$('#projectid').val()}, 2000);
+                    } else {
+                       setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+                    }
+                }
+            });
+        }
+    });
+	$('.js-doc-delete').on('click', function(){
+    	var that = $(this);
+		var docid = that.attr('data-id');	
+		$.post('/doc/ajax/delete', {ids:docid},function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				setTimeout(function(){ window.history.back(); }, 1000);
+			} else {
+				
+			}
+			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+		},'json');
+    });
+	//版本
+	$('#version-form').validate({
+        ignore:'',		    
+		rules : {
+			title:{required: true},
+			versioned: {required: true}			
+        },
+        messages : {
+			title:{required: '请填写版本名称'},
+			versioned:{required: '请选择打包日期'}
+        },
+        submitHandler:function(form) {
+            $(form).ajaxSubmit({
+                type:'POST',
+                dataType:'json',
+                success:function(data) {
+                    dialogInfo(data.message)
+                    if (data.code) {
+                       setTimeout(function(){window.location.href="/project/version/"+$('#projectid').val()}, 2000);
+                    } else {
+                       setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+                    }
+                }
+            });
+        }
+    });
+	$('.js-version-delete').on('click', function(){
+    	var that = $(this);
+		var versionid = that.attr('data-id');	
+		$.post('/version/ajax/delete', {ids:versionid},function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				setTimeout(function(){ window.history.back(); }, 1000);
+			} else {
+				
+			}
+			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+		},'json');
+    });
+	
 	$('#knowledge-form').validate({
         ignore:'',		    
 		rules : {
@@ -702,6 +825,19 @@ $(function(){
             });
         }
     });	
+	$('.js-knowledage-delete').on('click', function(){
+    	var that = $(this);
+		var knowledgeid = that.attr('data-id');	
+		$.post('/knowledge/ajax/delete', {id:knowledgeid},function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				setTimeout(function(){ window.location.reload();}, 1000);
+			} else {
+				
+			}
+			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+		},'json');
+    });
 	
 	$('#knowledge-comment-form').validate({
         ignore:'',		    
@@ -761,7 +897,7 @@ $(function(){
                 success:function(data) {
                     dialogInfo(data.message)
                     if (data.code == 1) {						
-						setTimeout(function(){window.location.href='/album/list?filter=me'}, 1000);
+						setTimeout(function(){window.location.href='/album/manage?filter=me'}, 1000);
                     } else {
                         setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
                     }
@@ -801,6 +937,20 @@ $(function(){
 		var status = that.attr('data-status');
 		dialogAlbum(id, title, summary, status);
 	});
+	
+	$('.js-album-delete').on('click', function(){
+    	var that = $(this);
+		var albumid = that.attr('data-id');	
+		$.post('/album/ajax/delete', {id:albumid},function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				setTimeout(function(){ window.location.reload();}, 1000);
+			} else {
+				
+			}
+			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+		},'json');
+    });
 	
 	$('#album-comment-form').validate({
         ignore:'',		    
@@ -859,7 +1009,7 @@ $(function(){
                 success:function(data) {
                     dialogInfo(data.message)
                     if (data.code) {
-						setTimeout(function(){window.location.href='/resume/list';}, 2000);
+						setTimeout(function(){window.location.href='/resume/manage';}, 2000);
                     } else {
                         setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
                     }					
@@ -897,6 +1047,44 @@ $(function(){
 			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
 		},'json');
     });
+	
+	$('#permission-btn-new').on('click', function(){
+		var str = '', model = '', modelc = '';
+		
+		$('input[name="permission[]"]:checked').each(function(i){
+			str += $(this).val() + ',';
+			if ($(this).parents('li').parents('li').attr('data-pmodel')) {
+				model += $(this).parents('li').parents('li').attr('data-pmodel')+',';
+				
+				if ($(this).parents('div').attr('data-cmodel')) {
+					modelc += $(this).parents('div').attr('data-cmodel')+',';
+				}
+			}
+			
+		});
+		if (str == '') {
+			return false;
+		}
+		
+		model = uniqueString(model).toString();	
+		model = model.substring(0, model.length-1);
+		
+		modelc = uniqueString(modelc).toString();		
+		modelc = modelc.substring(0, modelc.length-1);
+		
+		str = str.substring(0, str.length-1)
+		var groupid = $('#groupid').val();
+		var url = '/group/permission/'+groupid;
+		$.post(url, { groupid: groupid, permission: str, model:model, modelc:modelc },function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				
+			} else {
+				
+			}
+			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+		},'json');
+	});
 	
 	$('#permission-btn').on('click', function(){
 		var str = '', model = '', modelc = '';
@@ -1433,6 +1621,123 @@ $(function(){
         }
     });
 	
+	//组权限
+	$('#group-form').validate({
+        ignore:'',		    
+		rules : {
+			'name':{required:true},
+			'summary':{required:true}
+        },
+        messages : {		
+			'name':{required:'请填写组名称'},
+			'summary':{required:'请填写组描述'}
+        },
+        submitHandler:function(form) {
+            $(form).ajaxSubmit({
+                type:'POST',
+                dataType:'json',
+                success:function(data) {
+                    dialogInfo(data.message)
+                    if (data.code) {
+						setTimeout(function(){ window.location.href='/group/manage'; }, 2000);
+                    } else {
+                       setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+                    }															
+                }
+            });
+        }
+    });
+	
+	$('.js-group-delete').on('click', function(){
+		var that = $(this);
+		var id = that.attr('data-id');
+		$.post('/group/ajax/delete', {ids:id},function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				setTimeout(function(){ window.location.reload() }, 2000);
+			} else {
+				setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+			}
+			
+		},'json');
+	});
+	
+	$('#permission-form').validate({
+        ignore:'',		    
+		rules : {
+			'name':{required:true},
+			'ename':{required:true}
+        },
+        messages : {		
+			'name':{required:'请填写名称'},
+			'ename':{required:'请填写英文名称'}
+        },
+        submitHandler:function(form) {
+            $(form).ajaxSubmit({
+                type:'POST',
+                dataType:'json',
+                success:function(data) {
+                    dialogInfo(data.message)
+                    if (data.code) {
+						setTimeout(function(){ window.location.href='/permission/manage'; }, 2000);
+                    } else {
+                       setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+                    }															
+                }
+            });
+        }
+    });
+	$('.js-permission-delete').on('click', function(){
+		var that = $(this);
+		var id = that.attr('data-id');
+		$.post('/permission/ajax/delete', {ids:id},function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				setTimeout(function(){ window.location.reload() }, 2000);
+			} else {
+				setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+			}
+			
+		},'json');
+	});
+	
+	$('#group-user-form').validate({
+        ignore:'',		    
+		rules : {
+			username:{required: true}
+        },
+        messages : {
+			username:{required: '请填写姓名'} 
+        },
+        submitHandler:function(form) {
+            $(form).ajaxSubmit({
+                type:'POST',
+                dataType:'json',
+                success:function(data) {
+                    dialogInfo(data.message)
+                    if (data.code) {
+                       setTimeout(function(){window.location.href="/group/user/"+$('#groupid').val()}, 2000);
+                    } else {
+                       setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+                    }
+                }
+            });
+        }
+    });
+	$('.js-group-user-single').on('click', function(){
+    	var that = $(this);
+		var testid = that.attr('data-id');	
+		$.post('/group/user/ajax/delete', {id:testid},function(data){
+			dialogInfo(data.message)
+			if (data.code) {
+				that.parents('tr').remove();
+			} else {
+				
+			}
+			setTimeout(function(){ $('#dialogInfo').modal('hide'); }, 1000);
+		},'json');
+    });
+	
 });
 
 function dialogInfo(msg) {
@@ -1580,7 +1885,7 @@ function uniqueString(str) {
 }
 
 function addZero(v){
-	return v<10 ? '0'+v : v;
+	return parseInt(v)<10 ? '0'+v : v;
 }
 	
 function fixDate(time) {

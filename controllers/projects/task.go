@@ -98,6 +98,7 @@ func (this *TaskProjectController) Get() {
 	if err1 != nil {
 		offset = 15
 	}
+	//offset = 6
 
 	condArr := make(map[string]string)
 	condArr["projectid"] = idstr
@@ -222,6 +223,99 @@ func (this *AjaxAcceptTaskController) Post() {
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "指派成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "指派失败"}
+	}
+	this.ServeJSON()
+}
+
+type TaskBatchProjectController struct {
+	controllers.BaseController
+}
+
+func (this *TaskBatchProjectController) Get() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "task-batch-add") {
+		this.Abort("401")
+	}
+	idstr := this.Ctx.Input.Param(":id")
+	id, err := strconv.Atoi(idstr)
+	idlong := int64(id)
+	project, err := GetProject(idlong)
+	if err != nil {
+		this.Abort("404")
+	}
+	this.Data["project"] = project
+
+	needs := ListNeedsForForm(idlong, 1, 100)
+	this.Data["needs"] = needs
+
+	_, _, teams := ListProjectTeam(idlong, 1, 100)
+	this.Data["teams"] = teams
+
+	this.TplName = "projects/task-batch-form.tpl"
+}
+
+func (this *TaskBatchProjectController) Post() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "task-batch-add") {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "无权设置"}
+		this.ServeJSON()
+		return
+	}
+	needsid := make([]int64, 0, 10)
+	this.Ctx.Input.Bind(&needsid, "needsid")
+	//fmt.Println(needsid)
+
+	name := make([]string, 0, 10)
+	this.Ctx.Input.Bind(&name, "name")
+	//fmt.Println(name)
+
+	typet := make([]int, 0, 10)
+	this.Ctx.Input.Bind(&typet, "type")
+	//fmt.Println(typet)
+
+	acceptid := make([]int64, 0, 10)
+	this.Ctx.Input.Bind(&acceptid, "acceptid")
+	//fmt.Println(acceptid)
+
+	tasktime := make([]int, 0, 10)
+	this.Ctx.Input.Bind(&tasktime, "tasktime")
+	//fmt.Println(tasktime)
+
+	desc := make([]string, 0, 10)
+	this.Ctx.Input.Bind(&desc, "desc")
+	//fmt.Println(desc)
+
+	level := make([]int, 0, 10)
+	this.Ctx.Input.Bind(&level, "level")
+	//fmt.Println(level)
+
+	var task ProjectsTask
+	var err error
+	projectid, _ := this.GetInt64("projectid")
+	userid := this.BaseController.UserUserId
+	task.Projectid = projectid
+	task.Userid = userid
+
+	for index, val := range needsid {
+		//fmt.Println(fmt.Sprintf("%d", val) + " " + name[index])
+		if name[index] != "" {
+			id := utils.SnowFlakeId()
+			task.Id = id
+			task.Needsid = val
+			task.Acceptid = acceptid[index]
+			task.Name = name[index]
+			task.Desc = desc[index]
+			task.Type = typet[index]
+			task.Level = level[index]
+			task.Tasktime = tasktime[index]
+			err = AddTask(task)
+		}
+
+	}
+	if err == nil {
+		this.Data["json"] = map[string]interface{}{"code": 1, "message": "任务添加成功"}
+	} else {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "任务添加失败"}
 	}
 	this.ServeJSON()
 }
@@ -475,6 +569,138 @@ func (this *EditTaskProjectController) Post() {
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "任务编辑成功"}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "任务编辑失败"}
+	}
+	this.ServeJSON()
+}
+
+type CloneTaskProjectController struct {
+	controllers.BaseController
+}
+
+func (this *CloneTaskProjectController) Get() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "task-clone") {
+		this.Abort("401")
+	}
+	idstr := this.Ctx.Input.Param(":id")
+	id, _ := strconv.Atoi(idstr)
+	task, _ := GetProjectTask(int64(id))
+
+	project, err := GetProject(task.Projectid)
+	if err != nil {
+		this.Abort("404")
+	}
+	this.Data["project"] = project
+	this.Data["task"] = task
+
+	ccids := strings.Split(task.Ccid, ",")
+	var ccidsmap = make(map[int]int64)
+	for i, v := range ccids {
+		ccid, _ := strconv.Atoi(v)
+		ccidsmap[i] = int64(ccid)
+	}
+	this.Data["ccids"] = ccidsmap
+
+	needs := ListNeedsForForm(task.Projectid, 1, 100)
+	this.Data["needs"] = needs
+
+	_, _, teams := ListProjectTeam(task.Projectid, 1, 100)
+	this.Data["teams"] = teams
+	this.Data["clone"] = 1
+
+	this.TplName = "projects/task-form.tpl"
+}
+func (this *CloneTaskProjectController) Post() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "task-clone") {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "无权设置"}
+		this.ServeJSON()
+		return
+	}
+	projectid, _ := this.GetInt64("projectid")
+	if projectid <= 0 {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "请选择项目"}
+		this.ServeJSON()
+		return
+	}
+	userid := this.BaseController.UserUserId
+	name := this.GetString("name")
+	if "" == name {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "请填写名称"}
+		this.ServeJSON()
+		return
+	}
+
+	ccid := this.GetString("ccid")
+	tasktype, _ := this.GetInt("type")
+
+	needsid, _ := this.GetInt64("needsid")
+	acceptid, _ := this.GetInt64("acceptid")
+	level, _ := this.GetInt("level")
+	tasktime, _ := this.GetInt("tasktime")
+
+	startedstr := this.GetString("started")
+	startedtime := utils.GetDateParse(startedstr)
+
+	endedstr := this.GetString("ended")
+	endedtime := utils.GetDateParse(endedstr)
+
+	desc := this.GetString("desc")
+	note := this.GetString("note")
+
+	var filepath string
+	f, h, err := this.GetFile("attachment")
+
+	if err == nil {
+		defer f.Close()
+
+		//生成上传路径
+		now := time.Now()
+		dir := "./static/uploadfile/" + strconv.Itoa(now.Year()) + "-" + strconv.Itoa(int(now.Month())) + "/" + strconv.Itoa(now.Day())
+		err1 := os.MkdirAll(dir, 0755)
+		if err1 != nil {
+			this.Data["json"] = map[string]interface{}{"code": 1, "message": "目录权限不够"}
+			this.ServeJSON()
+			return
+		}
+		filename := h.Filename
+		if err != nil {
+			this.Data["json"] = map[string]interface{}{"code": 0, "message": err}
+			this.ServeJSON()
+			return
+		} else {
+			this.SaveToFile("attachment", dir+"/"+filename)
+			filepath = strings.Replace(dir, ".", "", 1) + "/" + filename
+		}
+	}
+
+	//var err error
+	//雪花算法ID生成
+	id := utils.SnowFlakeId()
+
+	var task ProjectsTask
+	task.Id = id
+	task.Needsid = needsid
+	task.Projectid = projectid
+	task.Userid = userid
+	task.Acceptid = acceptid
+	task.Ccid = ccid
+	task.Name = name
+	task.Desc = desc
+	task.Note = note
+	task.Type = tasktype
+	task.Level = level
+	task.Tasktime = tasktime
+	task.Started = startedtime
+	task.Ended = endedtime
+	task.Attachment = filepath
+
+	err = AddTask(task)
+
+	if err == nil {
+		this.Data["json"] = map[string]interface{}{"code": 1, "message": "任务添加成功", "id": fmt.Sprintf("%d", id)}
+	} else {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "任务添加失败"}
 	}
 	this.ServeJSON()
 }

@@ -22,7 +22,7 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 审批管理 </h3>
+      <h3> 审批管理 {{template "inc/checkwork-nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/expense/manage">审批管理</a> </li>
@@ -45,19 +45,19 @@
                 <div class="js-expenseBox">
                   <div class="alert alert-info fade in"> 报销明细(1) </div>
                   <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">报销金额</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><span>*</span>报销金额</label>
                     <div class="col-sm-10">
                       <input type="number" name="amounts[]" class="form-control" placeholder="请输入金额">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">报销类型</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><span>*</span>报销类型</label>
                     <div class="col-sm-10">
                       <input type="text" name="types[]" class="form-control" placeholder="请输入报销类型，如采购经费、活动经费">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">报销明细</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><span>*</span>报销明细</label>
                     <div class="col-sm-10">
                       <textarea name="contents[]" placeholder="报销明细" style="height:94px;" class="form-control"></textarea>
                     </div>

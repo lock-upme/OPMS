@@ -6,6 +6,7 @@ import (
 	"opms/controllers/checkworks"
 	"opms/controllers/expenses"
 	"opms/controllers/goouts"
+	"opms/controllers/groups"
 	"opms/controllers/knowledges"
 	"opms/controllers/leaves"
 	"opms/controllers/messages"
@@ -29,6 +30,7 @@ func init() {
 	beego.Router("/user/avatar", &users.AvatarUserController{})
 	beego.Router("/user/ajax/search", &users.AjaxSearchUserController{}) //搜索用户名匹配
 	beego.Router("/user/show/:id", &users.ShowUserController{})
+	beego.Router("/my/manage", &users.ShowUserController{})
 	beego.Router("/user/profile", &users.EditUserProfileController{})
 	beego.Router("/user/password", &users.EditUserPasswordController{})
 
@@ -88,6 +90,8 @@ func init() {
 	beego.Router("/task/ajax/status", &projects.AjaxStatusTaskController{})
 	beego.Router("/task/ajax/delete", &projects.DeleteTaskProjectController{})
 	beego.Router("/task/show/:id", &projects.ShowTaskProjectController{})
+	beego.Router("/project/taskbatch/:id", &projects.TaskBatchProjectController{})
+	beego.Router("/task/clone/:id", &projects.CloneTaskProjectController{})
 
 	beego.Router("/my/task", &projects.MyTaskProjectController{})
 
@@ -102,27 +106,43 @@ func init() {
 
 	beego.Router("/my/test", &projects.MyTestProjectController{})
 
+	//项目文档
+	beego.Router("/project/doc/:id", &projects.DocProjectController{})
+	beego.Router("/doc/ajax/delete", &projects.AjaxDeleteDocPorjectController{})
+	beego.Router("/doc/add/:id", &projects.FormDocProjectController{})
+	beego.Router("/doc/edit/:id", &projects.FormDocProjectController{})
+	beego.Router("/doc/show/:id", &projects.ShowDocProjectController{})
+
+	//项目版本
+	beego.Router("/project/version/:id", &projects.VersionProjectController{})
+	beego.Router("/version/ajax/delete", &projects.AjaxDeleteVersionPorjectController{})
+	beego.Router("/version/add/:id", &projects.FormVersionProjectController{})
+	beego.Router("/version/edit/:id", &projects.FormVersionProjectController{})
+	beego.Router("/version/show/:id", &projects.ShowVersionProjectController{})
+
 	//知识分享
-	beego.Router("/knowledge/list", &knowledges.ManageKnowledgeController{})
+	beego.Router("/knowledge/manage", &knowledges.ManageKnowledgeController{})
 	beego.Router("/knowledge/add", &knowledges.AddKnowledgeController{})
 	beego.Router("/knowledge/edit/:id", &knowledges.EditKnowledgeController{})
 	beego.Router("/knowledge/:id", &knowledges.ShowKnowledgeController{})
 	beego.Router("/knowledge/comment/add", &knowledges.AddCommentController{})
 	beego.Router("/knowledge/ajax/laud", &knowledges.AjaxLaudController{})
+	beego.Router("/knowledge/ajax/delete", &knowledges.AjaxDeleteKnowledgeController{})
 
 	//beego.Router("/task/ajax/status", &projects.AjaxAcceptTaskController{}, "*:AddPost")
 
 	//相片
-	beego.Router("/album/list", &albums.ListAlbumController{})
+	beego.Router("/album/manage", &albums.ListAlbumController{})
 	beego.Router("/album/upload", &albums.UploadAlbumController{})
 	beego.Router("/album/edit", &albums.EditAlbumController{})
 	beego.Router("/uploadmulti", &albums.UploadMultiController{})
 	beego.Router("/album/:id", &albums.ShowAlbumController{})
 	beego.Router("/album/comment/add", &albums.AddCommentController{})
 	beego.Router("/album/ajax/laud", &albums.AjaxLaudController{})
+	beego.Router("/album/ajax/delete", &albums.AjaxDeleteAlbumController{})
 
 	//简历
-	beego.Router("/resume/list", &resumes.ManageResumeController{})
+	beego.Router("/resume/manage", &resumes.ManageResumeController{})
 	beego.Router("/resume/add", &resumes.AddResumeController{})
 	beego.Router("/resume/edit/:id", &resumes.EditResumeController{})
 	beego.Router("/resume/ajax/status", &resumes.AjaxStatusResumeController{})
@@ -130,6 +150,7 @@ func init() {
 
 	beego.Router("/kindeditor/upload", &albums.UploadKindController{})
 
+	beego.Router("/approval/manage", &leaves.ManageApprovalController{})
 	//请假
 	beego.Router("/leave/manage", &leaves.ManageLeaveController{})
 	beego.Router("/leave/approval", &leaves.ApprovalLeaveController{})
@@ -185,13 +206,33 @@ func init() {
 	beego.Router("/overtime/ajax/delete", &overtimes.AjaxOvertimeDeleteController{})
 
 	//考勤打卡
-	beego.Router("/checkwork/list", &checkworks.ManageCheckworkController{})
+	beego.Router("/checkwork/manage", &checkworks.ManageCheckworkController{})
 	beego.Router("/checkwork/all", &checkworks.ManageCheckworkAllController{})
 	beego.Router("/checkwork/ajax/clock", &checkworks.AjaxClockUserController{})
 
 	//消息
-	beego.Router("/message/list", &messages.ManageMessageController{})
+	beego.Router("/message/manage", &messages.ManageMessageController{})
 	beego.Router("/message/ajax/delete", &messages.AjaxDeleteMessageController{})
 	beego.Router("/message/ajax/status", &messages.AjaxStatusMessageController{})
+
+	//组
+	beego.Router("/group/manage", &groups.ManageGroupController{})
+	beego.Router("/group/ajax/delete", &groups.AjaxDeleteGroupController{})
+	beego.Router("/group/add", &groups.FormGroupController{})
+	beego.Router("/group/edit/:id", &groups.FormGroupController{})
+	//组成员
+	beego.Router("/group/user/:id", &groups.ManageGroupUserController{})
+	beego.Router("/group/user/add/:id", &groups.FormGroupUserController{})
+	beego.Router("/group/user/ajax/delete", &groups.AjaxDeleteGroupUserController{})
+	//组权限
+	beego.Router("/group/permission/:id", &groups.ManageGroupPermissionController{})
+	//beego.Router("/group/permission/add/:id", &groups.FormGroupPermissionController{})
+	beego.Router("/group/permission/ajax/delete", &groups.AjaxDeleteGroupPermissionController{})
+
+	//权限
+	beego.Router("/permission/manage", &groups.ManagePermissionController{})
+	beego.Router("/permission/ajax/delete", &groups.AjaxDeletePermissionController{})
+	beego.Router("/permission/add", &groups.FormPermissionController{})
+	beego.Router("/permission/edit/:id", &groups.FormPermissionController{})
 
 }

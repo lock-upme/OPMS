@@ -86,7 +86,7 @@ func ListNotices(condArr map[string]string, page int, offset int) (num int64, er
 	start := (page - 1) * offset
 
 	var deps []Notices
-	qs = qs.OrderBy("-noticeid")
+	qs = qs.OrderBy("noticeid")
 	num, err1 := qs.Limit(offset, start).All(&deps)
 	return num, err1, deps
 }

@@ -67,6 +67,10 @@ type ShowKnowledgeController struct {
 }
 
 func (this *ShowKnowledgeController) Get() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "knowledge-view") {
+		this.Abort("401")
+	}
 	idstr := this.Ctx.Input.Param(":id")
 	id, err := strconv.Atoi(idstr)
 	knowledge, err := GetKnowledge(int64(id))
@@ -80,34 +84,6 @@ func (this *ShowKnowledgeController) Get() {
 	this.Data["comments"] = comments
 
 	this.TplName = "knowledges/detail.tpl"
-}
-
-type AjaxDeleteKnowledgeController struct {
-	controllers.BaseController
-}
-
-func (this *AjaxDeleteKnowledgeController) Post() {
-	//权限检测
-	if !strings.Contains(this.GetSession("userPermission").(string), "knowledge-edit") {
-		this.Data["json"] = map[string]interface{}{"code": 0, "message": "无权设置"}
-		this.ServeJSON()
-		return
-	}
-	id, _ := this.GetInt64("id")
-	if id < 0 {
-		this.Data["json"] = map[string]interface{}{"code": 0, "message": "请选择用户"}
-		this.ServeJSON()
-		return
-	}
-
-	err := DeleteKnowledge(id)
-
-	if err == nil {
-		this.Data["json"] = map[string]interface{}{"code": 1, "message": "成员删除成功"}
-	} else {
-		this.Data["json"] = map[string]interface{}{"code": 0, "message": "成员删除失败"}
-	}
-	this.ServeJSON()
 }
 
 type AddKnowledgeController struct {
@@ -247,6 +223,34 @@ func (this *EditKnowledgeController) Post() {
 		this.Data["json"] = map[string]interface{}{"code": 1, "message": "知识分享修改成功", "id": fmt.Sprintf("%d", id)}
 	} else {
 		this.Data["json"] = map[string]interface{}{"code": 0, "message": "知识分享修改失败"}
+	}
+	this.ServeJSON()
+}
+
+type AjaxDeleteKnowledgeController struct {
+	controllers.BaseController
+}
+
+func (this *AjaxDeleteKnowledgeController) Post() {
+	//权限检测
+	if !strings.Contains(this.GetSession("userPermission").(string), "knowledge-delete") {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "无权设置"}
+		this.ServeJSON()
+		return
+	}
+	id, _ := this.GetInt64("id")
+	if id < 0 {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "请选择要删除的选项"}
+		this.ServeJSON()
+		return
+	}
+
+	err := DeleteKnowledge(id, this.BaseController.UserUserId)
+
+	if err == nil {
+		this.Data["json"] = map[string]interface{}{"code": 1, "message": "删除成功"}
+	} else {
+		this.Data["json"] = map[string]interface{}{"code": 0, "message": "删除失败"}
 	}
 	this.ServeJSON()
 }

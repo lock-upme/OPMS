@@ -148,3 +148,12 @@ func ChangeAlbumRelationNum(id int64, record string) error {
 	_, err := o.Update(&album, updateRecord)
 	return err
 }
+
+func DeleteAlbum(id int64, userid int64) error {
+	o := orm.NewOrm()
+	_, err := o.Raw("DELETE FROM "+models.TableName("albums")+" WHERE albumid=? AND userid=?", id, userid).Exec()
+	o.Raw("DELETE FROM "+models.TableName("albums_comment")+" WHERE albumid=?", id).Exec()
+	o.Raw("DELETE FROM "+models.TableName("albums_laud")+" WHERE albumid=?", id).Exec()
+
+	return err
+}

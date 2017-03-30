@@ -15,7 +15,7 @@
       <a class="toggle-btn"><i class="fa fa-bars"></i></a>
       <!--toggle button end-->
       <!--search start-->
-      <form class="searchform" action="/message/list" method="get">
+      <form class="searchform" action="/message/manage" method="get">
         <select name="status" class="form-control">
           <option value="">状态</option>
           <option value="1" {{if eq "1" .condArr.view}}selected{{end}}>未看</option>
@@ -37,7 +37,7 @@
       <h3> 消息管理 </h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
-        <li> <a href="/message/list">消息管理</a> </li>
+        <li> <a href="/message/manage">消息管理</a> </li>
         <li class="active"> 消息 </li>
       </ul>
     </div>

@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : z-local
-Source Server Version : 50626
+Source Server         : localhost
+Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : aiopms
 
 Target Server Type    : MYSQL
-Target Server Version : 50626
+Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-10-21 15:46:06
+Date: 2017-03-28 17:23:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,11 @@ CREATE TABLE `pms_albums` (
 -- ----------------------------
 -- Records of pms_albums
 -- ----------------------------
-INSERT INTO `pms_albums` VALUES ('1468934759849234932', '1461312703628858832', '美丽的背后', '/static/uploadfile/2016-9/28/d1bb6059a54a832f8542a9389d5ffcd3.jpg', '', '我想知道相片背后的故事', '1475046528', '16', '1', '2', '1');
+INSERT INTO `pms_albums` VALUES ('66621261991645184', '1461312703628858832', '海边漫步', '/static/uploadfile/2017-3/28/f739b6c6351a82a4953d8d8b44cd426d.jpg', '', '我想知道相片背后的故事', '1490686634', '1', '0', '0', '1');
+INSERT INTO `pms_albums` VALUES ('66621261995839488', '1461312703628858832', '那一处', '/static/uploadfile/2017-3/28/eac2a34d2cd6f3d0df1b233a0f589bce.jpg', '', '我想知道相片背后的故事', '1490686634', '2', '0', '0', '1');
+INSERT INTO `pms_albums` VALUES ('66621262004228096', '1461312703628858832', '那个镇', '/static/uploadfile/2017-3/28/6b4b9957ffbd6ec1c8515025fba39818.jpg', '', '我想知道相片背后的故事', '1490686634', '1', '0', '0', '1');
+INSERT INTO `pms_albums` VALUES ('66621262008422400', '1461312703628858832', '满上遍野', '/static/uploadfile/2017-3/28/48b77d930cb7a02824874ed9c6be434c.jpg', '', '我想知道相片背后的故事', '1490686634', '2', '0', '0', '1');
+INSERT INTO `pms_albums` VALUES ('66621262012616704', '1461312703628858832', '油菜花', '/static/uploadfile/2017-3/28/73434f8343c3780b5e8af114e8825b9c.jpg', '', '我想知道相片背后的故事', '1490686634', '3', '1', '0', '1');
 
 -- ----------------------------
 -- Table structure for pms_albums_comment
@@ -58,7 +62,7 @@ CREATE TABLE `pms_albums_comment` (
 -- ----------------------------
 -- Records of pms_albums_comment
 -- ----------------------------
-INSERT INTO `pms_albums_comment` VALUES ('9305470284075008', '1468140265954907628', '1468934759849234932', '这个好美~', '1477021485', '1');
+INSERT INTO `pms_albums_comment` VALUES ('66639445419364352', '1461312703628858832', '66621262012616704', 'LIFE BT', '1490690969', '1');
 
 -- ----------------------------
 -- Table structure for pms_albums_laud
@@ -77,8 +81,6 @@ CREATE TABLE `pms_albums_laud` (
 -- ----------------------------
 -- Records of pms_albums_laud
 -- ----------------------------
-INSERT INTO `pms_albums_laud` VALUES ('9026951792562176', '1461312703628858832', '1468934759849234932', '1476955081', '1');
-INSERT INTO `pms_albums_laud` VALUES ('9305430773731328', '1468140265954907628', '1468934759849234932', '1477021475', '1');
 
 -- ----------------------------
 -- Table structure for pms_businesstrips
@@ -105,8 +107,6 @@ CREATE TABLE `pms_businesstrips` (
 -- ----------------------------
 -- Records of pms_businesstrips
 -- ----------------------------
-INSERT INTO `pms_businesstrips` VALUES ('1468755197309162132', '1461312703628858832', '10.2||20', '活动经费||服务费', '10.2的活动经费||20的服务经费', '30', null, '', '1', '2', '1468140265954907628,1467191338628906628', '1474866966', '1474879081');
-INSERT INTO `pms_businesstrips` VALUES ('1468842643441590032', '1461312703628858832', '河北||北京', '2016-09-28||2016-09-30', '2016-09-29||2016-10-31', '3', '项目洽谈', '/static/uploadfile/2016-9/27/2.jpg', '1', '2', '1468140265954907628,1467191338628906628', '1474954412', '1474954460');
 
 -- ----------------------------
 -- Table structure for pms_businesstrips_approver
@@ -127,10 +127,6 @@ CREATE TABLE `pms_businesstrips_approver` (
 -- ----------------------------
 -- Records of pms_businesstrips_approver
 -- ----------------------------
-INSERT INTO `pms_businesstrips_approver` VALUES ('1468755197373479132', '1468755197309162132', '1468140265954907628', '魂牵梦萦', '1', '1474866966', '1474882786');
-INSERT INTO `pms_businesstrips_approver` VALUES ('1468755197443881232', '1468755197309162132', '1467191338628906628', '同意', '1', '1474866966', '1474883614');
-INSERT INTO `pms_businesstrips_approver` VALUES ('1468842643488774532', '1468842643441590032', '1468140265954907628', '可以~', '1', '1474954412', '1474955131');
-INSERT INTO `pms_businesstrips_approver` VALUES ('1468842643513491432', '1468842643441590032', '1467191338628906628', 'ok', '1', '1474954412', '1477029517');
 
 -- ----------------------------
 -- Table structure for pms_checkworks
@@ -150,11 +146,6 @@ CREATE TABLE `pms_checkworks` (
 -- ----------------------------
 -- Records of pms_checkworks
 -- ----------------------------
-INSERT INTO `pms_checkworks` VALUES ('8568693101432832', '1461312703628858832', '10:57:03', '2', '127.0.0.1', '1476845823');
-INSERT INTO `pms_checkworks` VALUES ('8568702534422528', '1461312703628858832', '10:57:05', '3', '127.0.0.1', '1476845825');
-INSERT INTO `pms_checkworks` VALUES ('8906461258190848', '1461312703628858832', '09:19:14', '2', '127.0.0.1', '1476926353');
-INSERT INTO `pms_checkworks` VALUES ('9335379463245824', '1461312703628858832', '13:43:36', '2', '127.0.0.1', '1477028615');
-INSERT INTO `pms_checkworks` VALUES ('9358014863642624', '1461312703628858832', '08:00:03', '3', '127.0.0.1', '1477034012');
 
 -- ----------------------------
 -- Table structure for pms_departs
@@ -202,7 +193,6 @@ CREATE TABLE `pms_expenses` (
 -- ----------------------------
 -- Records of pms_expenses
 -- ----------------------------
-INSERT INTO `pms_expenses` VALUES ('1468755197309162132', '1461312703628858832', '10.2||20', '活动经费||服务费', '10.2的活动经费||20的服务经费', '30.2', '', '1', '2', '1468140265954907628,1467191338628906628', '1474866966', '1474879081');
 
 -- ----------------------------
 -- Table structure for pms_expenses_approver
@@ -223,8 +213,6 @@ CREATE TABLE `pms_expenses_approver` (
 -- ----------------------------
 -- Records of pms_expenses_approver
 -- ----------------------------
-INSERT INTO `pms_expenses_approver` VALUES ('1468755197373479132', '1468755197309162132', '1468140265954907628', '魂牵梦萦', '1', '1474866966', '1474882786');
-INSERT INTO `pms_expenses_approver` VALUES ('1468755197443881232', '1468755197309162132', '1467191338628906628', '同意', '1', '1474866966', '1474883614');
 
 -- ----------------------------
 -- Table structure for pms_goouts
@@ -250,8 +238,6 @@ CREATE TABLE `pms_goouts` (
 -- ----------------------------
 -- Records of pms_goouts
 -- ----------------------------
-INSERT INTO `pms_goouts` VALUES ('1468852391078933228', '1461312703628858832', '1474963200', '1474970400', '2', '大师傅城标魂牵梦萦', '', '1', '2', '1467191338628906628', '1474964159', '1474964172');
-INSERT INTO `pms_goouts` VALUES ('1468853987531273432', '1461312703628858832', '1474966800', '1474970400', '1', 'test', '', '0', '2', '1468140265954907628', '1474965756', '1474965756');
 
 -- ----------------------------
 -- Table structure for pms_goouts_approver
@@ -272,8 +258,277 @@ CREATE TABLE `pms_goouts_approver` (
 -- ----------------------------
 -- Records of pms_goouts_approver
 -- ----------------------------
-INSERT INTO `pms_goouts_approver` VALUES ('1468852391132927432', '1468852391078933228', '1467191338628906628', 'ok', '1', '1474964159', '1474964213');
-INSERT INTO `pms_goouts_approver` VALUES ('1468853987584299228', '1468853987531273432', '1468140265954907628', '', '0', '1474965756', '1474965756');
+
+-- ----------------------------
+-- Table structure for pms_groups
+-- ----------------------------
+DROP TABLE IF EXISTS `pms_groups`;
+CREATE TABLE `pms_groups` (
+  `groupid` bigint(20) NOT NULL,
+  `name` varchar(30) DEFAULT NULL COMMENT '组名称',
+  `summary` varchar(500) DEFAULT NULL COMMENT '组描述',
+  `created` int(10) DEFAULT NULL,
+  `changed` int(10) DEFAULT NULL,
+  PRIMARY KEY (`groupid`),
+  KEY `INDEX_NCC` (`name`,`created`,`changed`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='组成员表';
+
+-- ----------------------------
+-- Records of pms_groups
+-- ----------------------------
+INSERT INTO `pms_groups` VALUES ('37623600177483776', '测试组', '项目功能测试，白盒黑盒测试', '1483773053', '1483773321');
+INSERT INTO `pms_groups` VALUES ('1468755197309162133', '其他', '普通员工', '1474866966', '1474866966');
+INSERT INTO `pms_groups` VALUES ('1468755197309162134', '产品', '产品经理', '1474866966', '1474866966');
+INSERT INTO `pms_groups` VALUES ('1468755197309162135', '研发', '技术人员', '1474866966', '1474866966');
+INSERT INTO `pms_groups` VALUES ('1468755197309162136', '高层管理', '公司高层', '1474866966', '1474866966');
+INSERT INTO `pms_groups` VALUES ('1468755197309162137', '管理员', '系统管理员', '1474866966', '1474866966');
+
+-- ----------------------------
+-- Table structure for pms_groups_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `pms_groups_permission`;
+CREATE TABLE `pms_groups_permission` (
+  `id` bigint(20) NOT NULL,
+  `groupid` bigint(20) DEFAULT NULL,
+  `permissionid` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `INDEX_GP` (`groupid`,`permissionid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='组权限表';
+
+-- ----------------------------
+-- Records of pms_groups_permission
+-- ----------------------------
+INSERT INTO `pms_groups_permission` VALUES ('64082362622808064', '1468755197309162133', '41980651519348736');
+INSERT INTO `pms_groups_permission` VALUES ('64082362723471360', '1468755197309162133', '41980770788577280');
+INSERT INTO `pms_groups_permission` VALUES ('64082362874466304', '1468755197309162133', '42334265874059264');
+INSERT INTO `pms_groups_permission` VALUES ('64082362975129600', '1468755197309162133', '42334379363536896');
+INSERT INTO `pms_groups_permission` VALUES ('64082363075792896', '1468755197309162133', '42334463782293504');
+INSERT INTO `pms_groups_permission` VALUES ('64082363176456192', '1468755197309162133', '42334539376234496');
+INSERT INTO `pms_groups_permission` VALUES ('64082363277119488', '1468755197309162133', '42334628953985024');
+INSERT INTO `pms_groups_permission` VALUES ('64082363428114432', '1468755197309162133', '42334838946009088');
+INSERT INTO `pms_groups_permission` VALUES ('64082363528777728', '1468755197309162133', '42334976082972672');
+INSERT INTO `pms_groups_permission` VALUES ('64082363629441024', '1468755197309162133', '42335081259339776');
+INSERT INTO `pms_groups_permission` VALUES ('64082363730104320', '1468755197309162133', '42335209235943424');
+INSERT INTO `pms_groups_permission` VALUES ('64082363830767616', '1468755197309162133', '42335311539212288');
+INSERT INTO `pms_groups_permission` VALUES ('64082363931430912', '1468755197309162133', '42335402681438208');
+INSERT INTO `pms_groups_permission` VALUES ('64082364082425856', '1468755197309162133', '42335721133969408');
+INSERT INTO `pms_groups_permission` VALUES ('64082364183089152', '1468755197309162133', '42335817183531008');
+INSERT INTO `pms_groups_permission` VALUES ('64082364350861312', '1468755197309162133', '42335940605120512');
+INSERT INTO `pms_groups_permission` VALUES ('64082364535410688', '1468755197309162133', '42336024805773312');
+INSERT INTO `pms_groups_permission` VALUES ('64082364988395520', '1468755197309162133', '42336123501940736');
+INSERT INTO `pms_groups_permission` VALUES ('64082365089058816', '1468755197309162133', '42336206301696000');
+INSERT INTO `pms_groups_permission` VALUES ('64082365189722112', '1468755197309162133', '42336271770587136');
+INSERT INTO `pms_groups_permission` VALUES ('64082365340717056', '1468755197309162133', '42336347972702208');
+INSERT INTO `pms_groups_permission` VALUES ('64082365441380352', '1468755197309162133', '42336433490366464');
+INSERT INTO `pms_groups_permission` VALUES ('64082365542043648', '1468755197309162133', '42336599123431424');
+INSERT INTO `pms_groups_permission` VALUES ('64082365642706944', '1468755197309162133', '42336697060429824');
+INSERT INTO `pms_groups_permission` VALUES ('64082365743370240', '1468755197309162133', '42336773992353792');
+INSERT INTO `pms_groups_permission` VALUES ('64082365844033536', '1468755197309162133', '42336853726072832');
+INSERT INTO `pms_groups_permission` VALUES ('64082365995028480', '1468755197309162133', '42336946441162752');
+INSERT INTO `pms_groups_permission` VALUES ('64082366095691776', '1468755197309162133', '42337029878452224');
+INSERT INTO `pms_groups_permission` VALUES ('64082366196355072', '1468755197309162133', '42337132236247040');
+INSERT INTO `pms_groups_permission` VALUES ('64082366297018368', '1468755197309162133', '42337204650905600');
+INSERT INTO `pms_groups_permission` VALUES ('64082366397681664', '1468755197309162133', '42337301711294464');
+INSERT INTO `pms_groups_permission` VALUES ('64082366481567744', '1468755197309162133', '42337378299285504');
+INSERT INTO `pms_groups_permission` VALUES ('64082366599008256', '1468755197309162133', '42337629286436864');
+INSERT INTO `pms_groups_permission` VALUES ('64082366699671552', '1468755197309162133', '42337745028255744');
+INSERT INTO `pms_groups_permission` VALUES ('64082366800334848', '1468755197309162133', '42337817904287744');
+INSERT INTO `pms_groups_permission` VALUES ('64082366900998144', '1468755197309162133', '42338384647032832');
+INSERT INTO `pms_groups_permission` VALUES ('64082367051993088', '1468755197309162133', '42338452590563328');
+INSERT INTO `pms_groups_permission` VALUES ('64082367202988032', '1468755197309162133', '42338538640904192');
+INSERT INTO `pms_groups_permission` VALUES ('64082367303651328', '1468755197309162133', '42338630085120000');
+INSERT INTO `pms_groups_permission` VALUES ('64082367404314624', '1468755197309162133', '42338743775924224');
+INSERT INTO `pms_groups_permission` VALUES ('64082367504977920', '1468755197309162133', '42356198170693632');
+INSERT INTO `pms_groups_permission` VALUES ('64082367605641216', '1468755197309162133', '42356266030338048');
+INSERT INTO `pms_groups_permission` VALUES ('64082362492784640', '1468755197309162133', '61562786651574272');
+INSERT INTO `pms_groups_permission` VALUES ('65091376714354688', '1468755197309162135', '42354812125188096');
+INSERT INTO `pms_groups_permission` VALUES ('65091376945041408', '1468755197309162135', '42354905771413504');
+INSERT INTO `pms_groups_permission` VALUES ('65091377121202176', '1468755197309162135', '42354988550197248');
+INSERT INTO `pms_groups_permission` VALUES ('65091377196699648', '1468755197309162135', '42355171505737728');
+INSERT INTO `pms_groups_permission` VALUES ('65091377272197120', '1468755197309162135', '42355325336031232');
+INSERT INTO `pms_groups_permission` VALUES ('65091377725181952', '1468755197309162135', '42355402511224832');
+INSERT INTO `pms_groups_permission` VALUES ('65091377800679424', '1468755197309162135', '42355510552301568');
+INSERT INTO `pms_groups_permission` VALUES ('65091377876176896', '1468755197309162135', '42355596724277248');
+INSERT INTO `pms_groups_permission` VALUES ('65091377976840192', '1468755197309162135', '42355693625282560');
+INSERT INTO `pms_groups_permission` VALUES ('65091378052337664', '1468755197309162135', '42355773019262976');
+INSERT INTO `pms_groups_permission` VALUES ('65091378127835136', '1468755197309162135', '42355862622179328');
+INSERT INTO `pms_groups_permission` VALUES ('65091378203332608', '1468755197309162135', '42355935212998656');
+INSERT INTO `pms_groups_permission` VALUES ('65091378278830080', '1468755197309162135', '42356020873269248');
+INSERT INTO `pms_groups_permission` VALUES ('65091378375299072', '1468755197309162135', '42356198170693632');
+INSERT INTO `pms_groups_permission` VALUES ('65091378454990848', '1468755197309162135', '42356266030338048');
+INSERT INTO `pms_groups_permission` VALUES ('65091378580819968', '1468755197309162135', '64059892574457856');
+INSERT INTO `pms_groups_permission` VALUES ('65091378656317440', '1468755197309162135', '64059999378214912');
+INSERT INTO `pms_groups_permission` VALUES ('65091378731814912', '1468755197309162135', '64060145163833344');
+INSERT INTO `pms_groups_permission` VALUES ('65091378807312384', '1468755197309162135', '64060216546693120');
+INSERT INTO `pms_groups_permission` VALUES ('65091378928947200', '1468755197309162135', '64060546483228672');
+INSERT INTO `pms_groups_permission` VALUES ('65091379008638976', '1468755197309162135', '64060742327865344');
+INSERT INTO `pms_groups_permission` VALUES ('65091379084136448', '1468755197309162135', '64060871856361472');
+INSERT INTO `pms_groups_permission` VALUES ('65091379159633920', '1468755197309162135', '64060949748781056');
+INSERT INTO `pms_groups_permission` VALUES ('65091379235131392', '1468755197309162135', '64061137204809728');
+INSERT INTO `pms_groups_permission` VALUES ('65091379310628864', '1468755197309162135', '64061220927311872');
+INSERT INTO `pms_groups_permission` VALUES ('65091379432263680', '1468755197309162135', '64061290498232320');
+INSERT INTO `pms_groups_permission` VALUES ('65091379511955456', '1468755197309162135', '64061357862948864');
+INSERT INTO `pms_groups_permission` VALUES ('65091061193641984', '1468755197309162136', '41969113630773248');
+INSERT INTO `pms_groups_permission` VALUES ('65091061344636928', '1468755197309162136', '41969192357859328');
+INSERT INTO `pms_groups_permission` VALUES ('65091061420134400', '1468755197309162136', '41969252499984384');
+INSERT INTO `pms_groups_permission` VALUES ('65091061520797696', '1468755197309162136', '41976726762295296');
+INSERT INTO `pms_groups_permission` VALUES ('65091061596295168', '1468755197309162136', '41976831846387712');
+INSERT INTO `pms_groups_permission` VALUES ('65091061696958464', '1468755197309162136', '41976904223297536');
+INSERT INTO `pms_groups_permission` VALUES ('65091061772455936', '1468755197309162136', '41977259501817856');
+INSERT INTO `pms_groups_permission` VALUES ('65091061847953408', '1468755197309162136', '41977400967303168');
+INSERT INTO `pms_groups_permission` VALUES ('65091061923450880', '1468755197309162136', '41977528792911872');
+INSERT INTO `pms_groups_permission` VALUES ('65091061998948352', '1468755197309162136', '41977654831747072');
+INSERT INTO `pms_groups_permission` VALUES ('65091062074445824', '1468755197309162136', '41977734154424320');
+INSERT INTO `pms_groups_permission` VALUES ('65091062149943296', '1468755197309162136', '41977922247987200');
+INSERT INTO `pms_groups_permission` VALUES ('65091062225440768', '1468755197309162136', '41978045921234944');
+INSERT INTO `pms_groups_permission` VALUES ('65091062351269888', '1468755197309162136', '41978134387494912');
+INSERT INTO `pms_groups_permission` VALUES ('65091062426767360', '1468755197309162136', '41978216994312192');
+INSERT INTO `pms_groups_permission` VALUES ('65091062502264832', '1468755197309162136', '41978289807429632');
+INSERT INTO `pms_groups_permission` VALUES ('65091062602928128', '1468755197309162136', '41978468690300928');
+INSERT INTO `pms_groups_permission` VALUES ('65091062678425600', '1468755197309162136', '41978566618910720');
+INSERT INTO `pms_groups_permission` VALUES ('65091062753923072', '1468755197309162136', '41978664295862272');
+INSERT INTO `pms_groups_permission` VALUES ('65091062829420544', '1468755197309162136', '41978754309820416');
+INSERT INTO `pms_groups_permission` VALUES ('65091062904918016', '1468755197309162136', '41978832399372288');
+INSERT INTO `pms_groups_permission` VALUES ('65091062980415488', '1468755197309162136', '41980651519348736');
+INSERT INTO `pms_groups_permission` VALUES ('65091063097856000', '1468755197309162136', '41980770788577280');
+INSERT INTO `pms_groups_permission` VALUES ('65091063181742080', '1468755197309162136', '42337629286436864');
+INSERT INTO `pms_groups_permission` VALUES ('65091063257239552', '1468755197309162136', '42337745028255744');
+INSERT INTO `pms_groups_permission` VALUES ('65091063332737024', '1468755197309162136', '42337817904287744');
+INSERT INTO `pms_groups_permission` VALUES ('65091063408234496', '1468755197309162136', '42338384647032832');
+INSERT INTO `pms_groups_permission` VALUES ('65091063483731968', '1468755197309162136', '42338452590563328');
+INSERT INTO `pms_groups_permission` VALUES ('65091063601172480', '1468755197309162136', '42338538640904192');
+INSERT INTO `pms_groups_permission` VALUES ('65091063685058560', '1468755197309162136', '42338630085120000');
+INSERT INTO `pms_groups_permission` VALUES ('65091063760556032', '1468755197309162136', '42338743775924224');
+INSERT INTO `pms_groups_permission` VALUES ('65091060962955264', '1468755197309162136', '61562786651574272');
+INSERT INTO `pms_groups_permission` VALUES ('65141224696188928', '1468755197309162137', '41969113630773248');
+INSERT INTO `pms_groups_permission` VALUES ('65141224826212352', '1468755197309162137', '41969192357859328');
+INSERT INTO `pms_groups_permission` VALUES ('65141224897515520', '1468755197309162137', '41969252499984384');
+INSERT INTO `pms_groups_permission` VALUES ('65141224977207296', '1468755197309162137', '41976726762295296');
+INSERT INTO `pms_groups_permission` VALUES ('65141225048510464', '1468755197309162137', '41976831846387712');
+INSERT INTO `pms_groups_permission` VALUES ('65141225128202240', '1468755197309162137', '41976904223297536');
+INSERT INTO `pms_groups_permission` VALUES ('65141225199505408', '1468755197309162137', '41977259501817856');
+INSERT INTO `pms_groups_permission` VALUES ('65141225400832000', '1468755197309162137', '41977400967303168');
+INSERT INTO `pms_groups_permission` VALUES ('65141225480523776', '1468755197309162137', '41977528792911872');
+INSERT INTO `pms_groups_permission` VALUES ('65141225551826944', '1468755197309162137', '41977654831747072');
+INSERT INTO `pms_groups_permission` VALUES ('65141225652490240', '1468755197309162137', '41977734154424320');
+INSERT INTO `pms_groups_permission` VALUES ('65141225732182016', '1468755197309162137', '41977922247987200');
+INSERT INTO `pms_groups_permission` VALUES ('65141225803485184', '1468755197309162137', '41978045921234944');
+INSERT INTO `pms_groups_permission` VALUES ('65141225883176960', '1468755197309162137', '41978134387494912');
+INSERT INTO `pms_groups_permission` VALUES ('65141225954480128', '1468755197309162137', '41978216994312192');
+INSERT INTO `pms_groups_permission` VALUES ('65141226034171904', '1468755197309162137', '41978289807429632');
+INSERT INTO `pms_groups_permission` VALUES ('65141226105475072', '1468755197309162137', '41978468690300928');
+INSERT INTO `pms_groups_permission` VALUES ('65141226185166848', '1468755197309162137', '41978566618910720');
+INSERT INTO `pms_groups_permission` VALUES ('65141226407464960', '1468755197309162137', '41978664295862272');
+INSERT INTO `pms_groups_permission` VALUES ('65141226508128256', '1468755197309162137', '41978754309820416');
+INSERT INTO `pms_groups_permission` VALUES ('65141226587820032', '1468755197309162137', '41978832399372288');
+INSERT INTO `pms_groups_permission` VALUES ('65141227745447936', '1468755197309162137', '41980651519348736');
+INSERT INTO `pms_groups_permission` VALUES ('65141227816751104', '1468755197309162137', '41980770788577280');
+INSERT INTO `pms_groups_permission` VALUES ('65141227896442880', '1468755197309162137', '42334265874059264');
+INSERT INTO `pms_groups_permission` VALUES ('65141227997106176', '1468755197309162137', '42334379363536896');
+INSERT INTO `pms_groups_permission` VALUES ('65141228068409344', '1468755197309162137', '42334463782293504');
+INSERT INTO `pms_groups_permission` VALUES ('65141228148101120', '1468755197309162137', '42334539376234496');
+INSERT INTO `pms_groups_permission` VALUES ('65141228219404288', '1468755197309162137', '42334628953985024');
+INSERT INTO `pms_groups_permission` VALUES ('65141228299096064', '1468755197309162137', '42334838946009088');
+INSERT INTO `pms_groups_permission` VALUES ('65141228370399232', '1468755197309162137', '42334976082972672');
+INSERT INTO `pms_groups_permission` VALUES ('65141228450091008', '1468755197309162137', '42335081259339776');
+INSERT INTO `pms_groups_permission` VALUES ('65141228521394176', '1468755197309162137', '42335209235943424');
+INSERT INTO `pms_groups_permission` VALUES ('65141228601085952', '1468755197309162137', '42335311539212288');
+INSERT INTO `pms_groups_permission` VALUES ('65141228672389120', '1468755197309162137', '42335402681438208');
+INSERT INTO `pms_groups_permission` VALUES ('65141228752080896', '1468755197309162137', '42335721133969408');
+INSERT INTO `pms_groups_permission` VALUES ('65141228852744192', '1468755197309162137', '42335817183531008');
+INSERT INTO `pms_groups_permission` VALUES ('65141228924047360', '1468755197309162137', '42335940605120512');
+INSERT INTO `pms_groups_permission` VALUES ('65141229003739136', '1468755197309162137', '42336024805773312');
+INSERT INTO `pms_groups_permission` VALUES ('65141229075042304', '1468755197309162137', '42336123501940736');
+INSERT INTO `pms_groups_permission` VALUES ('65141229154734080', '1468755197309162137', '42336206301696000');
+INSERT INTO `pms_groups_permission` VALUES ('65141229226037248', '1468755197309162137', '42336271770587136');
+INSERT INTO `pms_groups_permission` VALUES ('65141229305729024', '1468755197309162137', '42336347972702208');
+INSERT INTO `pms_groups_permission` VALUES ('65141229377032192', '1468755197309162137', '42336433490366464');
+INSERT INTO `pms_groups_permission` VALUES ('65141229658050560', '1468755197309162137', '42336599123431424');
+INSERT INTO `pms_groups_permission` VALUES ('65141229729353728', '1468755197309162137', '42336697060429824');
+INSERT INTO `pms_groups_permission` VALUES ('65141229809045504', '1468755197309162137', '42336773992353792');
+INSERT INTO `pms_groups_permission` VALUES ('65141229880348672', '1468755197309162137', '42336853726072832');
+INSERT INTO `pms_groups_permission` VALUES ('65141229960040448', '1468755197309162137', '42336946441162752');
+INSERT INTO `pms_groups_permission` VALUES ('65141230031343616', '1468755197309162137', '42337029878452224');
+INSERT INTO `pms_groups_permission` VALUES ('65141230111035392', '1468755197309162137', '42337132236247040');
+INSERT INTO `pms_groups_permission` VALUES ('65141230182338560', '1468755197309162137', '42337204650905600');
+INSERT INTO `pms_groups_permission` VALUES ('65141230262030336', '1468755197309162137', '42337301711294464');
+INSERT INTO `pms_groups_permission` VALUES ('65141230333333504', '1468755197309162137', '42337378299285504');
+INSERT INTO `pms_groups_permission` VALUES ('65141230413025280', '1468755197309162137', '42337629286436864');
+INSERT INTO `pms_groups_permission` VALUES ('65141230484328448', '1468755197309162137', '42337745028255744');
+INSERT INTO `pms_groups_permission` VALUES ('65141230564020224', '1468755197309162137', '42337817904287744');
+INSERT INTO `pms_groups_permission` VALUES ('65141230836649984', '1468755197309162137', '42338384647032832');
+INSERT INTO `pms_groups_permission` VALUES ('65141230916341760', '1468755197309162137', '42338452590563328');
+INSERT INTO `pms_groups_permission` VALUES ('65141230987644928', '1468755197309162137', '42338538640904192');
+INSERT INTO `pms_groups_permission` VALUES ('65141231067336704', '1468755197309162137', '42338630085120000');
+INSERT INTO `pms_groups_permission` VALUES ('65141231168000000', '1468755197309162137', '42338743775924224');
+INSERT INTO `pms_groups_permission` VALUES ('65141231318994944', '1468755197309162137', '42338936218980352');
+INSERT INTO `pms_groups_permission` VALUES ('65141231390298112', '1468755197309162137', '42339022474842112');
+INSERT INTO `pms_groups_permission` VALUES ('65141231469989888', '1468755197309162137', '42339129958076416');
+INSERT INTO `pms_groups_permission` VALUES ('65141231541293056', '1468755197309162137', '42339223352643584');
+INSERT INTO `pms_groups_permission` VALUES ('65141231620984832', '1468755197309162137', '42354812125188096');
+INSERT INTO `pms_groups_permission` VALUES ('65141231692288000', '1468755197309162137', '42354905771413504');
+INSERT INTO `pms_groups_permission` VALUES ('65141231771979776', '1468755197309162137', '42354988550197248');
+INSERT INTO `pms_groups_permission` VALUES ('65141231843282944', '1468755197309162137', '42355171505737728');
+INSERT INTO `pms_groups_permission` VALUES ('65141231922974720', '1468755197309162137', '42355325336031232');
+INSERT INTO `pms_groups_permission` VALUES ('65141231994277888', '1468755197309162137', '42355402511224832');
+INSERT INTO `pms_groups_permission` VALUES ('65141232073969664', '1468755197309162137', '42355510552301568');
+INSERT INTO `pms_groups_permission` VALUES ('65141232145272832', '1468755197309162137', '42355596724277248');
+INSERT INTO `pms_groups_permission` VALUES ('65141232224964608', '1468755197309162137', '42355693625282560');
+INSERT INTO `pms_groups_permission` VALUES ('65141232296267776', '1468755197309162137', '42355773019262976');
+INSERT INTO `pms_groups_permission` VALUES ('65141232375959552', '1468755197309162137', '42355862622179328');
+INSERT INTO `pms_groups_permission` VALUES ('65141232476622848', '1468755197309162137', '42355935212998656');
+INSERT INTO `pms_groups_permission` VALUES ('65141232547926016', '1468755197309162137', '42356020873269248');
+INSERT INTO `pms_groups_permission` VALUES ('65141232627617792', '1468755197309162137', '42356198170693632');
+INSERT INTO `pms_groups_permission` VALUES ('65141232698920960', '1468755197309162137', '42356266030338048');
+INSERT INTO `pms_groups_permission` VALUES ('65141224528416768', '1468755197309162137', '61562786651574272');
+INSERT INTO `pms_groups_permission` VALUES ('65141232778612736', '1468755197309162137', '64059892574457856');
+INSERT INTO `pms_groups_permission` VALUES ('65141232849915904', '1468755197309162137', '64059999378214912');
+INSERT INTO `pms_groups_permission` VALUES ('65141232929607680', '1468755197309162137', '64060145163833344');
+INSERT INTO `pms_groups_permission` VALUES ('65141233000910848', '1468755197309162137', '64060216546693120');
+INSERT INTO `pms_groups_permission` VALUES ('65141233080602624', '1468755197309162137', '64060546483228672');
+INSERT INTO `pms_groups_permission` VALUES ('65141233151905792', '1468755197309162137', '64060742327865344');
+INSERT INTO `pms_groups_permission` VALUES ('65141233231597568', '1468755197309162137', '64060871856361472');
+INSERT INTO `pms_groups_permission` VALUES ('65141233302900736', '1468755197309162137', '64060949748781056');
+INSERT INTO `pms_groups_permission` VALUES ('65141233382592512', '1468755197309162137', '64061137204809728');
+INSERT INTO `pms_groups_permission` VALUES ('65141233453895680', '1468755197309162137', '64061220927311872');
+INSERT INTO `pms_groups_permission` VALUES ('65141233533587456', '1468755197309162137', '64061290498232320');
+INSERT INTO `pms_groups_permission` VALUES ('65141233818800128', '1468755197309162137', '64061357862948864');
+INSERT INTO `pms_groups_permission` VALUES ('65141230635323392', '1468755197309162137', '64738735329120256');
+INSERT INTO `pms_groups_permission` VALUES ('65141226659123200', '1468755197309162137', '64739027659526144');
+INSERT INTO `pms_groups_permission` VALUES ('65141226738814976', '1468755197309162137', '64739308640145408');
+INSERT INTO `pms_groups_permission` VALUES ('65141226839478272', '1468755197309162137', '64739380002033664');
+INSERT INTO `pms_groups_permission` VALUES ('65141226990473216', '1468755197309162137', '64739571354570752');
+INSERT INTO `pms_groups_permission` VALUES ('65141227091136512', '1468755197309162137', '64739781774413824');
+INSERT INTO `pms_groups_permission` VALUES ('65141227162439680', '1468755197309162137', '64739963341639680');
+INSERT INTO `pms_groups_permission` VALUES ('65141227242131456', '1468755197309162137', '64740034804191232');
+INSERT INTO `pms_groups_permission` VALUES ('65141227313434624', '1468755197309162137', '64740129687736320');
+INSERT INTO `pms_groups_permission` VALUES ('65141227393126400', '1468755197309162137', '64740203201302528');
+INSERT INTO `pms_groups_permission` VALUES ('65141227464429568', '1468755197309162137', '64740359808225280');
+INSERT INTO `pms_groups_permission` VALUES ('65141227544121344', '1468755197309162137', '64809905348939776');
+INSERT INTO `pms_groups_permission` VALUES ('65141227615424512', '1468755197309162137', '64815327690625024');
+INSERT INTO `pms_groups_permission` VALUES ('65141230715015168', '1468755197309162137', '65140829198487552');
+INSERT INTO `pms_groups_permission` VALUES ('65141231239303168', '1468755197309162137', '65140900749119488');
+
+-- ----------------------------
+-- Table structure for pms_groups_user
+-- ----------------------------
+DROP TABLE IF EXISTS `pms_groups_user`;
+CREATE TABLE `pms_groups_user` (
+  `id` bigint(20) NOT NULL,
+  `groupid` bigint(20) DEFAULT NULL,
+  `userid` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `INDEX_GU` (`groupid`,`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='组成员';
+
+-- ----------------------------
+-- Records of pms_groups_user
+-- ----------------------------
+INSERT INTO `pms_groups_user` VALUES ('64082500007235584', '1468755197309162133', '1468140265954907628');
+INSERT INTO `pms_groups_user` VALUES ('65088655424753664', '1468755197309162135', '1467191338628906628');
+INSERT INTO `pms_groups_user` VALUES ('64067989481197568', '1468755197309162136', '1467191338628906628');
+INSERT INTO `pms_groups_user` VALUES ('66642626870251520', '1468755197309162137', '65140463652311040');
+INSERT INTO `pms_groups_user` VALUES ('43355033198137344', '1468755197309162137', '1461312703628858832');
 
 -- ----------------------------
 -- Table structure for pms_knowledges
@@ -303,9 +558,8 @@ CREATE TABLE `pms_knowledges` (
 -- ----------------------------
 -- Records of pms_knowledges
 -- ----------------------------
-INSERT INTO `pms_knowledges` VALUES ('1468921601280784732', '1461312703628858832', '4', 'lockPHP框架升级2.0', 'php', '全新lockPHP框架升级2.0', 'https://my.oschina.net/lockupme/blog/745074', '', '<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n	之前一直没有维护lockPHP，最近项目中一直在使用并做了一些更改与升级\n</p>\n<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n	github地址：<a href=\"https://github.com/lock-upme/lockphp\" target=\"_blank\" rel=\"nofollow\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;outline:0px;border:none;text-decoration:none;color:#4466BB;transition:color 0.3s;\">https://github.com/lock-upme/lockphp</a>\n</p>\n<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n	下一步会升级到\n</p>\n<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n	1.pdo\n</p>\n<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n	2.lock引用优化\n</p>\n<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n	3.添加命名空间\n</p>', '21', '3', '1', '1', '1', '1475033370', '1475051052');
-INSERT INTO `pms_knowledges` VALUES ('1468921646897369828', '1461312703628858832', '4', '13 款开源的全文搜索引擎', '全文 搜索引擎', '主要介绍13款现有的开源搜索引擎，你可以将它们用在你的项目中以实现检索功能。', 'http://www.open-open.com/news/view/e36182', '', '<div class=\"inner\" style=\"box-sizing:border-box;color:#333333;font-family:&quot;font-size:14px;line-height:20px;white-space:normal;\">\n	<span style=\"box-sizing:border-box;font-weight:700;\">1.&nbsp; Lucene</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nLucene的开发语言是Java，也是Java家族中最为出名的一个开源搜索引擎，在Java世界中已经是标准的全文检索程序，它提供了完整的查询引擎和索引引擎，没有中文分词引擎，需要自己去实现，因此用Lucene去做一个搜素引擎需要自己去架构.另外它不支持实时搜索，但linkedin和twitter有分别对Lucene改进的实时搜素. 其中Lucene有一个C++移植版本叫CLucene，CLucene因为使用C++编写，所以理论上要比lucene快.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://lucene.apache.org/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://lucene.apache.org/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nCLucene官方主页：<a href=\"http://sourceforge.net/projects/clucene/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://sourceforge.net/projects/clucene/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">2.&nbsp; Sphinx</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nSphinx是一个用C++语言写的开源搜索引擎，也是现在比较主流的搜索引擎之一，在建立索引的事件方面比Lucene快50%，但是索引文件比Lucene要大一倍，因此Sphinx在索引的建立方面是空间换取事件的策略，在检索速度上，和lucene相差不大，但检索精准度方面Lucene要优于Sphinx，另外在加入中文分词引擎难度方面，Lucene要优于Sphinx.其中Sphinx支持实时搜索，使用起来比较简单方便.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://sphinxsearch.com/about/sphinx/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://sphinxsearch.com/about/sphinx/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">3.&nbsp; Xapian</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nXapian是一个用C++编写的全文检索程序，它的api和检索原理和lucene在很多方面都很相似，算是填补了lucene在C++中的一个空缺.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://xapian.org/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://xapian.org/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">4.&nbsp; Nutch</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nNutch是一个用java实现的开源的web搜索引擎，包括爬虫crawler，索引引擎，查询引擎. 其中Nutch是基于Lucene的，Lucene为Nutch提供了文本索引和搜索的API.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n对于应该使用Lucene还是使用Nutch，应该是如果你不需要抓取数据的话，应该使用Lucene，最常见的应用是：你有数据源，需要为这些数据提供一个搜索页面，在这种情况下，最好的方式是直接从数据库中取出数据，并用Lucene API建立索引.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://nutch.apache.org/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://nutch.apache.org/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">5.&nbsp; DataparkSearch</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nDataparkSearch是一个用C语言实现的开源的搜索引擎. 其中网页排序是采用神经网络模型.&nbsp; 其中支持HTTP，HTTPS，FTP，NNTP等下载网页.包括索引引擎，检索引擎和中文分词引擎(这个也是唯一的一个开源的搜索引擎里有中文分词引擎).能个性化定制搜索结果，拥有完整的日志记录.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://www.dataparksearch.org/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://www.dataparksearch.org/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">6.&nbsp; Zettair</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nZettair是根据Justin Zobel的研究成果为基础的全文检索实验系统.它是用C语言实现的. 其中Justin Zobel在全文检索领域很有名气，是业界第一个系统提出倒排序索引差分压缩算法的人，倒排列表的压缩大大提高了检索和加载的性能，同时空间膨胀率也缩小到相当优秀的水平. 由于Zettair是源于学术界，代码是由RMIT University的搜索引擎组织写的，因此它的代码简洁精炼，算法高效，是学习倒排索引经典算法的非常好的实例. 其中支持linux，windows，mac os等系统.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://www.seg.rmit.edu.au/zettair/about.html\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://www.seg.rmit.edu.au/zettair/about.html</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">7.&nbsp; Indri</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nIndri是一个用C语言和C++语言写的全文检索引擎系统，是由University of Massachusetts和Carnegie Mellon University合作推出的一个开源项目. 特点是跨平台，API接口支持Java，PHP，C++.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://www.lemurproject.org/indri/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://www.lemurproject.org/indri/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">8.&nbsp; Terrier</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nTerrier是由School of Computing Science，Universityof Glasgow用java开发的一个全文检索系统.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://terrier.org/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://terrier.org/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">9.&nbsp; Galago</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nGalago是一个用java语言写的关于文本搜索的工具集. 其中包括索引引擎和查询引擎，还包括一个叫TupleFlow的分布式计算框架(和google的MapReduce很像).这个检索系统支持很多Indri查询语言.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://www.galagosearch.org/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://www.galagosearch.org/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">10.&nbsp; Zebra</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nZebra是一个用C语言实现的检索程序，特点是对大数据的支持，支持EMAIL，XML，MARC等格式的数据.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"https://www.indexdata.com/zebra\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">https://www.indexdata.com/zebra</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">11.&nbsp; Solr</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nSolr是一个用java开发的独立的企业级搜索应用服务器，它提供了类似于Web-service的API接口，它是基于Lucene的全文检索服务器，也算是Lucene的一个变种，很多一线互联网公司都在使用Solr，也算是一种成熟的解决方案.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://lucene.apache.org/solr/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://lucene.apache.org/solr/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">12.&nbsp; Elasticsearch</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nElasticsearch是一个采用java语言开发的，基于Lucene构造的开源，分布式的搜索引擎. 设计用于云计算中，能够达到实时搜索，稳定可靠. Elasticsearch的数据模型是JSON.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"http://www.elasticsearch.org/\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">http://www.elasticsearch.org/</a>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n<span style=\"box-sizing:border-box;font-weight:700;\">13.&nbsp; Whoosh</span>&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\nWhoosh是一个用纯python写的开源搜索引擎.&nbsp;<br style=\"box-sizing:border-box;\" />\n<br style=\"box-sizing:border-box;\" />\n官方主页：<a href=\"https://bitbucket.org/mchaput/whoosh/wiki/Home\" target=\"_blank\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">https://bitbucket.org/mchaput/whoosh/wiki/Home</a>\n</div>\n<div class=\"post-tags\" style=\"box-sizing:border-box;margin-bottom:20px;color:#333333;font-family:&quot;font-size:14px;line-height:20px;white-space:normal;\">\n	<a href=\"http://www.open-open.com/news/tags/%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2\" style=\"box-sizing:border-box;color:#EE6E50 !important;\">全文搜索</a>\n</div>', '6', '0', '0', '1', '1', '1475033415', '1475050979');
-INSERT INTO `pms_knowledges` VALUES ('1468931070950897432', '1468915433602979028', '4', ' MongoDB自增主键id生成器', 'mongodb', 'mongodb不支持事务，所以，在你的项目中应用时，要注意这点。无论什么设计，都不要要求mongodb保证数据的完整性。', 'https://my.oschina.net/lockupme/blog/650734', '', '<p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		参考地址：\n	</p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		<a href=\"http://www.runoob.com/mongodb/mongodb-atomic-operations.html\" rel=\"nofollow\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;outline:0px;border:none;text-decoration:none;color:#4466BB;transition:color 0.3s;\">http://www.runoob.com/mongodb/mongodb-atomic-operations.html</a>\n	</p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		mongodb不支持事务，所以，在你的项目中应用时，要注意这点。无论什么设计，都不要要求mongodb保证数据的完整性。\n	</p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		但是mongodb提供了许多原子操作，比如文档的保存，修改，删除等，都是原子操作。\n	</p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		所谓原子操作就是要么这个文档保存到Mongodb，要么没有保存到Mongodb，不会出现查询到的文档没有保存完整的情况。\n	</p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		<span style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;line-height:22.5px;\">原子操作：</span>\n	</p>\n<span id=\"OSC_h4_1\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\"></span><span style=\"color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\"></span>\n	<h4 id=\"h4_0\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;font-size:16px;font-weight:500;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		$inc\n	</h4>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:0px;white-space:normal;border:0px;margin-top:0px;padding:0px;line-height:2em;font-family:\'Microsoft Yahei\', \'Helvetica Neue\', Helvetica, Arial, sans-serif;color:#333333;background-color:#FFFFFF;\">\n		$inc可以对文档的某个值为数字型（只能为满足要求的数字）的键进行增减的操作。\n	</p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:0px;white-space:normal;border:0px;margin-top:0px;padding:0px;line-height:2em;font-family:\'Microsoft Yahei\', \'Helvetica Neue\', Helvetica, Arial, sans-serif;color:#333333;background-color:#FFFFFF;\">\n		<br />\n	</p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:0px;white-space:normal;border:0px;margin-top:0px;padding:0px;line-height:2em;font-family:\'Microsoft Yahei\', \'Helvetica Neue\', Helvetica, Arial, sans-serif;color:#333333;background-color:#FFFFFF;\">\n		php方法，会自动生成一张集合\n	</p>\n<pre class=\"brush:php;toolbar: true; auto-links: false; hljs\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;overflow-x:auto;padding:2px;color:#DCDCDC;border-radius:3px;line-height:1.4;word-wrap:normal;font-size:13px;font-family:Menlo, Monaco, Consolas, \'Courier New\', monospace;background:#3F3F3F;\"><code class=\"hljs php\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;display:block;overflow-x:auto;padding:10px;border-radius:4px;line-height:1.4;word-wrap:normal;font-family:Menlo, Monaco, Consolas, \'Courier New\', monospace;background-image:initial;background-attachment:initial;background-size:initial;background-origin:initial;background-clip:initial;background-position:initial;background-repeat:initial;\"><span class=\"hljs-function\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\"><span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\"><span class=\"hljs-function\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\"><span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\">function</span></span></span><span class=\"hljs-function\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\">&nbsp;</span><span class=\"hljs-title\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#EFEF8F;\"><span class=\"hljs-function\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\"><span class=\"hljs-title\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\">autoId</span></span></span><span class=\"hljs-params\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\"><span class=\"hljs-function\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\"><span class=\"hljs-params\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\">($name,&nbsp;$db)</span></span></span></span>{\n	&nbsp;&nbsp;&nbsp;	$update&nbsp;=&nbsp;<span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">array</span>(<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'$inc\'</span>=&gt;<span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">array</span>(<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"id\"</span>=&gt;<span class=\"hljs-number\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#8CD0D3;\">1</span>));\n	&nbsp;&nbsp;&nbsp;	$query&nbsp;=&nbsp;<span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">array</span>(<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'name\'</span>=&gt;$name);\n	&nbsp;&nbsp;&nbsp;	$command&nbsp;=&nbsp;<span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">array</span>(\n	&nbsp;&nbsp;&nbsp; <span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'findandmodify\'</span>=&gt;<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'autoIds\'</span>,&nbsp;<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'update\'</span>=&gt;$update,\n	&nbsp;&nbsp;&nbsp; <span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'query\'</span>=&gt;$query,&nbsp;<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'new\'</span>=&gt;<span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">true</span>,&nbsp;<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'upsert\'</span>=&gt;<span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">true</span> &nbsp;&nbsp;&nbsp;	);\n	&nbsp;&nbsp;&nbsp;	$id&nbsp;=&nbsp;$db-&gt;command($command);\n	&nbsp;&nbsp;&nbsp; <span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">return</span>&nbsp;$id[<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'value\'</span>][<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'id\'</span>];\n&nbsp;&nbsp;&nbsp;}</code></pre>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		<br />\n	</p>\n	<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:\'Pingfang SC\', STHeiti, \'Lantinghei SC\', \'Open Sans\', Arial, \'Hiragino Sans GB\', \'Microsoft YaHei\', \'WenQuanYi Micro Hei\', SimSun, sans-serif;font-size:16px;line-height:28px;white-space:normal;background-color:#F8F8F8;\">\n		demo:\n	</p>\n<pre class=\"brush:php;toolbar: true; auto-links: false; hljs\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;overflow-x:auto;padding:2px;color:#DCDCDC;border-radius:3px;line-height:1.4;word-wrap:normal;font-size:13px;font-family:Menlo, Monaco, Consolas, \'Courier New\', monospace;background:#3F3F3F;\"><code class=\"hljs php\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;display:block;overflow-x:auto;padding:10px;border-radius:4px;line-height:1.4;word-wrap:normal;font-family:Menlo, Monaco, Consolas, \'Courier New\', monospace;background-image:initial;background-attachment:initial;background-size:initial;background-origin:initial;background-clip:initial;background-position:initial;background-repeat:initial;\">&nbsp;<span class=\"hljs-comment\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#7F9F7F;\">//&nbsp;连接到mongodb</span> &nbsp;&nbsp;&nbsp;$m&nbsp;=&nbsp;<span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">new</span>&nbsp;MongoClient();\n&nbsp;&nbsp;&nbsp;$db&nbsp;=&nbsp;$m-&gt;myblog;\n&nbsp;&nbsp;&nbsp;$collection&nbsp;=&nbsp;$db-&gt;createCollection(<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"blog\"</span>);\n&nbsp;&nbsp;&nbsp;$collection&nbsp;=&nbsp;$db-&gt;blog;\n&nbsp;&nbsp;&nbsp;\n&nbsp;&nbsp;&nbsp;<span class=\"hljs-comment\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#7F9F7F;\">//自动ID</span> &nbsp;&nbsp;&nbsp;$id&nbsp;=&nbsp;&nbsp;autoId(<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\'blog\'</span>,&nbsp;$db);\n&nbsp;&nbsp;&nbsp;$document&nbsp;=&nbsp;<span class=\"hljs-keyword\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#E3CEAB;\">array</span>(\n&nbsp;&nbsp;&nbsp; <span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"id\"</span> =&gt;&nbsp;$id,\n&nbsp;&nbsp;&nbsp; <span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"title\"</span>&nbsp;=&gt;&nbsp;<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"MongoDB\"</span>,\n&nbsp;&nbsp;&nbsp; <span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"description\"</span>&nbsp;=&gt;&nbsp;<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"database\"</span>,\n&nbsp;&nbsp;&nbsp; <span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"likes\"</span>&nbsp;=&gt;&nbsp;<span class=\"hljs-number\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#8CD0D3;\">100</span>,\n&nbsp;&nbsp;&nbsp; <span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"url\"</span>&nbsp;=&gt;&nbsp;<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"http://www.w3cschool.cc/mongodb/\"</span>,\n&nbsp;&nbsp;&nbsp; <span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"by\"</span>,&nbsp;<span class=\"hljs-string\" style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;color:#CC9393;\">\"w3cschool.cc\"</span> &nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;\n&nbsp;&nbsp;&nbsp;$collection-&gt;insert($document);</code></pre>\n</p>', '31', '0', '0', '1', '1', '1475043974', '1475051171');
+INSERT INTO `pms_knowledges` VALUES ('66618679508340736', '1461312703628858832', '8', 'OPMS 1.2 版本更新发布', 'OPMS', '主要新增消息通知及考勤管理，其他功能优化，样式优化', 'https://my.oschina.net/lockupme/blog/778857', '', '<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;white-space:normal;background-color:#F8F8F8;\">\n	主要新增消息通知及考勤管理，其他功能优化，样式优化\n</p>\n<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;white-space:normal;background-color:#F8F8F8;\">\n	1、修订用户登录后跳转<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n2、修订审批请假，天数不能输入小数问题<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n3、增加考勤管理<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;1、增加上下班考勤打卡<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;2、个人考勤列表、小计、搜索<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;3、全部员工考勤列表，小计<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;4、员工管理添加个人考勤快捷链接<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n4、增加消息通知功能<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;1、消息顶部红点显示<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;2、消息列表展示与删除<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;3、添加审批消息通知，审核通知<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;4、添加知识评论和赞通知<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n&nbsp; &nbsp;5、添加相册评论和赞通知\n</p>\n<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;white-space:normal;background-color:#F8F8F8;\">\n	5、增加公告删除功能<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n6、增加简历删除功能<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n7、优化表格抬头样式<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n8、初始化用户权限\n</p>\n<p style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;margin-bottom:16px;color:#3D464D;font-family:&quot;font-size:16px;white-space:normal;background-color:#F8F8F8;\">\n	9、员工权限管理增加考勤设置、公告删除设置、简历删除设置<br style=\"box-sizing:inherit;-webkit-tap-highlight-color:transparent;\" />\n10、优化用户退出\n</p>', '6', '1', '0', '1', '1', '1490686018', '1490686018');
+INSERT INTO `pms_knowledges` VALUES ('66635963073302528', '1461312703628858832', '4', 'OPMS 1.3 版本更新发布', '', '终于迎来了OPMS1.3版本的更新，群里的朋友一直在苦苦等待。本次改动的地方比较多，也优化了之前一些功能。在这里感谢各位OPMS使用者提供的意见反馈，希望后续提出更加宝贵的意见！', '', '', '<p>\n	<span style=\"font-size:14px;\">终于迎来了OPMS1.3版本的更新，群里的朋友一直在苦苦等待。本次改动的地方比较多，也优化了之前一些功能。在这里感谢各位OPMS使用者提供的意见反馈，希望后续提出更加宝贵的意见！</span>\n</p>\n<p>\n	<span style=\"font-size:14px;\">&nbsp;Fix如下：</span>\n</p>\n<ol>\n	<li>\n		<span style=\"font-size:14px;\">发布项目成功后，添加项目流程引导设置</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">调整项目管里各个栏目的样式</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">增加项目管理任务、bug、需求Table排序</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">增加我的相关任务、bug、需求Table排序</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">新增项目文档管理</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">新增项目版本管理</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">新增项目批量新建任务</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">新增项目克隆任务</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">新增知识分享、相册删除功能</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">修订审批人员选择功能</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">修订考勤日期搜索功能</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">新增组管理，完善后台权限管理，人员分配，人员可以多组</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">新增权限管理</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">调整相册样式</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">调整“我的主页”模块</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">调整项目管理中各个栏目样式图标</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">修订图片上传在有的电脑上，不能上传中文名称图片</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">调整和优化功能代码</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">优化后台左侧导航菜单</span>\n	</li>\n	<li>\n		<span style=\"font-size:14px;\">调整和优化相关表结构</span>\n	</li>\n</ol>\n<p>\n	<span style=\"font-size:14px;\"><img src=\"/static/uploadfile/2017-3/28/66ca879b967a225cf8ef76736dcd59ca.png\" alt=\"\" /><br />\n</span>\n</p>', '7', '0', '0', '1', '1', '1490690139', '1490690326');
 
 -- ----------------------------
 -- Table structure for pms_knowledges_comment
@@ -325,9 +579,7 @@ CREATE TABLE `pms_knowledges_comment` (
 -- ----------------------------
 -- Records of pms_knowledges_comment
 -- ----------------------------
-INSERT INTO `pms_knowledges_comment` VALUES ('9025311345741824', '1467191338628906628', '1468921601280784732', '我以前就是做PHP的', '1476954689', '1');
-INSERT INTO `pms_knowledges_comment` VALUES ('9273364971524096', '1467191338628906628', '1468921601280784732', 'lockPHP', '1477013830', '1');
-INSERT INTO `pms_knowledges_comment` VALUES ('9298587166969856', '1468140265954907628', '1468921601280784732', '今天的天气不错', '1477019843', '1');
+INSERT INTO `pms_knowledges_comment` VALUES ('66626417361686528', '1461312703628858832', '66618679508340736', '下一版本更加精彩！', '1490687863', '1');
 
 -- ----------------------------
 -- Table structure for pms_knowledges_laud
@@ -346,7 +598,6 @@ CREATE TABLE `pms_knowledges_laud` (
 -- ----------------------------
 -- Records of pms_knowledges_laud
 -- ----------------------------
-INSERT INTO `pms_knowledges_laud` VALUES ('9297246814212096', '1468140265954907628', '1468921601280784732', '1477019524', '1');
 
 -- ----------------------------
 -- Table structure for pms_knowledges_sort
@@ -398,14 +649,7 @@ CREATE TABLE `pms_leaves` (
 -- ----------------------------
 -- Records of pms_leaves
 -- ----------------------------
-INSERT INTO `pms_leaves` VALUES ('9341180651245568', '1461312703628858832', '3', '1476979200', '1477238400', '1.5', '我出去玩', '', '0', '2', '1467191338628906628,1468140265954907628', '1477029999', '1477029999');
-INSERT INTO `pms_leaves` VALUES ('9341755161841664', '1461312703628858832', '8', '1477238400', '1477497600', '3', '埼魂牵梦萦', '', '0', '2', '1467191338628906628', '1477030135', '1477030135');
-INSERT INTO `pms_leaves` VALUES ('9343094470217728', '1461312703628858832', '4', '1477584000', '1477584000', '1', '魂牵梦萦埼', '', '0', '1', '1468140265954907628,1467191338628906628', '1477030455', '1477030455');
-INSERT INTO `pms_leaves` VALUES ('9345827742945280', '1461312703628858832', '3', '1476979200', '1476979200', '1', '魂牵梦萦城标魂牵梦萦', '', '2', '2', '1468140265954907628', '1477031106', '1477031106');
-INSERT INTO `pms_leaves` VALUES ('1468485329884714828', '1467191338628906628', '3', '1474588800', '1474934400', '2', '出去走一走，看看大世界的美丽~', '', '1', '2', '1468140265954907628,1461312703628858832', '1474597098', '1474597117');
-INSERT INTO `pms_leaves` VALUES ('1468486881268841232', '1467191338628906628', '4', '1474588800', '1474243200', '1', '前段时间加班太久，想休息一下', '', '2', '2', '1468140265954907628,1461312703628858832', '1474598650', '1474598650');
-INSERT INTO `pms_leaves` VALUES ('1468499570776805828', '1461312703628858832', '4', '1474588800', '1474675200', '1', '大法师魂牵梦萦地城标的撒范德萨防盗防', '', '1', '2', '1468140265954907628,1467191338628906628', '1474611339', '1474611339');
-INSERT INTO `pms_leaves` VALUES ('1469093116260676528', '1461312703628858832', '3', '1475164800', '1475251200', '1', '魂牵梦萦', '', '1', '2', '1468140265954907628', '1475204885', '1475204885');
+INSERT INTO `pms_leaves` VALUES ('66618286464307200', '1461312703628858832', '1', '1490976000', '1490976000', '1', '出去走一走，很久没有出行了！', '', '0', '2', '1469024587469707428', '1490685925', '1490685925');
 
 -- ----------------------------
 -- Table structure for pms_leaves_approver
@@ -426,19 +670,7 @@ CREATE TABLE `pms_leaves_approver` (
 -- ----------------------------
 -- Records of pms_leaves_approver
 -- ----------------------------
-INSERT INTO `pms_leaves_approver` VALUES ('9341180898709504', '9341180651245568', '1467191338628906628', '', '0', '1477029999', '1477029999');
-INSERT INTO `pms_leaves_approver` VALUES ('9341181112619008', '9341180651245568', '1468140265954907628', '', '0', '1477029999', '1477029999');
-INSERT INTO `pms_leaves_approver` VALUES ('9341755405111296', '9341755161841664', '1467191338628906628', '', '0', '1477030136', '1477030136');
-INSERT INTO `pms_leaves_approver` VALUES ('9343094814150656', '9343094470217728', '1468140265954907628', '', '0', '1477030455', '1477030455');
-INSERT INTO `pms_leaves_approver` VALUES ('9343095434907648', '9343094470217728', '1467191338628906628', '', '0', '1477030455', '1477030455');
-INSERT INTO `pms_leaves_approver` VALUES ('9345827982020608', '9345827742945280', '1468140265954907628', '最近项目急，等下一次。', '2', '1477031107', '1477031527');
-INSERT INTO `pms_leaves_approver` VALUES ('1468485329945851032', '1468485329884714828', '1468140265954907628', '让你爽一段时间吧~', '1', '1474597098', '1474597890');
-INSERT INTO `pms_leaves_approver` VALUES ('1468485329970682132', '1468485329884714828', '1461312703628858832', '好的，可以~', '1', '1474597098', '1474597954');
-INSERT INTO `pms_leaves_approver` VALUES ('1468486881315872732', '1468486881268841232', '1468140265954907628', '明天有个紧急项目处理完了，再调休吧', '2', '1474598650', '1474600405');
-INSERT INTO `pms_leaves_approver` VALUES ('1468486881388411732', '1468486881268841232', '1461312703628858832', '前审批人拒绝，后面审批人默认拒绝', '2', '1474598650', '1474600405');
-INSERT INTO `pms_leaves_approver` VALUES ('1468499570822373232', '1468499570776805828', '1468140265954907628', '可以，不容易~', '1', '1474611339', '1474618252');
-INSERT INTO `pms_leaves_approver` VALUES ('1468499570879828328', '1468499570776805828', '1467191338628906628', 'OK,没有问题', '1', '1474611339', '1474618270');
-INSERT INTO `pms_leaves_approver` VALUES ('1469093116306650732', '1469093116260676528', '1468140265954907628', '可以', '1', '1475204885', '1477017529');
+INSERT INTO `pms_leaves_approver` VALUES ('66618286627885056', '66618286464307200', '1469024587469707428', '', '0', '1490685925', '1490685925');
 
 -- ----------------------------
 -- Table structure for pms_messages
@@ -460,17 +692,9 @@ CREATE TABLE `pms_messages` (
 -- ----------------------------
 -- Records of pms_messages
 -- ----------------------------
-INSERT INTO `pms_messages` VALUES ('9298587246661632', '1468140265954907628', '1461312703628858832', '1', '11', 'lockPHP框架升级2.0', '/knowledge/1468921601280784732', '2', '1477019843');
-INSERT INTO `pms_messages` VALUES ('9305430811480064', '1468140265954907628', '1461312703628858832', '2', '22', '美丽的背后', '/album/1468934759849234932', '2', '1477021475');
-INSERT INTO `pms_messages` VALUES ('9305470346989568', '1468140265954907628', '1461312703628858832', '1', '12', '美丽的背后', '/album/1468934759849234932', '2', '1477021485');
-INSERT INTO `pms_messages` VALUES ('9339159604891648', '1467191338628906628', '1461312703628858832', '3', '34', '同意', '/businesstrip/approval/1468842643441590032', '2', '1477029517');
-INSERT INTO `pms_messages` VALUES ('9341755593854976', '1461312703628858832', '1467191338628906628', '4', '31', '去审批处理', '/leave/approval/9341755161841664', '2', '1477030136');
-INSERT INTO `pms_messages` VALUES ('9343095145500672', '1461312703628858832', '1468140265954907628', '4', '31', '去审批处理', '/leave/approval/9343094470217728', '2', '1477030455');
-INSERT INTO `pms_messages` VALUES ('9343095707537408', '1461312703628858832', '1467191338628906628', '4', '31', '去审批处理', '/leave/approval/9343094470217728', '1', '1477030455');
-INSERT INTO `pms_messages` VALUES ('9346109554036736', '1461312703628858832', '1468140265954907628', '4', '31', '去审批处理', '/leave/approval/9345827742945280', '2', '1477031174');
-INSERT INTO `pms_messages` VALUES ('9347589832970240', '1468140265954907628', '1461312703628858832', '3', '31', '拒绝', '/leave/approval/9345827742945280', '2', '1477031527');
-INSERT INTO `pms_messages` VALUES ('9350488906534912', '1461312703628858832', '1468140265954907628', '4', '32', '去审批处理', '/overtime/approval/9350441984856064', '2', '1477032218');
-INSERT INTO `pms_messages` VALUES ('9350600059785216', '1468140265954907628', '1461312703628858832', '3', '32', '拒绝', '/overtime/approval/9350441984856064', '2', '1477032244');
+INSERT INTO `pms_messages` VALUES ('66618325785907200', '1461312703628858832', '1469024587469707428', '4', '31', '去审批处理', '/leave/approval/66618286464307200', '1', '1490685934');
+INSERT INTO `pms_messages` VALUES ('66626417378463744', '1461312703628858832', '1461312703628858832', '1', '11', 'OPMS 1.2 版本更新发布', '/knowledge/66618679508340736', '1', '1490687863');
+INSERT INTO `pms_messages` VALUES ('66639445431947264', '1461312703628858832', '1461312703628858832', '1', '12', '油菜花', '/album/66621262012616704', '1', '1490690969');
 
 -- ----------------------------
 -- Table structure for pms_notices
@@ -484,12 +708,13 @@ CREATE TABLE `pms_notices` (
   `status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`noticeid`),
   KEY `INDEX_TCS` (`title`,`created`,`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='公告通知表';
 
 -- ----------------------------
 -- Records of pms_notices
 -- ----------------------------
-INSERT INTO `pms_notices` VALUES ('1469025346278150728', '10.1放假通知', '各部门注意，本次放假多放10天，共17天！', '1475137115', '1');
+INSERT INTO `pms_notices` VALUES ('66623026262708224', '2017清明放假通知', '2017清明放假通知，连续放6天（2017-04-01至2017-04-06），请各部门注意~', '1490687055', '1');
+INSERT INTO `pms_notices` VALUES ('66623026262708225', '10.1放假通知', '各部门注意，本次放假多放10天，共17天！', '1475137115', '1');
 
 -- ----------------------------
 -- Table structure for pms_oagoods
@@ -563,8 +788,6 @@ CREATE TABLE `pms_overtimes` (
 -- ----------------------------
 -- Records of pms_overtimes
 -- ----------------------------
-INSERT INTO `pms_overtimes` VALUES ('9350441984856064', '1461312703628858832', '1477032000', '1477062000', '6', '2', '2', '城标埼韦尔奇', '2', '2', '1468140265954907628', '1477032207', '1477032207');
-INSERT INTO `pms_overtimes` VALUES ('1469101768980362328', '1461312703628858832', '1475213700', '1475717100', '81', '1', '2', '魂牵梦萦', '1', '2', '1469024587469707428', '1475213537', '1475213717');
 
 -- ----------------------------
 -- Table structure for pms_overtimes_approver
@@ -585,29 +808,143 @@ CREATE TABLE `pms_overtimes_approver` (
 -- ----------------------------
 -- Records of pms_overtimes_approver
 -- ----------------------------
-INSERT INTO `pms_overtimes_approver` VALUES ('9350442173599744', '9350441984856064', '1468140265954907628', '今天是周五，不用加班~', '2', '1477032207', '1477032244');
-INSERT INTO `pms_overtimes_approver` VALUES ('1469101769037534028', '1469101768980362328', '1469024587469707428', '可以', '1', '1475213537', '1475213870');
 
 -- ----------------------------
 -- Table structure for pms_permissions
 -- ----------------------------
 DROP TABLE IF EXISTS `pms_permissions`;
 CREATE TABLE `pms_permissions` (
-  `userid` bigint(20) NOT NULL,
-  `permission` varchar(5000) DEFAULT NULL,
-  `model` varchar(5000) DEFAULT NULL,
-  `modelc` varchar(5000) DEFAULT NULL,
-  PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `permissionid` bigint(20) NOT NULL,
+  `parentid` bigint(20) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL COMMENT '中文名称',
+  `ename` varchar(50) DEFAULT NULL COMMENT '英文名称',
+  `icon` varchar(20) DEFAULT NULL,
+  `nav` tinyint(1) DEFAULT '0' COMMENT '1是0否导航',
+  `type` tinyint(1) DEFAULT '0' COMMENT '0不显示1显示',
+  `weight` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`permissionid`),
+  KEY `INDEX_PNETW` (`parentid`,`name`,`ename`,`type`,`weight`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='权限表';
 
 -- ----------------------------
 -- Records of pms_permissions
 -- ----------------------------
-INSERT INTO `pms_permissions` VALUES ('1461312703628858832', 'project-manage,project-add,project-edit,project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,checkwork-manage,checkwork-all,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit,resume-manage,resume-add,resume-edit,resume-delete,user-manage,user-add,user-edit,user-permission,message-manage,message-delete,department-manage,department-add,department-edit,position-manage,position-add,position-edit,notice-manage,notice-add,notice-edit,notice-delete', '项目管理-project-book||project-manage,考勤管理-checkwork-tasks||checkwork-list,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list,简历管理-resume-laptop||resume-list,员工管理-user-user||#', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage,员工-user||user-manage,部门-user||department-manage,职称-user||position-manage,公告-user||notice-manage');
-INSERT INTO `pms_permissions` VALUES ('1467191338628906628', 'project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,checkwork-manage,message-manage,message-delete,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit', '项目管理-project-book||project-manage,考勤管理-checkwork-tasks||checkwork-list,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage');
-INSERT INTO `pms_permissions` VALUES ('1468140265954907628', 'project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,checkwork-manage,checkwork-all,message-manage,message-delete,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit', '项目管理-project-book||project-manage,考勤管理-checkwork-tasks||checkwork-list,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage');
-INSERT INTO `pms_permissions` VALUES ('1468915433602979028', 'project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit', '项目管理-project-book||project-manage,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage');
-INSERT INTO `pms_permissions` VALUES ('1469024587469707428', 'project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit', '项目管理-project-book||project-manage,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage');
+INSERT INTO `pms_permissions` VALUES ('41965474417741824', '0', '我的主页', 'my', 'home', '1', '1', '99');
+INSERT INTO `pms_permissions` VALUES ('41969010140516352', '0', '项目管理', 'project', 'book', '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41969113630773248', '41969010140516352', '项目列表', 'project-manage', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41969192357859328', '41969010140516352', '添加项目', 'project-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41969252499984384', '41969010140516352', '编辑项目', 'project-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41976726762295296', '41969010140516352', '团队列表', 'project-team', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41976831846387712', '41969010140516352', '添加团队', 'team-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41976904223297536', '41969010140516352', '团队删除', 'team-delete', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41977259501817856', '41969010140516352', '需求列表', 'project-need', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41977400967303168', '41969010140516352', '添加需求', 'need-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41977528792911872', '41969010140516352', '编辑需求', 'need-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41977654831747072', '41969010140516352', '删除需求', 'need-delete', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41977734154424320', '41969010140516352', '需求查看', 'need-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41977922247987200', '41969010140516352', '任务列表', 'project-task', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978045921234944', '41969010140516352', '添加任务', 'task-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978134387494912', '41969010140516352', '编辑任务', 'task-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978216994312192', '41969010140516352', '任务删除', 'task-delete', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978289807429632', '41969010140516352', '任务查看', 'task-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978468690300928', '41969010140516352', 'Bug列表', 'project-test', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978566618910720', '41969010140516352', '提Bug', 'test-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978664295862272', '41969010140516352', '编辑Bug', 'test-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978754309820416', '41969010140516352', 'Bug查看', 'test-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41978832399372288', '41969010140516352', 'Bug删除', 'test-delete', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41980436594823168', '0', '考勤管理', 'checkwork', 'tasks', '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41980651519348736', '41980436594823168', '我的考勤', 'checkwork-manage', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('41980770788577280', '41980436594823168', '全部考勤', 'checkwork-all', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42334086215241728', '0', '审批管理', 'approval', 'suitcase', '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42334265874059264', '42334086215241728', '请假', 'leave-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42334379363536896', '42334086215241728', '申请请假', 'leave-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42334463782293504', '42334086215241728', '编辑请假', 'leave-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42334539376234496', '42334086215241728', '请假查看', 'leave-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42334628953985024', '42334086215241728', '审批请假', 'leave-approval', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42334838946009088', '42334086215241728', '加班', 'overtime-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42334976082972672', '42334086215241728', '申请加班', 'overtime-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42335081259339776', '42334086215241728', '编辑加班', 'overtime-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42335209235943424', '42334086215241728', '查看加班', 'overtime-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42335311539212288', '42334086215241728', '审批加班', 'overtime-approval', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42335402681438208', '42334086215241728', '报销', 'expense-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42335721133969408', '42334086215241728', '申请报销', 'expense-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42335817183531008', '42334086215241728', '编辑报销', 'expense-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42335940605120512', '42334086215241728', '报销查看', 'expense-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336024805773312', '42334086215241728', '审批报销', 'expense-approval', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336123501940736', '42334086215241728', '出差', 'businesstrip-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336206301696000', '42334086215241728', '申请出差', 'businesstrip-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336271770587136', '42334086215241728', '编辑出差', 'businesstrip-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336347972702208', '42334086215241728', '出差查看', 'businesstrip-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336433490366464', '42334086215241728', '审批出差', 'businesstrip-approval', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336599123431424', '42334086215241728', '外出', 'goout-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336697060429824', '42334086215241728', '申请外出', 'goout-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336773992353792', '42334086215241728', '编辑外出', 'goout-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336853726072832', '42334086215241728', '外出查看', 'goout-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42336946441162752', '42334086215241728', '审批外出', 'goout-approval', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337029878452224', '42334086215241728', '物品', 'oagood-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337132236247040', '42334086215241728', '申请物品', 'oagood-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337204650905600', '42334086215241728', '编辑物品', 'oagood-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337301711294464', '42334086215241728', '物品查看', 'oagood-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337378299285504', '42334086215241728', '审批物品', 'oagood-approval', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337482720677888', '0', '知识分享', 'knowledge', 'tasks', '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337629286436864', '42337482720677888', '知识列表', 'knowledge-manage', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337745028255744', '42337482720677888', '发布知识', 'knowledge-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42337817904287744', '42337482720677888', '编辑知识', 'knowledge-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42338272126439424', '0', '员工相册', 'album', 'plane', '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42338384647032832', '42338272126439424', '相册列表', 'album-manage', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42338452590563328', '42338272126439424', '上传相片', 'album-upload', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42338538640904192', '42338272126439424', '编辑相片', 'album-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42338630085120000', '42338272126439424', '查看相册', 'album-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42338743775924224', '42338272126439424', '相册删除', 'album-delete', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42338841398349824', '0', '简历管理', 'resume', 'laptop', '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42338936218980352', '42338841398349824', '简历列表', 'resume-manage', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42339022474842112', '42338841398349824', '添加简历', 'resume-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42339129958076416', '42338841398349824', '编辑简历', 'resume-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42339223352643584', '42338841398349824', '删除简历', 'resume-delete', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42354722958479360', '0', '组织管理', 'user', 'user', '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42354812125188096', '42354722958479360', '用户列表', 'user-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42354905771413504', '42354722958479360', '添加用户', 'user-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42354988550197248', '42354722958479360', '编辑用户', 'user-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355171505737728', '42354722958479360', '部门列表', 'department-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355325336031232', '42354722958479360', '添加部门', 'department-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355402511224832', '42354722958479360', '编辑部门', 'department-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355510552301568', '42354722958479360', '职称列表', 'position-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355596724277248', '42354722958479360', '添加职称', 'position-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355693625282560', '42354722958479360', '编辑职称', 'position-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355773019262976', '42354722958479360', '公告列表', 'notice-manage', null, '1', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355862622179328', '42354722958479360', '添加公告', 'notice-add', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42355935212998656', '42354722958479360', '编辑公告', 'notice-edit', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42356020873269248', '42354722958479360', '删除公告', 'notice-delete', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42356198170693632', '42354722958479360', '消息列表', 'message-manage', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('42356266030338048', '42354722958479360', '删除消息', 'message-delete', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('61562786651574272', '41965474417741824', '查看主页', 'my-view', null, '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64059892574457856', '42354722958479360', '组管理', 'group-manage', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64059999378214912', '42354722958479360', '添加组', 'group-add', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64060145163833344', '42354722958479360', '编辑组', 'group-edit', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64060216546693120', '42354722958479360', '删除组', 'group-delete', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64060546483228672', '42354722958479360', '组权限', 'group-permission', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64060742327865344', '42354722958479360', '组成员', 'group-user', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64060871856361472', '42354722958479360', '添加组成员', 'group-user-add', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64060949748781056', '42354722958479360', '删除组成员', 'group-user-delete', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64061137204809728', '42354722958479360', '权限管理', 'permission-manage', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64061220927311872', '42354722958479360', '添加权限', 'permission-add', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64061290498232320', '42354722958479360', '编辑权限', 'permission-edit', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64061357862948864', '42354722958479360', '删除权限', 'permission-delete', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64738735329120256', '42337482720677888', '知识删除', 'knowledge-delete', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64739027659526144', '41969010140516352', '文档列表', 'project-doc', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64739308640145408', '41969010140516352', '文档编辑', 'doc-edit', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64739380002033664', '41969010140516352', '文档添加', 'doc-add', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64739571354570752', '41969010140516352', '文档删除', 'doc-delete', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64739781774413824', '41969010140516352', '文档查看', 'doc-view', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64739963341639680', '41969010140516352', '版本列表', 'project-version', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64740034804191232', '41969010140516352', '版本编辑', 'version-edit', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64740129687736320', '41969010140516352', '版本添加', 'version-add', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64740203201302528', '41969010140516352', '版本删除', 'version-delete', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64740359808225280', '41969010140516352', '版本查看', 'version-view', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64809905348939776', '41969010140516352', '批量添加任务', 'task-batch-add', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('64815327690625024', '41969010140516352', '任务克隆', 'task-clone', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('65140829198487552', '42337482720677888', '知识查看', 'knowledge-view', '', '0', '0', '0');
+INSERT INTO `pms_permissions` VALUES ('65140900749119488', '42338272126439424', '相册查看', 'album-view', '', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for pms_positions
@@ -656,7 +993,33 @@ CREATE TABLE `pms_projects` (
 -- ----------------------------
 -- Records of pms_projects
 -- ----------------------------
-INSERT INTO `pms_projects` VALUES ('1467192163843257232', '1461312703628858832', 'App项目开发', 'AppStyle', '1473264000', '1475078400', 'App项目开发，主要完成第一版本功能的测试，上线~', '1473303932', '3', '1461312703628858832', '1467191338628906628', '1468140265954907628', '1468140265954907628');
+INSERT INTO `pms_projects` VALUES ('66562760133054464', '1461312703628858832', '项目管理与OA办公', 'OPMS', '1490630400', '1509379200', '<ol>\n	<li>\n		项目管理与OA办公\n	</li>\n	<li>\n		简单轻便\n	</li>\n	<li>\n		工作流\n	</li>\n	<li>\n		日常办公管理\n	</li>\n	<li>\n		权限管理\n	</li>\n</ol>', '1490672686', '1', '1467191338628906628', '1468140265954907628', '1468140265954907628', '1461312703628858832');
+
+-- ----------------------------
+-- Table structure for pms_projects_doc
+-- ----------------------------
+DROP TABLE IF EXISTS `pms_projects_doc`;
+CREATE TABLE `pms_projects_doc` (
+  `docid` bigint(20) NOT NULL,
+  `projectid` bigint(20) DEFAULT NULL,
+  `userid` bigint(20) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `keyword` varchar(255) DEFAULT NULL,
+  `sort` tinyint(1) DEFAULT '1' COMMENT '1正文2链接',
+  `content` text,
+  `url` varchar(255) DEFAULT NULL,
+  `attachment` varchar(255) DEFAULT NULL,
+  `created` int(10) DEFAULT NULL,
+  `changed` int(10) DEFAULT NULL,
+  PRIMARY KEY (`docid`),
+  KEY `INDEX_PUTK` (`projectid`,`userid`,`title`,`keyword`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='项目文档表';
+
+-- ----------------------------
+-- Records of pms_projects_doc
+-- ----------------------------
+INSERT INTO `pms_projects_doc` VALUES ('66565795970289664', '66562760133054464', '1461312703628858832', 'OA办公参考网站', '', '2', '参考这个网站的功能，可以适当删减', 'http://www.milu365.com', '', '1490673410', '1490673440');
+INSERT INTO `pms_projects_doc` VALUES ('66566140419117056', '66562760133054464', '1461312703628858832', 'PDF版思维导图', '', '1', '相关人员可以查看PDF思维导图', '', '/static/uploadfile/2017-3/28/0.jpg', '1490673492', '1490673492');
 
 -- ----------------------------
 -- Table structure for pms_projects_needs
@@ -671,7 +1034,7 @@ CREATE TABLE `pms_projects_needs` (
   `acceptid` bigint(20) DEFAULT NULL COMMENT '指派人userid',
   `source` tinyint(2) DEFAULT '0' COMMENT '来源1客户,2用户,3产品经理,4市场,5客服,6竞争对手,7合作伙伴,8开发人员,9测试人员,10其他',
   `acceptance` text COMMENT '验收标准',
-  `level` tinyint(1) DEFAULT NULL COMMENT '优先级1,2,3,4,5,6',
+  `level` tinyint(1) DEFAULT '4' COMMENT '优先级1,2,3,4',
   `tasktime` tinyint(4) DEFAULT NULL COMMENT '预计工时',
   `attachment` varchar(255) DEFAULT NULL COMMENT '附件',
   `created` int(10) DEFAULT NULL,
@@ -685,10 +1048,9 @@ CREATE TABLE `pms_projects_needs` (
 -- ----------------------------
 -- Records of pms_projects_needs
 -- ----------------------------
-INSERT INTO `pms_projects_needs` VALUES ('1468140408257075332', '1467192163843257232', '1461312703628858832', '活动列表模板制作 - 制作', '魂牵梦萦', '1461312703628858832', '2', '魂牵梦萦', '1', '0', '', '1474252177', '0', '2', '2');
-INSERT INTO `pms_projects_needs` VALUES ('1468140431990600932', '1467192163843257232', '1461312703628858832', '移去端生成', '魂牵梦萦', '1467191338628906628', '5', '魂牵梦萦', '3', '10', '', '1474252200', '0', '3', '2');
-INSERT INTO `pms_projects_needs` VALUES ('1468140748845766528', '1467192163843257232', '1461312703628858832', '移去端生成', '魂牵梦萦', '1468140265954907628', '2', '魂牵梦萦', '2', '10', '', '1474252517', '0', '2', '2');
-INSERT INTO `pms_projects_needs` VALUES ('1468921774268994028', '1467192163843257232', '1461312703628858832', '活动列表模板制作 - 制作', 'fdsaffdsa', '1461312703628858832', '2', 'fdsafdsafsd', '2', '10', '/static/uploadfile/2016-9/28/2.jpg', '1475033543', '0', '1', '5');
+INSERT INTO `pms_projects_needs` VALUES ('66563530584756224', '66562760133054464', '1461312703628858832', '出思维导图', '出整个项目的思维导图，与需求方确认', '1467191338628906628', '3', '', '1', '8', '', '1490672870', '0', '3', '2');
+INSERT INTO `pms_projects_needs` VALUES ('66563749770694656', '66562760133054464', '1461312703628858832', '用户相关模块', '用户登录，注册，忘记密码，手机验证码等', '1467191338628906628', '3', '', '2', '5', '', '1490672922', '0', '3', '2');
+INSERT INTO `pms_projects_needs` VALUES ('66563918947946496', '66562760133054464', '1461312703628858832', '项目管理', '项目管理流程，团队，需求，任务，测试，版本，文档', '1467191338628906628', '4', '', '2', '6', '', '1490672962', '0', '3', '2');
 
 -- ----------------------------
 -- Table structure for pms_projects_task
@@ -706,7 +1068,7 @@ CREATE TABLE `pms_projects_task` (
   `desc` text COMMENT '描述',
   `note` text COMMENT '备注',
   `type` tinyint(1) DEFAULT '8' COMMENT '任务类型1设计,2开发,3测试,4研究,5讨论,6界面,7事务,8其他',
-  `level` tinyint(1) DEFAULT NULL COMMENT '优先级1,2,3,4,5,6',
+  `level` tinyint(1) DEFAULT '4' COMMENT '优先级1,2,3,4',
   `tasktime` tinyint(4) DEFAULT NULL COMMENT '预计工时',
   `ended` int(10) DEFAULT NULL COMMENT '截止日期',
   `started` int(10) DEFAULT NULL COMMENT '预计开始时间',
@@ -723,9 +1085,16 @@ CREATE TABLE `pms_projects_task` (
 -- ----------------------------
 -- Records of pms_projects_task
 -- ----------------------------
-INSERT INTO `pms_projects_task` VALUES ('1468156443597929432', '1468140431990600932', '1461312703628858832', '1467192163843257232', '1467191338628906628', '', '0', '朝秦暮楚', '朝秦暮楚', '', '2', '0', '0', '1474243200', '1474243200', '', '1474268212', '0', '6', '1461312703628858832', '0');
-INSERT INTO `pms_projects_task` VALUES ('1468156456086352028', '1468140408257075332', '1461312703628858832', '1467192163843257232', '1467191338628906628', '', '0', '朝秦暮楚', '魂牵梦萦', '', '3', '0', '0', '1474243200', '1474243200', '', '1474268224', '0', '1', '0', '0');
-INSERT INTO `pms_projects_task` VALUES ('1468156476049560632', '1468140431990600932', '1461312703628858832', '1467192163843257232', '1468140265954907628', '', '1468140265954907628', '魂牵梦萦', '魂牵梦萦', '', '6', '0', '0', '1474243200', '1474243200', '', '1474268244', '0', '3', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565030916657152', '66563530584756224', '1461312703628858832', '66562760133054464', '1467191338628906628', '', '0', '思维导图版本', '思维导图版本设计', '', '4', '1', '6', '0', '0', '', '1490673228', '0', '1', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565031097012224', '66563530584756224', '1461312703628858832', '66562760133054464', '1467191338628906628', '', '0', '思维导图确认修订讨论', '', '', '4', '1', '5', '0', '0', '', '1490673228', '0', '1', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565031201869824', '66563749770694656', '1461312703628858832', '66562760133054464', '1461312703628858832', '', '0', 'UI - 用户登录', '', '', '1', '2', '5', '0', '0', '', '1490673228', '0', '2', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565031700992000', '66563749770694656', '1461312703628858832', '66562760133054464', '1461312703628858832', '', '0', 'UI - 用户注册', '', '', '1', '2', '3', '0', '0', '', '1490673228', '0', '1', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565031851986944', '66563749770694656', '1461312703628858832', '66562760133054464', '1461312703628858832', '', '0', 'UI - 用户忘记密码', '', '', '1', '3', '3', '0', '0', '', '1490673228', '0', '1', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565031935873024', '66563918947946496', '1461312703628858832', '66562760133054464', '1468140265954907628', '', '0', 'Front - 项目管理', '', '', '6', '3', '4', '0', '0', '', '1490673228', '0', '1', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565032053313536', '66563918947946496', '1461312703628858832', '66562760133054464', '1468140265954907628', '', '0', 'Front - 发布项目', '', '', '6', '3', '5', '0', '0', '', '1490673228', '0', '1', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565032137199616', '66563918947946496', '1461312703628858832', '66562760133054464', '1468140265954907628', '', '0', 'Front - 项目详情', '', '', '6', '3', '2', '0', '0', '', '1490673228', '0', '1', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565032304971776', '66563918947946496', '1461312703628858832', '66562760133054464', '1468140265954907628', '', '0', '后端 - 项目管理开发', '', '', '2', '3', '2', '0', '0', '', '1490673228', '0', '1', '0', '0');
+INSERT INTO `pms_projects_task` VALUES ('66565032388857856', '66563918947946496', '1461312703628858832', '66562760133054464', '1468140265954907628', '', '0', '后端 - 项目管理添加编辑', '', '', '2', '3', '8', '0', '0', '', '1490673228', '0', '1', '0', '0');
 
 -- ----------------------------
 -- Table structure for pms_projects_task_log
@@ -737,16 +1106,22 @@ CREATE TABLE `pms_projects_task_log` (
   `userid` bigint(20) DEFAULT NULL COMMENT '操作人',
   `note` text,
   `created` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='任务日志表';
 
 -- ----------------------------
 -- Records of pms_projects_task_log
 -- ----------------------------
-INSERT INTO `pms_projects_task_log` VALUES ('1468156443598942432', '1468156443597929432', '1461312703628858832', '李白创建了任务', '1474268212');
-INSERT INTO `pms_projects_task_log` VALUES ('1468156456087352628', '1468156456086352028', '1461312703628858832', '李白创建了任务', '1474268224');
-INSERT INTO `pms_projects_task_log` VALUES ('1468156476049560632', '1468156476049560632', '1461312703628858832', '李白创建了任务', '1474268244');
-INSERT INTO `pms_projects_task_log` VALUES ('1469102375318573528', '1468156443597929432', '1461312703628858832', '李白更改任务状态为已关闭', '1475214144');
-INSERT INTO `pms_projects_task_log` VALUES ('9356906980184064', '1468156476049560632', '1468140265954907628', '李四更改任务状态为已完成', '1477033748');
+INSERT INTO `pms_projects_task_log` VALUES ('66565030920851456', '66565030916657152', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565031109595136', '66565031097012224', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565031214452736', '66565031201869824', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565031713574912', '66565031700992000', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565031864569856', '66565031851986944', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565031948455936', '66565031935873024', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565032065896448', '66565032053313536', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565032149782528', '66565032137199616', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565032317554688', '66565032304971776', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66565032401440768', '66565032388857856', '1461312703628858832', '李白创建了任务', '1490673228');
+INSERT INTO `pms_projects_task_log` VALUES ('66566863257079808', '66565031201869824', '1461312703628858832', '李白更改任务状态为进行中', '1490673664');
 
 -- ----------------------------
 -- Table structure for pms_projects_team
@@ -764,9 +1139,9 @@ CREATE TABLE `pms_projects_team` (
 -- ----------------------------
 -- Records of pms_projects_team
 -- ----------------------------
-INSERT INTO `pms_projects_team` VALUES ('1467192298411400532', '1467192163843257232', '1461312703628858832', '1473304067');
-INSERT INTO `pms_projects_team` VALUES ('1467192316450102228', '1467192163843257232', '1467191338628906628', '1473304085');
-INSERT INTO `pms_projects_team` VALUES ('1468140282249771232', '1467192163843257232', '1468140265954907628', '1474252051');
+INSERT INTO `pms_projects_team` VALUES ('66562826440806400', '66562760133054464', '1461312703628858832', '1490672702');
+INSERT INTO `pms_projects_team` VALUES ('66562882074054656', '66562760133054464', '1468140265954907628', '1490672715');
+INSERT INTO `pms_projects_team` VALUES ('66562919290114048', '66562760133054464', '1467191338628906628', '1490672724');
 
 -- ----------------------------
 -- Table structure for pms_projects_test
@@ -783,7 +1158,7 @@ CREATE TABLE `pms_projects_test` (
   `ccid` varchar(100) DEFAULT NULL COMMENT '抄送者',
   `name` varchar(100) DEFAULT NULL COMMENT 'bug名称',
   `desc` text COMMENT '描述',
-  `level` tinyint(1) DEFAULT NULL COMMENT '优先级1,2,3,4,5,6',
+  `level` tinyint(1) DEFAULT '4' COMMENT '优先级1,2,3,4',
   `os` varchar(20) DEFAULT NULL COMMENT '操作系统',
   `browser` varchar(20) DEFAULT NULL COMMENT '浏览器',
   `attachment` varchar(255) DEFAULT NULL COMMENT '附件',
@@ -798,7 +1173,9 @@ CREATE TABLE `pms_projects_test` (
 -- ----------------------------
 -- Records of pms_projects_test
 -- ----------------------------
-INSERT INTO `pms_projects_test` VALUES ('1468158891722798928', '1468156456086352028', '1468140431990600932', '1461312703628858832', '1467192163843257232', '1461312703628858832', '1461312703628858832', '', '魂牵梦萦', '魂牵梦萦', '0', '', '', '', '1475214196', '1474270660', '0', '7');
+INSERT INTO `pms_projects_test` VALUES ('66565285141811200', '66565030916657152', '66563530584756224', '1461312703628858832', '66562760133054464', '1467191338628906628', '0', '', '思维导图打不开', '', '1', 'wp7', 'chrome', '', '0', '1490673288', '0', '0');
+INSERT INTO `pms_projects_test` VALUES ('66565532245037056', '66565031201869824', '66563749770694656', '1461312703628858832', '66562760133054464', '1468140265954907628', '0', '', '用户登录设计缺少登录按钮', '用户登录设计缺少登录按钮，无法登录', '2', '', '', '', '0', '1490673347', '0', '0');
+INSERT INTO `pms_projects_test` VALUES ('66622301705080832', '66565032304971776', '66563918947946496', '1461312703628858832', '66562760133054464', '1461312703628858832', '1461312703628858832', '', '发布项目出错，提示手机必填', '我发布的时候，手机号已经填写过了，提交还出现这问题~', '2', 'wp7', 'ie10', '', '1490686901', '1490686882', '0', '4');
 
 -- ----------------------------
 -- Table structure for pms_projects_test_log
@@ -810,15 +1187,40 @@ CREATE TABLE `pms_projects_test_log` (
   `userid` bigint(20) DEFAULT NULL COMMENT '操作人',
   `note` text,
   `created` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='测试Bug日志表';
 
 -- ----------------------------
 -- Records of pms_projects_test_log
 -- ----------------------------
-INSERT INTO `pms_projects_test_log` VALUES ('1468158891723813132', '1468158891722798928', '1461312703628858832', '李白创建了测试', '1474270660');
-INSERT INTO `pms_projects_test_log` VALUES ('1468158919174160132', '1468158891722798928', '1461312703628858832', '李白更改测试状态为已解决<br>', '1474270688');
-INSERT INTO `pms_projects_test_log` VALUES ('1469102389536192832', '1468158891722798928', '1461312703628858832', '李白更改测试状态为延期处理<br>', '1475214158');
-INSERT INTO `pms_projects_test_log` VALUES ('1469102427882017832', '1468158891722798928', '1461312703628858832', '李白更改测试状态为不予解决<br>', '1475214196');
+INSERT INTO `pms_projects_test_log` VALUES ('66565285150199808', '66565285141811200', '1461312703628858832', '李白创建了测试', '1490673288');
+INSERT INTO `pms_projects_test_log` VALUES ('66565532249231360', '66565532245037056', '1461312703628858832', '李白创建了测试', '1490673347');
+INSERT INTO `pms_projects_test_log` VALUES ('66622301709275136', '66622301705080832', '1461312703628858832', '李白创建了测试', '1490686882');
+INSERT INTO `pms_projects_test_log` VALUES ('66622380088233984', '66622301705080832', '1461312703628858832', '李白更改测试状态为已解决<br>', '1490686901');
+
+-- ----------------------------
+-- Table structure for pms_projects_version
+-- ----------------------------
+DROP TABLE IF EXISTS `pms_projects_version`;
+CREATE TABLE `pms_projects_version` (
+  `versionid` bigint(20) NOT NULL,
+  `projectid` bigint(20) DEFAULT NULL,
+  `userid` bigint(20) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `versioned` int(10) DEFAULT NULL COMMENT '打包日期',
+  `content` text,
+  `sourceurl` varchar(255) DEFAULT NULL COMMENT '源代码',
+  `downurl` varchar(255) DEFAULT NULL COMMENT '下载地址',
+  `attachment` varchar(255) DEFAULT NULL,
+  `created` int(10) DEFAULT NULL,
+  `changed` int(10) DEFAULT NULL,
+  PRIMARY KEY (`versionid`),
+  KEY `INDEX_PUT` (`projectid`,`userid`,`title`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='项目版本表';
+
+-- ----------------------------
+-- Records of pms_projects_version
+-- ----------------------------
+INSERT INTO `pms_projects_version` VALUES ('66566450906664960', '66562760133054464', '1461312703628858832', 'OPMS产品原型V1', '1490630400', '第一版本产品原型，后续迭代更新！', 'https://github.com/lock-upme', 'https://github.com/lock-upme', '/static/uploadfile/2017-3/28/0.jpg', '1490673566', '1490673566');
 
 -- ----------------------------
 -- Table structure for pms_resumes
@@ -837,12 +1239,13 @@ CREATE TABLE `pms_resumes` (
   `note` varchar(255) DEFAULT NULL,
   `phone` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`resumeid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='简历表';
 
 -- ----------------------------
 -- Records of pms_resumes
 -- ----------------------------
-INSERT INTO `pms_resumes` VALUES ('1469028741058477628', '张三', '2', '906076800', '10', '5', '', '1475140509', '1', 'fdsafas', '13524512531');
+INSERT INTO `pms_resumes` VALUES ('66627732930301952', '刘星', '1', '353894400', '7', '5', '', '1490688177', '2', '生活让我变的更加坚强', '1356512523');
+INSERT INTO `pms_resumes` VALUES ('1469028741058477628', '李芝芝', '2', '337564800', '10', '5', '', '1475140509', '4', '李芝芝曾留学国外，从事过人工智能方面的研究工作', '13524512531');
 
 -- ----------------------------
 -- Table structure for pms_users
@@ -862,11 +1265,33 @@ CREATE TABLE `pms_users` (
 -- ----------------------------
 -- Records of pms_users
 -- ----------------------------
-INSERT INTO `pms_users` VALUES ('1461312703628858832', '1461312703628858832', 'libai', 'e10adc3949ba59abbe56e057f20f883e', '/static/uploadfile/2016-9/28/b09699094fd80f154caf08de44b86b33-cropper.jpg', '1');
-INSERT INTO `pms_users` VALUES ('1467191338628906628', '1467191338628906628', 'zhangsan', 'e10adc3949ba59abbe56e057f20f883e', '/static/img/avatar/3.jpg', '1');
-INSERT INTO `pms_users` VALUES ('1468140265954907628', '1468140265954907628', 'lisi', 'e10adc3949ba59abbe56e057f20f883e', '/static/img/avatar/2.jpg', '1');
-INSERT INTO `pms_users` VALUES ('1468915433602979028', '1468915433602979028', 'fancy', 'e10adc3949ba59abbe56e057f20f883e', '/static/img/avatar/1.jpg', '1');
-INSERT INTO `pms_users` VALUES ('1469024587469707428', '1469024587469707428', 'xiaoxin', 'e10adc3949ba59abbe56e057f20f883e', '/static/img/avatar/1.jpg', '1');
+INSERT INTO `pms_users` VALUES ('65140463652311040', '65140463652311040', 'lock', '971b6101cfb78b2a161914f955011a62', '/static/img/avatar/1.jpg', '1');
+INSERT INTO `pms_users` VALUES ('1461312703628858832', '1461312703628858832', 'libai', '4c90f367f320011ed5582a9b5fa0f3e6', '/static/uploadfile/2017-3/28/5b41faa955a4c1acdb6d7e6c116bce2f-cropper.jpg', '1');
+INSERT INTO `pms_users` VALUES ('1467191338628906628', '1467191338628906628', 'zhangsan', '971b6101cfb78b2a161914f955011a62', '/static/img/avatar/3.jpg', '1');
+INSERT INTO `pms_users` VALUES ('1468140265954907628', '1468140265954907628', 'lisi', '971b6101cfb78b2a161914f955011a62', '/static/img/avatar/2.jpg', '1');
+INSERT INTO `pms_users` VALUES ('1468915433602979028', '1468915433602979028', 'fancy', '971b6101cfb78b2a161914f955011a62', '/static/img/avatar/1.jpg', '1');
+INSERT INTO `pms_users` VALUES ('1469024587469707428', '1469024587469707428', 'xiaoxin', '971b6101cfb78b2a161914f955011a62', '/static/img/avatar/1.jpg', '1');
+
+-- ----------------------------
+-- Table structure for pms_users_permissions
+-- ----------------------------
+DROP TABLE IF EXISTS `pms_users_permissions`;
+CREATE TABLE `pms_users_permissions` (
+  `userid` bigint(20) NOT NULL,
+  `permission` varchar(5000) DEFAULT NULL,
+  `model` varchar(5000) DEFAULT NULL,
+  `modelc` varchar(5000) DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户权限表（已弃用）';
+
+-- ----------------------------
+-- Records of pms_users_permissions
+-- ----------------------------
+INSERT INTO `pms_users_permissions` VALUES ('1461312703628858832', 'project-manage,project-add,project-edit,project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,checkwork-manage,checkwork-all,message-manage,message-delete,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit,resume-manage,resume-add,resume-edit,resume-delete,user-manage,user-add,user-edit,user-permission,department-manage,department-add,department-edit,position-manage,position-add,position-edit,notice-manage,notice-add,notice-edit,notice-delete', '项目管理-project-book||project-manage,考勤管理-checkwork-tasks||checkwork-list,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list,简历管理-resume-laptop||resume-list,员工管理-user-user||#', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage,员工-user||user-manage,部门-user||department-manage,职称-user||position-manage,公告-user||notice-manage');
+INSERT INTO `pms_users_permissions` VALUES ('1467191338628906628', 'project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,checkwork-manage,message-manage,message-delete,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit', '项目管理-project-book||project-manage,考勤管理-checkwork-tasks||checkwork-list,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage');
+INSERT INTO `pms_users_permissions` VALUES ('1468140265954907628', 'project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,checkwork-manage,checkwork-all,message-manage,message-delete,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit', '项目管理-project-book||project-manage,考勤管理-checkwork-tasks||checkwork-list,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage');
+INSERT INTO `pms_users_permissions` VALUES ('1468915433602979028', 'project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit', '项目管理-project-book||project-manage,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage');
+INSERT INTO `pms_users_permissions` VALUES ('1469024587469707428', 'project-team,team-add,team-delete,project-need,need-add,need-edit,project-task,task-add,task-edit,project-test,test-add,test-edit,leave-manage,leave-add,leave-edit,leave-view,leave-approval,overtime-manage,overtime-add,overtime-edit,overtime-view,overtime-approval,expense-manage,expense-add,expense-edit,expense-view,expense-approval,businesstrip-manage,businesstrip-add,businesstrip-edit,businesstrip-view,businesstrip-approval,goout-manage,goout-add,goout-edit,goout-view,goout-approval,oagood-manage,oagood-add,oagood-edit,oagood-view,oagood-approval,knowledge-manage,knowledge-add,knowledge-edit,album-manage,album-upload,album-edit', '项目管理-project-book||project-manage,审批管理-approval-suitcase||#,知识分享-knowledge-tasks||knowledge-list,员工相册-album-plane||album-list', '请假-approval||leave-manage,加班-approval||overtime-manage,报销-approval||expense-manage,出差-approval||businesstrip-manage,外出-approval||goout-manage,物品-approval||oagood-manage');
 
 -- ----------------------------
 -- Table structure for pms_users_profile
@@ -897,8 +1322,9 @@ CREATE TABLE `pms_users_profile` (
 -- ----------------------------
 -- Records of pms_users_profile
 -- ----------------------------
-INSERT INTO `pms_users_profile` VALUES ('1461312703628858832', '李白', '1', '1985-12-12', 'test@163.com', 'milu365', '49732343', '13754396432', '021-3432423', '九新公路华西办公楼7楼', 'zfancy', '137245613126', '1462290228639093428', '1462292041515367932', '57', '', '1477033985');
-INSERT INTO `pms_users_profile` VALUES ('1467191338628906628', '张三', '1', '1985-12-12', 'test@test.com', 'zs-milu365', '903561702', '13524512531', '021-84122521', '九新公路', 'lock', '135245132623', '1462290199274575028', '1462292041515367932', '14', '', '1477028450');
-INSERT INTO `pms_users_profile` VALUES ('1468140265954907628', '李四', '1', '1994-08-11', 'cto@nahehuo.com', 'zs-milu365', '903561702', '13524396586', '021-84122521', '九新公路华西办公楼', 'lock', '135245132623', '1462290127694985332', '1462292053049130632', '9', '127.0.0.1', '1477031153');
-INSERT INTO `pms_users_profile` VALUES ('1468915433602979028', '朱笑天', '1', '1992-09-10', 'test@test.coma', 'zs-milu365', '903561702', '13524512531', '021-84122521', '外滩一号', 'lock', '135245132623', '1462290199274575028', '1462292041515367932', '2', '127.0.0.1', '1475051104');
-INSERT INTO `pms_users_profile` VALUES ('1469024587469707428', '李浩', '1', '1997-09-06', 'test@test.com', 'ls-milu365', '903561702', '13521234231', '021-84122521', '外滩一号', '李呀', '135245132623', '1462290228639093428', '1462292006260420932', '3', '127.0.0.1', '1475213790');
+INSERT INTO `pms_users_profile` VALUES ('65140463652311040', 'lock', '1', '1993-03-06', 'lock888@tom.com', '', '', '13524612512', '', '', 'lock', '13524396382', '1462290127694985332', '1462292065226423828', '0', '', '0');
+INSERT INTO `pms_users_profile` VALUES ('1461312703628858832', '李白', '1', '1985-12-12', 'test@163.com', 'milu365', '49732343', '13754396432', '021-3432423', '九新公路华西办公楼7楼', 'zfancy', '137245613126', '1462290228639093428', '1462292041515367932', '1', '', '1490691863');
+INSERT INTO `pms_users_profile` VALUES ('1467191338628906628', '张三', '1', '1985-12-12', 'test@test.com', 'zs-milu365', '903561702', '13524512531', '021-84122521', '九新公路', 'lock', '135245132623', '1462290199274575028', '1462292041515367932', '0', '', '0');
+INSERT INTO `pms_users_profile` VALUES ('1468140265954907628', '李四', '1', '1994-08-11', 'cto@nahehuo.com', 'zs-milu365', '903561702', '13524396586', '021-84122521', '九新公路华西办公楼', 'lock', '135245132623', '1462290127694985332', '1462292053049130632', '0', '', '0');
+INSERT INTO `pms_users_profile` VALUES ('1468915433602979028', '朱笑天', '1', '1992-09-10', 'test@test.coma', 'zs-milu365', '903561702', '13524512531', '021-84122521', '外滩一号', 'lock', '135245132623', '1462290199274575028', '1462292041515367932', '0', '', '0');
+INSERT INTO `pms_users_profile` VALUES ('1469024587469707428', '李浩', '1', '1997-09-06', 'test@test.com', 'ls-milu365', '903561702', '13521234231', '021-84122521', '外滩一号', '李呀', '135245132623', '1462290228639093428', '1462292006260420932', '1', '', '1490691365');

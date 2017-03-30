@@ -33,13 +33,13 @@
             <div class="panel-body">
               <form class="form-horizontal adminex-form" id="needs-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">需求名称</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>需求名称</label>
                   <div class="col-sm-10">
                     <input type="text" name="name" value="{{.needs.Name}}" class="form-control" placeholder="请输入需求名称">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">来源</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>来源</label>
                   <div class="col-sm-10">
                     <select name="source" class="form-control">
                       <option value="">请选择来源</option>
@@ -57,7 +57,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">优先级</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>优先级</label>
                   <div class="col-sm-10">
                     <select name="level" class="form-control">
                       <option value="">请选择优先级</option>
@@ -69,7 +69,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">阶段</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>阶段</label>
                   <div class="col-sm-10">
                     <select name="stage" class="form-control">
                       <option value="">请选择阶段</option>
@@ -104,7 +104,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">描述</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>描述</label>
                   <div class="col-sm-10">
                     <textarea name="desc" placeholder="请填写描述" style="height:300px;" class="form-control">{{.needs.Desc}}</textarea>
                   </div>

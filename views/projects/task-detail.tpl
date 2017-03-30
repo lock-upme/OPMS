@@ -25,7 +25,7 @@
         <li> <a href="/project/task/{{.project.Id}}">{{.project.Name}}</a> </li>
         <li class="active"> 任务 </li>
       </ul>
-      <div class="pull-right"><a href="/project/team/{{.project.Id}}" class="btn btn-success">团队</a> <a href="/project/need/{{.project.Id}}" class="btn btn-success">需求</a> <a href="/project/task/{{.project.Id}}" class="btn btn-success">任务</a> <a href="/project/test/{{.project.Id}}" class="btn btn-success">Bug</a> <a href="/project/chart/{{.project.Id}}" class="btn btn-warning">报表</a></div>
+      <div class="pull-right">{{template "projects/nav.tpl" .}}</div>
     </div>
     <div class="clearfix"></div>
     <!-- page heading end-->
@@ -46,7 +46,7 @@
                     <div class="content"> {{str2html .need.Desc}} </div>
                     <h1>关联项目</h1>
                     <div class="content"> {{str2html .project.Desc}} </div>
-                    <a class="btn p-follow-btn" href="/task/edit/{{.task.Id}}"> <i class="fa fa-check"></i> 编辑</a>&nbsp; <a  href="javascript:;" class="btn p-follow-btn js-task-delete" data-id="{{.task.Id}}"> <i class="fa fa-times"></i> 删除</a>&nbsp; <a href="javascript:;" class="btn p-follow-btn js-task-single {{if eq .task.Status 1}}active{{end}}" data-id="{{.task.Id}}" data-status="1">未开始</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 2}}active{{end}}" data-id="{{.task.Id}}" data-status="2">进行中</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 3}}active{{end}}" data-id="{{.task.Id}}" data-status="3">已完成</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 4}}active{{end}}" data-id="{{.task.Id}}" data-status="4">已暂停</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 5}}active{{end}}" data-id="{{.task.Id}}" data-status="5">已取消</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 6}}active{{end}}" data-id="{{.task.Id}}" data-status="6">已关闭</a> </div>
+                    <a class="btn p-follow-btn" href="/task/edit/{{.task.Id}}"> <i class="fa fa-check"></i> 编辑</a>&nbsp; <a  href="javascript:;" class="btn p-follow-btn js-task-delete" data-id="{{.task.Id}}"> <i class="fa fa-times"></i> 删除</a>&nbsp; <a href="javascript:;" class="btn p-follow-btn js-task-single {{if eq .task.Status 1}}active{{end}}" data-id="{{.task.Id}}" data-status="1">未开始</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 2}}active{{end}}" data-id="{{.task.Id}}" data-status="2">进行中</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 3}}active{{end}}" data-id="{{.task.Id}}" data-status="3">已完成</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 4}}active{{end}}" data-id="{{.task.Id}}" data-status="4">已暂停</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 5}}active{{end}}" data-id="{{.task.Id}}" data-status="5">已取消</a> <a href="javascript:;" class="btn p-follow-btn js-task-status {{if eq .task.Status 6}}active{{end}}" data-id="{{.task.Id}}" data-status="6">已关闭</a> <a href="/task/clone/{{.task.Id}}" class="btn btn-warning"><i class="fa fa-files-o"></i> 克隆</a> </div>
                 </div>
               </div>
             </div>

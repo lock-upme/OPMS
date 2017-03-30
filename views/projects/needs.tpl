@@ -5,6 +5,8 @@
 <title>{{config "String" "globaltitle" ""}}</title>
 {{template "inc/meta.tpl" .}}
 <link href="/static/css/table-responsive.css" rel="stylesheet">
+<link href="/static/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+<link href="/static/js/data-tables/DT_bootstrap.css" rel="stylesheet" />
 </head><body class="sticky-header">
 <section> {{template "inc/left.tpl" .}}
   <!-- main content start-->
@@ -70,15 +72,15 @@
             <div class="panel-body">
               <section id="unseen">
                 <form id="project-form-list">
-                  <table class="table table-bordered table-striped table-condensed">
+                  <table class="table table-bordered table-striped table-condensed" id="dynamic-table">
                     <thead>
                       <tr>
+						<th>级别</th>
                         <th>名称</th>
                         <th>创建人</th>
                         <th>指派人</th>
-                        <th>等级</th>
                         <th>预工时</th>
-                        <th>创建日期</th>
+                        <th class="hidden-xs">创建日期</th>
                         <th>状态</th>
                         <th>阶段</th>
                         <th>操作</th>
@@ -88,15 +90,15 @@
                     
                     {{range $k,$v := .needs}}
                     <tr>
+					  <td><span class="label {{if eq 1 $v.Level}}label-danger{{else if eq 2 $v.Level}}label-warning{{else if eq 3 $v.Level}}label-primary{{else if eq 4 $v.Level}}label-default{{end}}">{{$v.Level}}级</span></td>
                       <td><a href="/need/show/{{$v.Id}}">{{$v.Name}}</a></td>
                       <td><a href="/user/show/{{$v.Userid}}">{{getRealname $v.Userid}}</a></td>
                       <td><a href="/user/show/{{$v.Acceptid}}">{{getRealname $v.Acceptid}}</a></td>
-                      <td>{{$v.Level}}级</td>
                       <td>{{$v.Tasktime}}</td>
-                      <td>{{getDate $v.Created}}</td>
+                      <td class="hidden-xs">{{getDate $v.Created}}</td>
                       <td>{{getNeedsStatus $v.Status}}</td>
                       <td>{{getNeedsStage $v.Stage}}</td>
-                      <td><a href="/task/add/{{$v.Projectid}}?needsid={{$v.Id}}">任务</a> <a href="/need/edit/{{$v.Id}}">编辑</a> </td>
+                      <td><a href="/task/add/{{$v.Projectid}}?needsid={{$v.Id}}" title="任务" class="btn btn-success btn-xs"><i class="fa fa-tasks"></i></a> <a href="/need/edit/{{$v.Id}}" title="编辑" class="btn btn-danger btn-xs"><i class="fa fa-pencil-square-o"></i></a> </td>
                     </tr>
                     {{end}}
                     </tbody>
@@ -117,5 +119,8 @@
   <!-- main content end-->
 </section>
 {{template "inc/foot.tpl" .}}
+<script type="text/javascript" src="/static/js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/static/js/data-tables/DT_bootstrap.js"></script>
+<script src="/static/js/dynamic_table_init.js"></script>
 </body>
 </html>

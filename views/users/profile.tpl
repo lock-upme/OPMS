@@ -218,7 +218,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="panel">
-                <header class="panel-heading"> 知识 <span class="pull-right"> <a href="/knowledge/list?filter=me">更多</a></span> </header>
+                <header class="panel-heading"> 知识 <span class="pull-right"> <a href="/knowledge/manage?filter=me">更多</a></span> </header>
                 <div class="panel-body">
                   <ul class="activity-list">
                     {{range $k,$v := .knowledges}}
@@ -239,17 +239,22 @@
           <div class="row">
             <div class="col-md-12">
               <div class="panel">
-                <header class="panel-heading"> 相册 <span class="pull-right"> <a href="/album/list?filter=me">更多</a></span> </header>
-                <div class="panel-body"> {{range $k,$v := .albums}}
-                  <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail"> <a href="/album/{{$v.Id}}"><img alt="{{$v.Title}}" class="img-responsive" src="{{$v.Picture}}" style="width:100%;height:200px;"></a>
-                      <div class="caption">
-                        <h3><a href="/album/{{$v.Id}}">{{$v.Title}}</a></h3>
-                        <p>{{substr $v.Summary 0 20}}</p>
-                      </div>
-                    </div>
-                  </div>
-                  {{end}} </div>
+                <header class="panel-heading"> 相册 <span class="pull-right"> <a href="/album/manage?filter=me">更多</a></span> </header>
+                <div class="panel-body"><div id="gallery" class="media-gal"> {{range $k,$v := .albums}}
+				
+				<div class="images item " >
+                                    <a href="/album/{{$v.Id}}" title="{{$v.Title}}">
+                                        <img src="{{$v.Picture}}" alt="{{$v.Title}}" />
+                                    </a>
+                                    <p><a href="/album/{{$v.Id}}">{{substr $v.Title 0 10}}</a> </p>
+									<p>{{substr $v.Summary 0 16}}</p>
+									
+									
+                                </div>
+				
+				
+                  
+                  {{end}} </div></div>
               </div>
             </div>
           </div>

@@ -15,13 +15,13 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 员工管理 </h3>
+      <h3> 组织管理 {{template "users/nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/notice/manage">公告管理</a> </li>
         <li class="active"> 公告 </li>
       </ul>
-      <div class="pull-right"><a href="/notice/add" class="btn btn-success">添加新公告</a></div>
+      <div class="pull-right"><a href="/notice/add" class="btn btn-success">+添加新公告</a></div>
     </div>
     <!-- page heading end-->
     <!--body wrapper start-->
@@ -33,13 +33,13 @@
             <div class="panel-body">
               <form class="form-horizontal adminex-form" id="notice-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">标题</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>标题</label>
                   <div class="col-sm-10">
                     <input type="text" name="title" value="{{.notice.Title}}" class="form-control" placeholder="请填写名称">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">内容</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>内容</label>
                   <div class="col-sm-10">
                     <textarea name="content" placeholder="请填写公告内容" style="height:90px;" class="form-control">{{.notice.Content}}</textarea>
                   </div>

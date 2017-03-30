@@ -29,13 +29,13 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 员工管理 </h3>
+      <h3> 组织管理 {{template "users/nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/notice/manage">公告管理</a> </li>
         <li class="active"> 公告 </li>
       </ul>
-      <div class="pull-right"><a href="/notice/add" class="btn btn-success">添加新公告</a></div>
+      <div class="pull-right"><a href="/notice/add" class="btn btn-success">+添加新公告</a></div>
     </div>
     <!-- page heading end-->
     <!--body wrapper start-->

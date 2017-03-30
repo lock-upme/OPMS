@@ -18,7 +18,7 @@
       <h3> 简历管理 </h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
-        <li> <a href="/resume/list">简历管理</a> </li>
+        <li> <a href="/resume/manage">简历管理</a> </li>
         <li class="active"> 简历 </li>
       </ul>
     </div>
@@ -32,13 +32,13 @@
             <div class="panel-body">
               <form class="form-horizontal adminex-form" id="resume-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">姓名</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>姓名</label>
                   <div class="col-sm-10">
                     <input type="text" name="realname" value="{{.resume.Realname}}" class="form-control" placeholder="请输入姓名">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">手机</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>手机</label>
                   <div class="col-sm-10">
                     <input type="text" name="phone" value="{{.resume.Phone}}" class="form-control" placeholder="请输入手机号">
                   </div>

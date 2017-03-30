@@ -19,7 +19,7 @@
       <h3> 知识分享 </h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
-        <li> <a href="/knowledge/list">知识分享</a> </li>
+        <li> <a href="/knowledge/manage">知识分享</a> </li>
         <li class="active"> 知识 </li>
       </ul>
       <div class="pull-right"><a href="/knowledge/add" class="btn btn-success">+分享知识</a></div>
@@ -34,7 +34,7 @@
             <div class="panel-body">
               <form class="form-horizontal adminex-form" id="knowledge-form">
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">类别</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>类别</label>
                   <div class="col-sm-10">
                     <select name="sortid" class="form-control">
                       <option value="">请选择分类</option>                      
@@ -45,7 +45,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">标题</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>标题</label>
                   <div class="col-sm-10">
                     <input type="text" name="title" value="{{.knowledge.Title}}" class="form-control" placeholder="请填写标题">
                   </div>
@@ -63,13 +63,13 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">简介</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>简介</label>
                   <div class="col-sm-10">
                     <textarea name="summary" placeholder="请填写简介" style="height:90px;" class="form-control">{{.knowledge.Summary}}</textarea>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">内容</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>内容</label>
                   <div class="col-sm-10">
                     <textarea name="content" placeholder="请填写简介" style="height:400px;" class="form-control">{{.knowledge.Content}}</textarea>
                   </div>

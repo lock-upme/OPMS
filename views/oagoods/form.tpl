@@ -22,7 +22,7 @@
     <!-- header section end-->
     <!-- page heading start-->
     <div class="page-heading">
-      <h3> 审批管理 </h3>
+      <h3> 审批管理 {{template "inc/checkwork-nav.tpl" .}}</h3>
       <ul class="breadcrumb pull-left">
         <li> <a href="/user/show/{{.LoginUserid}}">OPMS</a> </li>
         <li> <a href="/oagood/manage">审批管理</a> </li>
@@ -42,7 +42,7 @@
                 <strong>注意!</strong> 领用单状态为正常后(可在列表操作中设置为“正常”)，就不能再编辑！后续流程等待审批人操作。. </div>
               <form class="form-horizontal adminex-form" id="oagood-form">
 			  <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">物品用途</label>
+                  <label class="col-sm-2 col-sm-2 control-label"><span>*</span>物品用途</label>
                   <div class="col-sm-10">
                     <input type="text" name="purpose" value="{{.oagood.Purpose}}" class="form-control" placeholder="如办公用品 必填">
                   </div>
@@ -51,13 +51,13 @@
                 <div class="js-oagoodBox">
                   <div class="alert alert-info fade in"> 领用明细(1) </div>
                   <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">物品名称</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><span>*</span>物品名称</label>
                     <div class="col-sm-10">
                       <input type="text" name="names[]" class="form-control" placeholder="请输入物品名称">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">数量</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><span>*</span>数量</label>
                     <div class="col-sm-10">
                       <input type="number" name="quantitys[]" class="form-control" placeholder="请输入物品数量">
                     </div>

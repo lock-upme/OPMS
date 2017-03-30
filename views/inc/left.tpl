@@ -20,7 +20,11 @@
     </div>
     <!--sidebar nav start-->
     <ul class="nav nav-pills nav-stacked custom-nav js-left-nav">
-	<li><a href="/user/show/{{.LoginUserid}}"><i class="fa fa-home"></i> <span>我的主页</span></a></li>    
+	<!--li><a href="/user/show/{{.LoginUserid}}"><i class="fa fa-home"></i> <span>我的主页</span></a></li-->   
+	{{range $k,$v := .leftNav}}
+	<li><a href="/{{$v.Ename}}/manage"><i class="fa fa-{{$v.Icon}}"></i> <span>{{$v.Name}}</span></a></li>   
+	{{end}}
+	 
     </ul>
     <!--sidebar nav end-->
   </div>

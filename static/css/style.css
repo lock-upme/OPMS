@@ -958,7 +958,8 @@ h5.left-nav-title {
     font-weight: normal;
     margin: 10px 0;
 }
-
+.page-heading h3 span {padding-left:25px; font-size:16px;}
+.page-heading h3 span a {padding:0 5px;}
 .page-heading .breadcrumb {
     padding: 0;
     margin: 0;
@@ -2407,7 +2408,7 @@ table.display tr.even.gradeX, table.display tr.gradeX, tr.even.gradeU td.sorting
 .media-gal {
     float: left;
     width: 100%;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 
 .media-gal .item {
@@ -2431,6 +2432,10 @@ table.display tr.even.gradeX, table.display tr.gradeX, tr.even.gradeU td.sorting
     -moz-transition: all 0.3s;
     transition: all 0.3s;
     color: #fff;
+}
+.media-gal .item:hover a{
+	color: #fff;
+	text-decoration: underline;
 }
 
 .media-gal .item:hover img {
@@ -4760,3 +4765,5 @@ ol.comment-list {
 .gray {-webkit-filter: grayscale(1);filter:gray;filter: grayscale(1);}
 
 #js-clock{font-size: 26px;text-align: center; border-radius: 50%; display: inline-block; height: 150px; width: 150px; line-height: 32px; padding: 46px 0 0 0;  text-decoration: none;}
+.form-horizontal .control-label span {padding-right:2px; color:#FF6C60;}
+select{-webkit-appearance:none;}
