@@ -1,7 +1,7 @@
 $(function(){
 	if (is_mobile()) {
 		//$('body').removeClass('left-side-collapsed');
-		$('.left-side').hide();
+		//$('.left-side').hide();
 	}
 	
 	//左侧菜单显示
