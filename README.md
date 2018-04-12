@@ -31,7 +31,7 @@ http://opms.docs.milu365.cn/
 
 http://opms.demo.milu365.cn/
 
-加QQ群（660307579）获取用户名和密码
+加QQ群（753661431）获取用户名和密码
 
 技术讨论群：
 
