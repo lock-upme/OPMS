@@ -15,7 +15,7 @@ OPMS的由来：
 
 结合实际的项目要求和人事的日常工作经验要求，于是OPMS管理系统诞生了！
 
-# 新品地址：https://www.milu365.cn/
+# 新品地址：https://www.zhidieyun.com/
 
 OPMS官网：
 
